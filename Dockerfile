@@ -1,6 +1,6 @@
-FROM node:21.1.0
+FROM node:21
 
-WORKDIR /var/www/html
+WORKDIR /usr/src/app
 
 COPY package.json .
 
@@ -8,6 +8,6 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 14777
+EXPOSE 14000
 
 CMD ["npm", "start"]
