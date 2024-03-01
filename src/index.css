@@ -1,3 +1,19 @@
+:root {
+  --LTWhiteLighter: #FFFFFF;
+  --LTWhiteDarker: #F4F4F4;
+  --LTBlack: #202020;
+  --LTPink: #DB1144;
+  --LTGray: #949494;
+  --LTWhiteOverlay: rgba(255, 255, 255, 0.5);
+
+  --DTPink: #DB1144;
+  --DTWhiteDarker: #F4F4F4;
+  --DTBlack: #0F0F0F;
+  --DTWhiteOverlay: rgba(255, 255, 255, 0.5);
+  --DTDarkGray: #222222;
+  --DTLightGray: #949494;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
