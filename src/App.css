@@ -1,37 +1,4 @@
 
-/* HeaderButton START */
-
-.HeaderButton{
-  width: 6.25rem;
-  height: 5.625rem;
-  border-radius: 5%;
-  align-content: center;
-  border: none;
-  cursor: pointer;
-  padding: 0.625rem 0.625rem ;
-}
-
-.HeaderButton > * {
-  margin: 0;
-  padding: 0;
-  display: block;
-}
-
-.HeaderButton > i {
-  font-size: 40px;
-}
-
-.HeaderButton > label{
-  font-size:'16px',
-}
-
-/* HeaderButton END */
-
-
-
-
-
-
 /* Text Styles */
 
 .titleText{
