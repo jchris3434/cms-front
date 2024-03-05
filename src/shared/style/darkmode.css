@@ -1,0 +1,15 @@
+/* HeaderButton START */
+
+.HeaderButton {
+    background-color: var(--DTDarkGray);
+}
+
+.HeaderButton > * {
+    color: var(--DTWhiteDarker)
+}
+
+.HeaderButton:hover{
+    background-color: var(--LTPink);
+}
+
+/* HeaderButton END */

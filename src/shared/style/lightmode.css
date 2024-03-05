@@ -1,0 +1,20 @@
+/* HeaderButton START */
+
+.HeaderButton {
+    background-color: var(--LTWhiteLighter);
+}
+
+.HeaderButton > i {
+    color: var(--LTPink)
+}
+
+
+.HeaderButton:hover{
+    background-color: var(--LTPink);
+}
+
+.HeaderButton:hover > * {
+    color : var(--LTWhiteLighter);
+}
+
+/* HeaderButton END */
