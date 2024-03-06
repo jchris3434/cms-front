@@ -18,7 +18,7 @@ import './ListItem.css';
 function ListItem(props){
 
     return ( 
-        <Card className='ListItem' darkmode={props.darkmode}  style={{gridTemplateColumns:`repeat(${props.content.length} , 1fr) auto auto`}}>
+        <Card className='ListItem' darkmode={props.darkmode.toString()}  style={{gridTemplateColumns:`repeat(${props.content.length} , 1fr) auto auto`}}>
             
             {props.content.map(function(data) {
                 return (
