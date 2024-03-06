@@ -1,6 +1,6 @@
 import './App.css';
 
-// const darkmode = true;
+// const isDarkMode = true;
 
 function App() {
   return (

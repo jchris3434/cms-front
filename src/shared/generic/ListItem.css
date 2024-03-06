@@ -16,17 +16,17 @@
 
 /* LIGHT MODE */
 
-.ListItem[darkmode=false] {
+.ListItem[isDarkMode=false] {
     background-color: var(--LTWhiteLighter);
 }
 
 
 /* DARK MODE */
 
-.ListItem[darkmode=true] {
+.ListItem[isDarkMode=true] {
     background-color: var(--DTDarkGray);
 }
 
-.ListItem[darkmode=true] > p  {
+.ListItem[isDarkMode=true] > p  {
     color: var(--DTWhiteDarker);
 }

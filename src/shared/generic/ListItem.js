@@ -7,6 +7,7 @@ import './ListItem.css';
  * @description                             Card used as rows for a list. Similar to <tr> </tr>                               
  * 
  * @param {object}          props 
+ * @param {boolean}         isDarkMode      props.isDarkMode    Either 'true' or 'false'
  * @param {array}           content         props.content       Array with each element to display on the line
  * @param {null | function} modifyButton    props.modifyButton  Either null or a function that is passed to the 'modify' IconButton element
  * @param {null | function} deleteButton    props.deleteButton  Either null or a function that is passed to the 'delete' IconButton element
@@ -18,7 +19,7 @@ import './ListItem.css';
 function ListItem(props){
 
     return ( 
-        <Card className='ListItem' darkmode={props.darkmode.toString()}  style={{gridTemplateColumns:`repeat(${props.content.length} , 1fr) auto auto`}}>
+        <Card className='ListItem' isDarkMode={props.isDarkMode.toString()}  style={{gridTemplateColumns:`repeat(${props.content.length} , 1fr) auto auto`}}>
             
             {props.content.map(function(data) {
                 return (
