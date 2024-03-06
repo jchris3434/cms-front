@@ -1,17 +1,18 @@
 import React from 'react';
 import './App.css';
-import Button from './shared/generic/genericButton';
+import HeaderButton from './shared/components/HeaderButton';
 import { BsFillPlusSquareFill } from 'react-icons/bs';
+const darkmode = true;
 
 function App() {
-  return (
-    <div className="button test">
-      <Button
-        icon={<BsFillPlusSquareFill  />}
-        text={"Ajouter"}
-        onClick={''}
-      />
-    </div>
+  return (    
+  <div className="button test">
+      <Button icon={<BsFillPlusSquareFill  />} text={"Ajouter"}onClick={''}/>
+    <HeaderButton darkmode={darkmode.toString()} icon='bi-tools' text='text' redirect='https://fondespierre.com/'/>
+     </div>
+
+
+
   );
 }
 
