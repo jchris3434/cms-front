@@ -1,16 +1,15 @@
 /* GENERIC */
 
 .IconButton{
-    padding: 0.625rem;
-    border-radius: 100%;
+    padding: 0.6rem;
     border: none;
     cursor: pointer;
     background-color: transparent;
 }
 
-.IconButton > *{
+.IconButton > * {
     margin:0;
     padding:0;
     color: var(--LTPink);
-    font-size: 1.5rem;
+    font-size: 1.7rem;
 }

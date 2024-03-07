@@ -1,5 +1,4 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
 import './IconButton.css';
 
 /**
@@ -15,9 +14,9 @@ import './IconButton.css';
 function IconButton(props){
 
     return (<>
-        <Button className='IconButton' onClick={props.buttonAction}>
+        <button className='IconButton' onClick={props.buttonAction}>
             <i className={props.icon}></i>
-        </Button>
+        </button>
     </>)
 
 }

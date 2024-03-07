@@ -3,7 +3,7 @@
 .ListItem {
     display: grid;
     width: 62.5rem;
-    padding : 0.5rem 2.5rem;
+    padding : 0rem 2.5rem;
     border-radius: 1.25rem;
     gap: 1.25rem;
   }
@@ -11,7 +11,7 @@
 .ListItem > p {
     margin: 0;
     padding: 0;
-    line-height: 2.875rem;
+    line-height: 3.75rem;
 }
 
 /* LIGHT MODE */
