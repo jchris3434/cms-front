@@ -12,6 +12,5 @@ function CardGeneric(props) {
             </Card>
         </div>
     );
-}
-
+    
 export default CardGeneric;
