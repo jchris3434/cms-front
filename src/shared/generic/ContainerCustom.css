@@ -14,10 +14,10 @@
 }
 
 
-.ContainerCustom[isDarkMode=true]{
+.ContainerCustom[isdarkmode=true]{
     background-color: var(--DTBlack) ;
 }
 
-.ContainerCustom[isDarkMode=false]{
+.ContainerCustom[isdarkmode=false]{
     background-color: var(--LTWhiteDarker) ;
 }
