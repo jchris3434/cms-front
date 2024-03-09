@@ -4,7 +4,7 @@ import ListHeader from '../generic/ListHeader';
 import ListItem from '../generic/ListItem';
 
 /**
- * @description                             Versatile container for cards, lists, forms and other
+ * @description                             Component that displays a list with headers, similar to a <table> element 
  * 
  * @param {object}          props
  * @param {boolean}         isDarkMode      props.isDarkMode    Either 'true' or 'false'
