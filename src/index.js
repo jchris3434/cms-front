@@ -8,10 +8,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap-icons/font/bootstrap-icons.css";
+import CardGeneric from './shared/generic/CardGeneric';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <CardGeneric/>
     <App />
   </React.StrictMode>
 );
