@@ -1,9 +1,11 @@
 /* GENERIC */
 
 .ListItem {
+    margin-top: 1.25rem;
     display: grid;
     width: 62.5rem;
-    padding : 0.625rem 2.5rem;
+    border: none;
+    padding : 0 2.5rem;
     border-radius: 1.25rem;
     gap: 1.25rem;
   }
