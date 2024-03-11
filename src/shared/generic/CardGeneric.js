@@ -5,7 +5,7 @@ import { Card } from 'react-bootstrap';
 function CardGeneric(props) {
     return (
         <div className={`CardGeneric ${props.darkMode ? 'darkmode' : ''}`}>
-            <Card style={{ width: '18rem' }}>
+            <Card>
                 <Card.Body>
                 {props.children}
                 </Card.Body>

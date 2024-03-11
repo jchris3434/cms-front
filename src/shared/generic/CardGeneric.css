@@ -1,4 +1,9 @@
+.CardGeneric {
+    width: '18rem';
+}
+
 .CardGeneric.darkmode {
     background-color: var(--DTDarkGray);
+    width: '18rem';
 
 }
