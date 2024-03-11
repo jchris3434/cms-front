@@ -1,9 +1,11 @@
 .CardGeneric {
     width: 18rem;
+    box-shadow: 0rem 0.1rem rgba(0, 0, 0, 0.418);
 }
 
 .CardGeneric.darkmode {
     background-color: var(--DTDarkGray);
     width: 18rem;
     color: var(--DTWhiteDarker);
+
 }
