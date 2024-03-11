@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import IconButton from './IconButton';
 import './ListItem.css';
@@ -17,8 +17,11 @@ import './ListItem.css';
 
 function ListItem(props){
 
+    let buttonSpaceOne  = props.modifyButton !== null ? 'auto' : '';
+    let buttonSpaceTwo  = props.deleteButton !== null ? 'auto' : '';
+
     return ( 
-        <Card className='ListItem' darkmode={props.darkmode.toString()}  style={{gridTemplateColumns:`repeat(${props.content.length} , 1fr) auto auto`}}>
+        <Card className='ListItem' isdarkmode={props.isDarkMode.toString()}  style={{gridTemplateColumns:`repeat(${props.content.length} , 1fr) ${buttonSpaceOne} ${buttonSpaceTwo}`}}>
             
             {props.content.map(function(data) {
                 return (
