@@ -1,11 +1,16 @@
 import './App.css';
-
-// const isDarkMode = true;
+import UserSettings from './shared/generic/UserSettings'
+import React, { useState } from 'react';
+import getDarkModeFromLocalStorage from './shared/getDarkModeFromLocalStorage'
 
 function App() {
+  const [isdarkmode, setDarkMode] = useState(getDarkModeFromLocalStorage())
   return (
     <div>
-      turn ok
+      <UserSettings 
+      isdarkmode={isdarkmode}
+      setDarkMode={setDarkMode}
+      />
     </div>
   );
 }
