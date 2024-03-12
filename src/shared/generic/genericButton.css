@@ -1,0 +1,32 @@
+@import url('../../index.css');
+
+
+.ButtonContainer {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    border-radius: 24rem;
+    padding: 0.625rem;
+    cursor: pointer;
+    background-color: var(--LTPink);
+}
+
+
+.ButtonContainer:hover {
+    background-color: var(--LTGray);
+}
+
+
+.IconContainer {
+    text-align: center;
+    padding-top: 0.313rem;
+}
+
+
+.ButtonText {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1rem;
+    margin: 0;
+    color: var(--LTWhiteLighter);
+}
