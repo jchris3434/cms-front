@@ -5,7 +5,7 @@ import './CardGeneric.css'
 import '../../index.css';
 
 function CardGeneric(props) {
-    // Déterminez les classes à appliquer en fonction de l'état du mode sombre
+    
     const cardClasses = `CardGeneric ${props.darkMode ? 'darkmode' : ''}`;
 
     return (

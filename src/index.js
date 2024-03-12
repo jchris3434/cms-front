@@ -13,7 +13,6 @@ import CardGeneric from './shared/generic/CardGeneric';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <CardGeneric/>
     <App />
   </React.StrictMode>
 );
