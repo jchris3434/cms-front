@@ -21,7 +21,7 @@ import ListItem from '../generic/ListItem';
 function List(props){
 
     return ( 
-        <ContainerCustom className='List' isDarkMode={props.isDarkMode.toString()}>
+        <div className='List' isDarkMode={props.isDarkMode.toString()}>
             <ListHeader content={props.listHeaders} modifyButton={props.modifyButton} deleteButton={props.deleteButton} />
             
             {props.listRows.map(function(data) {
@@ -35,7 +35,7 @@ function List(props){
                 )
             })}  
                 
-        </ContainerCustom>
+        </div>
     )
 }
 
