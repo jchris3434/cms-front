@@ -1,0 +1,25 @@
+.icon-large {
+    font-size: 2rem;
+    padding: 1.5rem;
+    margin: 0.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #DB1144;
+}
+
+.card-title {
+    font-style: bold;
+    display: flex;
+    justify-content: center;
+    /* Centrage horizontal */
+    align-items: center;
+    margin: 5%;
+}
+
+.card-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
