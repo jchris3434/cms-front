@@ -14,7 +14,6 @@ import './ListItem.css';
  * @returns                                 ListItem component
  */
 
-
 function ListItem(props){
 
     let buttonSpaceOne  = props.modifyButton !== null ? 'auto' : '';
