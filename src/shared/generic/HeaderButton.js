@@ -1,6 +1,4 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-
 import './HeaderButton.css';
 
 /**
@@ -15,18 +13,16 @@ import './HeaderButton.css';
  */
 
 function HeaderButton(props){
-
-    console.log(props.isDarkMode)
     
     const redirect = () => {
         window.location.href = props.redirect;
     };
 
     return ( 
-        <Button isDarkMode={props.isDarkMode.toString()} className='HeaderButton' onClick={redirect}> 
+        <button isDarkMode={props.isDarkMode.toString()} className='HeaderButton' onClick={redirect}> 
             <i className={props.icon}></i>
             <label >{props.text}</label>
-        </Button>
+        </button>
     )
 }
 
