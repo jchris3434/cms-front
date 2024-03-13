@@ -1,28 +1,33 @@
 import React from 'react';
-import CardGeneric from '../generic/CardGeneric'; // Import the CardGeneric component
-import { Card } from 'react-bootstrap'; // Import the Card component from React Bootstrap
+import CardGeneric from '../generic/CardGeneric';
+import { Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BsFillPersonFill } from 'react-icons/bs'; // Import the icon from react-icons package
 import './DashboardCard.css';
 
-function DashBoardCard() {
-    return (
-        <CardGeneric darkMode={false} className="card-generic"> 
-            {/* Ajoutez la classe "card-generic" pour appliquer l'ombre */}
-            <Card.Body className="card-body-container"> 
-                <div className="icon icon-large mr-2 mt-1"> 
-                    <BsFillPersonFill/>
-                </div>
-                
-                <div className="card-title-container">
-                    <Card.Title className="text-center">Titre de la page</Card.Title>
-                    <Card.Text className="card-text-container"> 
-                        Accéder à la liste de tous les clients et leurs informations
-                    </Card.Text>
-                </div>
-            </Card.Body>
-        </CardGeneric>
-    );
+function DashBoardCard(props) {
+  // Add an additional class to apply dark mode
+  const cardClasses = props.isDarkMode ? 'CardGeneric.dark-mode' : 'CardGeneric';
+
+  // Function to handle redirection when card is clicked
+  const redirect = () => {
+    window.location.href = props.redirect;
+  };
+
+  return (
+    <CardGeneric isDarkMode={props.isDarkMode.toString()} className={cardClasses} onClick={redirect}>
+      <Card.Body className="card-body-container">
+        {/* Icon container */}
+        <div className="icon icon-large mr-2 mt-1">
+          {props.icon}
+        </div>
+        {/* Card title and text container */}
+        <div className="card-title-container">
+          <Card.Title className="text-center">{props.title}</Card.Title>
+          <Card.Text className="card-text-container">{props.text}</Card.Text>
+        </div>
+      </Card.Body>
+    </CardGeneric>
+  );
 }
 
 export default DashBoardCard;
