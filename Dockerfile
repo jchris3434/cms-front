@@ -2,12 +2,10 @@ FROM node:21
 
 WORKDIR /usr/src/app
 
-COPY package.json .
+COPY build/ .
 
-RUN npm install
-
-COPY . .
+RUN npm install -g serve
 
 EXPOSE 14000
 
-CMD ["npm", "start"]
+CMD ["serve", "." , "-l", "14000"]
