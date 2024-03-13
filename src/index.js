@@ -7,11 +7,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import DashBoardCard from './shared/component/DashBoardCard';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <DashBoardCard/>
     <App/>
   </React.StrictMode>
 );
