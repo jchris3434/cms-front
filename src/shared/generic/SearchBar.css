@@ -3,22 +3,33 @@ i {
 }
 
 .input-group {
-    width: 500px;
-    border: solid 1px var(--LTPink);
+    max-width: 31.25rem;
+    border: solid 0.063rem var(--LTPink);
     background-color:var(--LTWhiteLighter);
 }
 
 input {
-    width:400px;
+    max-width:25rem;
     border:none;
     background: transparent;
     outline: 0 !important;
 }
 
-.search-result {
-    width:25rem;
-    background-color:var(--LTWhiteLighter);
+.results-list {
+    position: absolute;
     margin-left: 2.5rem;
+    border: 0.063rem solid var(--DTLightGray);
+}
+
+.search-result {
+    max-width:25rem;
+    background-color:var(--LTWhiteLighter);
+    padding: 0.625rem 2.5rem;
+}
+
+.search-result:hover {
+    background-color:var(--LTWhiteDarker);
+    cursor: pointer;
 }
 
 #searchbardark .input-group {
@@ -30,6 +41,11 @@ input {
     color:var(--DTWhiteDarker);
 }
 
+#searchbardark .search-result:hover {
+    background-color:var(--DTLightGray);
+}
+
 #searchbardark input{
     color:var(--DTWhiteDarker);
 }
+
