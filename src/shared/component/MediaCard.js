@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types'; // Import the PropTypes package
 import CardGeneric from '../generic/CardGeneric';
 import IconButton from '../generic/IconButton';
 import { Card } from 'react-bootstrap';
@@ -20,27 +19,24 @@ function MediaCard(props) {
   const isDarkModeString = props.isDarkMode ? props.isDarkMode.toString() : '';
 
   return (
+
     <CardGeneric isDarkMode={isDarkModeString} className={cardClasses} onClick={redirect}>
+
       <Card.Body>
+
         <Card.Img src={props.src} alt={props.alt} />
         <Card.Text className="card-text">{props.text}</Card.Text>
 
         <div className="icon-button">
-          <IconButton icon={<BsPencil />}/> 
-          <IconButton icon={<BsXCircleFill />}/>
+        <IconButton icon={<BsPencil />}/> 
+        <IconButton icon={<BsXCircleFill />}/>
         </div>
+
       </Card.Body> 
+      
     </CardGeneric>
+
   );
 }
-
-// Prop types validation
-MediaCard.propTypes = {
-  isDarkMode: PropTypes.bool, // isDarkMode should be a boolean
-  redirect: PropTypes.string, // redirect should be a string
-  src: PropTypes.string.isRequired, // src is required and should be a string
-  alt: PropTypes.string.isRequired, // alt is required and should be a string
-  text: PropTypes.string.isRequired // text is required and should be a string
-};
 
 export default MediaCard;
