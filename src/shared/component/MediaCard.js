@@ -23,7 +23,7 @@ function MediaCard(props) {
     <CardGeneric isDarkMode={isDarkModeString} className={cardClasses} onClick={redirect}>
 
       <Card.Body>
-        
+
         <Card.Img src={props.src} alt={props.alt} />
         <Card.Text className="card-text">{props.text}</Card.Text>
 
@@ -32,7 +32,7 @@ function MediaCard(props) {
         <IconButton icon={<BsXCircleFill />}/>
         </div>
 
-      </Card.Body>
+      </Card.Body> 
       
     </CardGeneric>
 
