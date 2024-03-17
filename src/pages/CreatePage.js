@@ -1,7 +1,13 @@
+import React, { useState } from 'react';
+import SidebarLeftWidgets from '../shared/component/SidebarLeftWidgets';
+import getDarkModeFromLocalStorage from '../shared/getDarkModeFromLocalStorage'
+
 function CreatePage() {
+  const [isdarkmode, setDarkMode] = useState(getDarkModeFromLocalStorage());
+  
     return (
       <div>
-        <h1>This is the create page</h1>
+        <SidebarLeftWidgets isDarkMode={isdarkmode}/>
       </div>
     );
   }
