@@ -93,3 +93,8 @@
 .sidebar-left.classClose .pages-list-title {
     opacity: 0;
 }
+
+.nav-link {
+    color: #000; 
+    text-decoration: none;
+}

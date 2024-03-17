@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './SidebarLeftNavigation.css';
 import PropTypes from 'prop-types';
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
+import { NavLink } from 'react-router-dom';
 
 const SidebarLeftNavigation = ({ items, isDarkMode }) => {
     const [isOpen, setIsOpen] = useState(true);
@@ -19,13 +20,13 @@ const SidebarLeftNavigation = ({ items, isDarkMode }) => {
                 <ul className="pages-list">
                     {items.map((item, index) => (
                         <div className={`pages-bubble ${isDarkMode ? 'dark-mode' : 'light-mode'}`} key={index}>
-                            <span href={item.url}>{item.label}</span>
+                            <NavLink to={item.url} className="nav-link">{item.label}</NavLink>
                         </div>
                     ))}
                 </ul>
             </div>
             <div className={`button-container ${contentDisplay}`}>
-            <button className={`toggle-btn ${isDarkMode ? 'dark-mode' : ''}`} onClick={toggleSidebar}>
+                <button className={`toggle-btn ${isDarkMode ? 'dark-mode' : ''}`} onClick={toggleSidebar}>
                     {isOpen ? <BsArrowLeft /> : <BsArrowRight />}
                 </button>
             </div>
