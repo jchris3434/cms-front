@@ -1,6 +1,6 @@
 /* GENERIC */
 
-.IconButton{
+.IconButton {
     border: none;
     cursor: pointer;
     background-color: transparent;
@@ -10,7 +10,7 @@
 }
 
 
-.IconButton > * {
+.IconButton>* {
     display: inline-block;
     padding: 0;
     margin: 0;

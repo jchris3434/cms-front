@@ -12,11 +12,11 @@ import './IconButton.css';
  */
 function IconButton(props){
 
-    return (<>
+    return (
         <button className='IconButton' onClick={props.buttonAction}>
-            <i className={props.icon}></i>
+            {props.icon}
         </button>
-    </>)
+    )
 
 
 }
