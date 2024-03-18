@@ -1,7 +1,6 @@
 /**
  * @description                     Function that sets Dark Mode in localStorage (bool)
  * 
- * 
  * @returns                         boolean
  */
 

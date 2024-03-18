@@ -1,6 +1,16 @@
 import React from 'react';
 import './CreateProjectOverlay.css';
 
+/**
+ * @description                                     Overlay Content (fits in Overlay component)
+ * 
+ * @param {object}  props
+ * @param {boolean} isDarkMode  props.isDarkMode    Either true or false 
+ * @param {function} setShowCreateProjectOverlay  props.setShowCreateProjectOverlay    Returns a boolean to display the overlay
+ * 
+ * @returns                                         Create Project Content
+ */
+
 export default function CreateProjectOverlay(props){
     return ( 
        <div class="createprojectoverlay" id={props.isDarkMode === true ? 'dark':''}>

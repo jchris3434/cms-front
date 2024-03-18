@@ -1,6 +1,16 @@
 import React from 'react';
 import './CreateUserOverlay.css';
 
+/**
+ * @description                                     Overlay Content (fits in Overlay component)
+ * 
+ * @param {object}  props
+ * @param {boolean} isDarkMode  props.isDarkMode    Either true or false 
+ * @param {function} setShowCreateUserOverlay  props.setShowCreateUserOverlay    Returns a boolean to display the overlay
+ * 
+ * @returns                                         Create User Content
+ */
+
 function CreateUserOverlay(props){
  
     return ( 
