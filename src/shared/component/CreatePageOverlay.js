@@ -2,7 +2,6 @@ import React from 'react';
 import './CreatePageOverlay.css';
 
 function CreatePageOverlay(props){
- console.log('Ya')
     return ( 
        <div class="createpageoverlay" id={props.isDarkMode === true ? 'dark':''}>
         <h3>Créer une nouvelle page</h3>
