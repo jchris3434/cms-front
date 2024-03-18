@@ -1,0 +1,11 @@
+
+.pageCardButtons {
+    width: fit-content;
+    margin: auto auto;
+}
+
+.pagePreviewPlaceholder {
+    width: 100%;
+    aspect-ratio: 25 / 20;
+    background-color: orange;
+}
