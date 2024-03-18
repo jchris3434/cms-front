@@ -34,6 +34,10 @@
     color: #F4F4F4;
 }
 
+.pages-bubble.dark-mode > * {
+    color: #F4F4F4; 
+}
+
 .pages-bubble {
     width: 14.5rem;
     height: 2.9375rem;
