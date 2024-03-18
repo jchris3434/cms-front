@@ -16,6 +16,6 @@
     top:50%;
     box-shadow: 0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.2);
     transform:translate(-50%, -50%);
-    border-radius: 5px;
-    padding:50px;
+    border-radius: 1.5rem;
+    padding:1.6rem;
 }
