@@ -3,12 +3,12 @@ import ContainerCustom from '../shared/generic/ContainerCustom'
 import DashBoardCard from '../shared/component/DashBoardCard'
 import Overlay from '../shared/component/Overlay'
 import CreatePageOverlay from '../shared/component/CreatePageOverlay'
-
+import './ProjectsList.css'
 
 export default function ProjectsList(props) {
   const [showcreatepageoverlay, setShowCreatePageOverlay] = useState(false);
     return (
-      <div>
+      <div id={props.isDarkMode === true ? 'projectlistdark':''}>
         <h1>Projects List page</h1>
         <ContainerCustom isDarkMode={props.isDarkMode}>
             <DashBoardCard 
