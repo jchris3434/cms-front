@@ -1,6 +1,17 @@
 import React from 'react';
 import './ModifyMediaOverlay.css';
 
+/**
+ * @description                                     Overlay Content (fits in Overlay component)
+ * 
+ * @param {object}  props
+ * @param {boolean} isDarkMode  props.isDarkMode    Either true or false 
+ * @param {function} setShowModifyMedia  props.setShowModifyMedia    Returns a boolean to display the overlay
+ * 
+ * @returns                                         Modify Media Content
+ */
+
+
 function ModifyMediaOverlay(props){
  
     return ( 

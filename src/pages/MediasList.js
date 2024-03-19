@@ -1,6 +1,6 @@
 import React from 'react';
 
-function MediasList() {
+function MediasList(props) {
   return (
     <div>
       

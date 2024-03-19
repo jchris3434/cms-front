@@ -2,16 +2,13 @@
  * @description                     Logout procedure. Removes :
  *                                  -"username" token
  *                                  -"JWT" token
- *                                  -"isdarkmode" token
  * 
- * @returns                         URL Redirection (login page)
+ * @returns                         URL Redirection (/ page)
  */
 
-function Logout() {
+export default function Logout() {
     sessionStorage.removeItem("username") 
     sessionStorage.removeItem("JWT") 
     alert("Déconnexion")
-    window.location.href = "https://fondespierre.com//";
+    window.location.href = "/";
 }
-
-export default Logout;
