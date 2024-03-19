@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'; // Enables navigation between pa
 import './Login.css'; // Import CSS styles for this component
 import CustomButton from '../shared/generic/genericButton';
 
+
 // Definition of the login form component
 function Login() {
     // Declaration of state variables for username and password
@@ -45,7 +46,7 @@ function Login() {
         .then(data => {
             localStorage.setItem("token", data.token); // Store the authentication token in local storage
             localStorage.setItem("username", username); // Store the username in local storage
-            navigate("/DashboardProject"); // Redirect the user to "/DashboardProject" page
+            navigate("/Dashboard"); // Redirect the user to "/Dashboard" page
         })
         .catch(error => {
             console.log(error.message); // Log errors to the console
@@ -54,26 +55,28 @@ function Login() {
 
     // Render the login form using React-bootstrap
     return (
-        <div className="container">
-            <div className="form-container">
-                <Form>
-                 <p className='login'>Connexion</p>
+        <div>
+            <div className="container">
+                <div className="form-container">
+                    <Form>
+                        <p className='login'>Connexion</p>
 
-                    {/* Input field for username */}
-                    <Form.Group className="mb-3" controlId="formBasicUsername">
-                        <Form.Label className='Text'>Identifiant</Form.Label>
-                        <Form.Control type="text"  value={username} onChange={handleUsernameChange} />
-                    </Form.Group>
-                    {/* Input field for pass word */}
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label className='Text'>Mot de passe</Form.Label>
-                        <Form.Control type="password" value={password} onChange={handlePasswordChange} />
-                    </Form.Group>
-                    {/* Submit button for the form */}
-                    <div className="d-flex justify-content-end">
-                    <CustomButton className="ButtonText"  type="submit" onClick={handleSubmit} text="Connexion" />
-                    </div>
-                </Form>
+                        {/* Input field for username */}
+                        <Form.Group className="mb-3" controlId="formBasicUsername">
+                            <Form.Label className='Text'>Identifiant</Form.Label>
+                            <Form.Control type="text"  value={username} onChange={handleUsernameChange} />
+                        </Form.Group>
+                        {/* Input field for pass word */}
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label className='Text'>Mot de passe</Form.Label>
+                            <Form.Control type="password" value={password} onChange={handlePasswordChange} />
+                        </Form.Group>
+                        {/* Submit button for the form */}
+                        <div className="d-flex justify-content-end">
+                            <CustomButton className="ButtonText"  type="submit" onClick={handleSubmit} text="Connexion" />
+                        </div>
+                    </Form>
+                </div>
             </div>
         </div>
     );

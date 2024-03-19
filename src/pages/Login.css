@@ -1,3 +1,5 @@
+@import url('../index.css');
+
 .container {
     display: flex;
     justify-content: center;
@@ -7,7 +9,7 @@
 
 .form-container {
     width: 20rem;
-    background-color: #f5f5f5;
+    background-color: var(--LTWhiteDarker);
     /* Fond blanc pour le formulaire */
     padding: 1.8rem;
     border-radius: 1rem;
@@ -19,9 +21,12 @@
 
     font-weight: bold;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .Text {
     font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+
 
 }

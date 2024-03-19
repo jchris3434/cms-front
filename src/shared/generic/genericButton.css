@@ -6,6 +6,7 @@
     align-items: center;
     width: fit-content;
     border-radius: 24rem;
+    border-color: var(--LTPink);
     padding: 0.625rem;
     cursor: pointer;
     background-color: var(--LTPink);
@@ -14,6 +15,7 @@
 
 .ButtonContainer:hover {
     background-color: var(--LTGray);
+    border-color: var(--LTGray);
 }
 
 
@@ -25,7 +27,7 @@
 
 .ButtonText {
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.7rem;
     line-height: 1rem;
     margin: 0;
     color: var(--LTWhiteLighter);
