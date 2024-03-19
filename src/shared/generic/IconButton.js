@@ -1,5 +1,6 @@
 import React from 'react';
 import './IconButton.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 /**
  * @description                         A small icon that is a button. Executes passed on function when clicked
@@ -11,15 +12,10 @@ import './IconButton.css';
  * @returns                             IconButton component
  */
 function IconButton(props){
-
     return (
         <button className='IconButton' onClick={props.buttonAction}>
-            {props.icon}
+            <i class={props.icon}/>
         </button>
     )
-
-
 }
-
-
 export default IconButton ;

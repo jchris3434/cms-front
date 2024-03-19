@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import ContainerCustom from '../shared/generic/ContainerCustom'
 import DashBoardCard from '../shared/component/DashBoardCard'
 import Overlay from '../shared/component/Overlay'
-import CreatePageOverlay from '../shared/component/CreatePageOverlay'
 import DeleteProjectOverlay from '../shared/component/DeleteProjectOverlay'
 import './ProjectsList.css'
 
 export default function ProjectsList(props) {
-  const [showcreatepageoverlay, setShowCreatePageOverlay] = useState(false);
   const [showdeleteprojectoverlay, setShowDeleteProjectOverlay] = useState(false);
 
     return (
@@ -33,7 +31,7 @@ export default function ProjectsList(props) {
               text='Accéder au mode création de pages'
               title='Créer une page'
               icon="bi bi-plus-circle-fill"
-              show={setShowCreatePageOverlay} 
+              redirect='/pagesList'
             />
             <DashBoardCard 
               isDarkMode={props.isDarkMode}
@@ -50,17 +48,7 @@ export default function ProjectsList(props) {
               show={setShowDeleteProjectOverlay} 
             />
         </ContainerCustom> 
-        {showcreatepageoverlay && 
-           <Overlay 
-           component={
-              <CreatePageOverlay 
-                  isDarkMode={props.isDarkMode}
-                  setShowCreatePageOverlay={setShowCreatePageOverlay}
-              />}
-           />
-            }
-
-            {showdeleteprojectoverlay && 
+         {showdeleteprojectoverlay && 
            <Overlay 
            component={
               <DeleteProjectOverlay 
