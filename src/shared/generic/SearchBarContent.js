@@ -34,7 +34,7 @@ const SearchBarContent = (props) => {
                     <i class="bi-search"/>
                 </button>
                 <input
-                    placeholder="Chercher un projet"
+                    placeholder={props.placeholder}
                     value={input}
                     onChange={(e) => handleChange(e.target.value)}
                   />

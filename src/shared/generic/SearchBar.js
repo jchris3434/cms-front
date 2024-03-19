@@ -3,7 +3,6 @@ import { SearchResultsList } from "./SearchResultsList";
 import { useState } from "react";
 import './SearchBar.css'
 
-
 /**
  * @description                                     A searchbar 
  * 
@@ -24,6 +23,7 @@ function SearchBar(props) {
         >
           <SearchBarContent 
               setResults={setResults} 
+              placeholder={props.placeholder}
           />
           {results && results.length > 0 && <SearchResultsList results={results} />}
         </div> //Displays results if string > 0
