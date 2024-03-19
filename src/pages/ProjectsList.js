@@ -3,10 +3,13 @@ import ContainerCustom from '../shared/generic/ContainerCustom'
 import DashBoardCard from '../shared/component/DashBoardCard'
 import Overlay from '../shared/component/Overlay'
 import CreatePageOverlay from '../shared/component/CreatePageOverlay'
+import DeleteProjectOverlay from '../shared/component/DeleteProjectOverlay'
 import './ProjectsList.css'
 
 export default function ProjectsList(props) {
   const [showcreatepageoverlay, setShowCreatePageOverlay] = useState(false);
+  const [showdeleteprojectoverlay, setShowDeleteProjectOverlay] = useState(false);
+
     return (
       <div id={props.isDarkMode === true ? 'projectlistdark':''}>
         <h1>Projects List page</h1>
@@ -44,8 +47,7 @@ export default function ProjectsList(props) {
               title='Supprimer'
               text='Supprimer le projet en cours'
               icon="bi-x-circle-fill"
-              redirect='/preview'
-              // show={setShowDeleteProjectOverlay} 
+              show={setShowDeleteProjectOverlay} 
             />
         </ContainerCustom> 
         {showcreatepageoverlay && 
@@ -57,6 +59,17 @@ export default function ProjectsList(props) {
               />}
            />
             }
+
+            {showdeleteprojectoverlay && 
+           <Overlay 
+           component={
+              <DeleteProjectOverlay 
+                  isDarkMode={props.isDarkMode}
+                  setShowDeleteProjectOverlay={setShowDeleteProjectOverlay}
+              />}
+           />
+            }
+
 
       </div>
     );
