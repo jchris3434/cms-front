@@ -17,8 +17,4 @@ display: inline-block;
 #contentpagelistitems >* {
   display: flex;
   justify-content: space-between;
-  border: solid 1px yellow;
 }
-/* #addbuttonpagelist {
-  float: right;
-} */
