@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import './CreateProjectOverlay.css';
 
 /**
@@ -12,6 +12,15 @@ import './CreateProjectOverlay.css';
  */
 
 export default function CreateProjectOverlay(props){
+
+   const [clientsList, setClientsList] = useState([]);
+   useEffect(()=> {
+      fetch("https://jsonplaceholder.typicode.com/users") //Fake API until we have the right DB
+              .then((res) => res.json())
+              .then((res) => {setClientsList(res)})
+              .catch((err) => console.error(err))
+      }, [])
+
     return ( 
        <div class="createprojectoverlay" id={props.isDarkMode === true ? 'dark':''}>
         <h3>Créer un nouveau projet</h3>
@@ -23,9 +32,15 @@ export default function CreateProjectOverlay(props){
          </div>
          <div class="input-data">
          <label for='clientname'>Nom du client</label><br/>
-            <input type="text" name='clientname'/>
+         <select name="clientname" id="clientname" required>
+            <option value="-"></option>
+            {clientsList.map((user) => {
+              return <option value={user.id}>{user.username}</option>
+            })}
+         </select>
          </div>
       </div>
+     
       <div id="createprojectbuttons">
       <button onClick={() => props.setShowCreateProjectOverlay(false)}>Retour</button> 
       <button type="submit">Valider</button>
