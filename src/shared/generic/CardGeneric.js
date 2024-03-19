@@ -2,11 +2,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import './CardGeneric.css'
-import '../../index.css';
 
 function CardGeneric(props) {
     
-    const cardClasses = `CardGeneric ${props.darkMode ? 'darkmode' : ''}`;
+    const cardClasses = `CardGeneric ${props.isDarkMode ? 'darkmode' : ''}`;
 
     return (
         <div className="CardContainer">

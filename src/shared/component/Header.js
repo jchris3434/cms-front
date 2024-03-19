@@ -22,8 +22,8 @@ function Header(props){
                 <Logo isDarkMode={props.isDarkMode} />
                 <p className='titleText'> {props.pageName || 'Nom de la page'} </p>
                 <SearchBar customWidth='22.5rem' isDarkMode={props.isDarkMode} />
-                <HeaderButton isDarkMode={props.isDarkMode} icon='bi-archive-fill' text='Projets' redirect='https://fondespierre.com/'/>
-                <HeaderButton isDarkMode={props.isDarkMode} icon='bi-people-fill' text='Clients' redirect='https://fondespierre.com/'/>
+                <HeaderButton isDarkMode={props.isDarkMode} icon='bi-archive-fill' text='Projets' redirect='/projectsList'/>
+                <HeaderButton isDarkMode={props.isDarkMode} icon='bi-people-fill' text='Clients' redirect='/pagesList'/>
                 <UserSettings isdarkmode={props.isDarkMode} setDarkMode={props.setDarkMode}/>
             </div>
         </div>

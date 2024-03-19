@@ -8,6 +8,7 @@ import Layout from './pages/Layout';
 import MediasList from './pages/MediasList';
 import PagesList from './pages/PagesList';
 import Preview from './pages/Preview';
+import ProjectsList from './pages/ProjectsList';
 
 function App() {
   const [isdarkmode, setDarkMode] = useState(getDarkModeFromLocalStorage());
@@ -22,6 +23,7 @@ function App() {
            <Route path="mediasList" element={<MediasList isDarkMode={isdarkmode}/>} />
            <Route path="pagesList" element={<PagesList isDarkMode={isdarkmode}/>} />
            <Route path="preview" element={<Preview isDarkMode={isdarkmode}/>} />
+           <Route path="projectsList" element={<ProjectsList isDarkMode={isdarkmode}/>} />
          </Route>
        </Routes>
      </BrowserRouter>
