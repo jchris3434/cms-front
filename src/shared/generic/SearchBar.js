@@ -3,7 +3,6 @@ import { SearchResultsList } from "./SearchResultsList";
 import { useState } from "react";
 import './SearchBar.css'
 
-
 /**
  * @description                                     A searchbar 
  * 

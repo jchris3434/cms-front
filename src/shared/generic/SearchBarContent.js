@@ -1,28 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 const SearchBarContent = (props) => {
     const [input, setInput] = useState("");
-    const fetchData = (value) => {
+    const [clientsList, setClientsList] = useState([]);
+    useEffect(()=> {
         fetch("https://jsonplaceholder.typicode.com/users") //Fake data until we have a true database to fetch
         .then((response) => response.json())
         .then((json) => {
             const results = json.filter((user) => {
                 return (
-                    value &&
-                    user &&
-                    user.name &&
-                    user.name.toLowerCase().includes(value)
+                    user
                 );
         });
-            props.setResults(results);
+        setClientsList(results);
         });
-    };
+    }, [])
 
     const handleChange = (value) => {
         setInput(value);
-        fetchData(value);
+        const data_filter = clientsList.filter( client => client.username.includes(value))
+        props.setResults(data_filter)
     };
 
     return (
