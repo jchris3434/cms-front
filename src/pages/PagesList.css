@@ -1,0 +1,24 @@
+#pageslistdark {
+  background-color: var(--DTDarkGray); 
+}
+
+.pagelist div {
+display: inline-block;
+}
+.pagelist {
+  display:flex;
+  }
+
+#contentpagelistitems {
+  padding:50px;
+  width:100%;
+}
+
+#contentpagelistitems >* {
+  display: flex;
+  justify-content: space-between;
+  border: solid 1px yellow;
+}
+/* #addbuttonpagelist {
+  float: right;
+} */

@@ -4,10 +4,7 @@ import IconButton from '../generic/IconButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './PageCard.css';
 
-
-
 function PageCard(props) {
-
 
     // Function to handle redirection when card is clicked
     const redirect = () => {
@@ -15,7 +12,7 @@ function PageCard(props) {
     };
 
   return (
-    <CardGeneric className='PageCard' isDarkMode={props.isDarkMode} onClick={redirect}>
+    <CardGeneric id='PageCard' isDarkMode={props.isDarkMode} onClick={redirect}>
         <p className='titleText'>{props.pageName}</p>
 
         <div className='pagePreviewPlaceholder'> </div>

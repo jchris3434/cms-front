@@ -9,7 +9,10 @@ function CardGeneric(props) {
 
     return (
         <div className="CardContainer">
-            <Card className={cardClasses}>
+            <Card 
+                className={cardClasses} 
+                id={props.id} 
+            >
                 <Card.Body>
                     {props.children}
                 </Card.Body>
