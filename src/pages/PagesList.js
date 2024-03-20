@@ -11,7 +11,7 @@ import AddButton from '../shared/component/AddButton'
 function PageList(props) {
   
   const pages = [
-    { url: '/', label: 'Dashboard projet' },
+    { url: '/projectdashboard', label: 'Dashboard projet' },
     { url: '/createPage', label: 'Création de page' },
     { url: '/mediasList', label: 'Liste des médias' },
     { url: '/pagesList', label: 'Liste des pages' },

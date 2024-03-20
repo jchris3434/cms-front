@@ -13,7 +13,7 @@ import './SearchBar.css'
  * @returns                                         The SearchBar component
  */
 
-function SearchBar(props) {
+export default function SearchBar(props) {
     const [results, setResults] = useState([]);
     return (
         <div
@@ -29,5 +29,3 @@ function SearchBar(props) {
         </div> //Displays results if string > 0
     );
 }
-
-export default SearchBar;
