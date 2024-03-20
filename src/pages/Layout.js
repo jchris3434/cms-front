@@ -1,15 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../shared/component/Header';
 import { Outlet } from 'react-router-dom';
-import getDarkModeFromLocalStorage from '../shared/getDarkModeFromLocalStorage'
 
-function Layout() {
-  const [isdarkmode, setDarkMode] = useState(getDarkModeFromLocalStorage())
-  
+function Layout(props) {
     return (
       <div>
-        <Header isDarkMode={isdarkmode} setDarkMode={setDarkMode}/>
-        <Outlet isDarkMode={isdarkmode} setDarkMode={setDarkMode}/>
+        <Header isDarkMode={props.isDarkMode} setDarkMode={props.setDarkMode}/>
+        <Outlet isDarkMode={props.isDarkMode} setDarkMode={props.setDarkMode}/>
       </div>
     );
   }

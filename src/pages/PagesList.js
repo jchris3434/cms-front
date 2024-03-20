@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SidebarLeftNavigation from '../shared/component/SidebarLeftNavigation';
-import getDarkModeFromLocalStorage from '../shared/getDarkModeFromLocalStorage'
 
-function PageList() {
-  const [isdarkmode, setDarkMode] = useState(getDarkModeFromLocalStorage());
+function PageList(props) {
   
   const pages = [
     { url: '/', label: 'Dashboard projet' },
@@ -15,7 +13,7 @@ function PageList() {
 
     return (
       <div>
-        <SidebarLeftNavigation isDarkMode={isdarkmode} items={pages}/>
+        <SidebarLeftNavigation isDarkMode={props.isDarkMode} items={pages}/>
       </div>
     );
   }
