@@ -11,7 +11,7 @@ export default function ProjectsList(props) {
     return (
       <div id={props.isDarkMode === true ? 'projectlistdark':''}>
         <h1>Projects List page</h1>
-        <ContainerCustom isDarkMode={props.isDarkMode}>
+        <ContainerCustom displayStyle='dashboard' isDarkMode={props.isDarkMode}>
             <DashBoardCard 
               isDarkMode={props.isDarkMode} 
               text='Accéder à la liste de toutes les pages de ce projet' 
