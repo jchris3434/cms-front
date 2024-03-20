@@ -1,4 +1,6 @@
-import SidebarLeftNavigation from '../shared/component/SidebarLeftNavigation' 
+import React from 'react';
+import './Preview.css';
+import SidebarLeftNavigation from '../shared/component/SidebarLeftNavigation';
 
 function Preview(props) {
   const pages = [
@@ -7,15 +9,18 @@ function Preview(props) {
     { url: '/mediasList', label: 'Liste des médias' },
     { url: '/pagesList', label: 'Liste des pages' },
     { url: '/preview', label: 'Preview' }
-];
-    return (
-      <div>
-        <div>
-          <SidebarLeftNavigation isDarkMode={props.isDarkMode} items={pages}/>
-        </div>
-      <div>
-        <h1>This is the preview page</h1></div>
+  ];
+  
+
+  return (
+    <div className="Prevdiv"> 
+      <SidebarLeftNavigation className="Sidebar" isDarkMode={props.isDarkMode} items={pages}/>
+      <div className="MainContent">
+        <h1 className='projectName'>Nom projet</h1>
+        <div className='prevProject'></div>
       </div>
-    );
-  }
-   export default Preview;
+    </div>
+  );
+}
+
+export default Preview;
