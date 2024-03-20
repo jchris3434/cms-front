@@ -3,7 +3,7 @@
     color:var(--DTWhiteDarker);
 }
 
-#dark input{
+#dark input, #dark select {
     background-color: var(--DTDarkGray);
     color:var(--DTWhiteDarker);
 }
