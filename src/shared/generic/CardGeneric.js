@@ -22,4 +22,3 @@ function CardGeneric(props) {
 }
 
 export default CardGeneric;
-
