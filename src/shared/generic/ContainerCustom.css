@@ -4,10 +4,14 @@
     margin: auto auto 3.125rem auto;
     padding:1.563rem;
     width: fit-content;
-    
     border-radius: 1.5rem;
     border: none;
     box-shadow: 0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.2);
+}
+
+.ContainerCustom[displayStyle=dashboard]{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 /* LIGHT MODE */
@@ -24,9 +28,4 @@
 
 .ContainerCustom[isdarkmode=true]{
     background-color: var(--DTBlack) ;
-}
-
-.ContainerCustom[displayStyle=dashboard]{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
 }

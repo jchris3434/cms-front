@@ -12,6 +12,7 @@ function CardGeneric(props) {
             <Card 
                 className={cardClasses} 
                 id={props.id} 
+                isdarkmode={props.isDarkMode.toString()}
             >
                 <Card.Body>
                     {props.children}
