@@ -38,6 +38,7 @@
     right: 0.625rem;
     width: 18.5rem;
     height: 12.875rem;
+    z-index:1;
 }
 
 .subdiv {
