@@ -46,7 +46,7 @@ function Login() {
         .then(data => {
             localStorage.setItem("token", data.token); // Store the authentication token in local storage
             localStorage.setItem("username", username); // Store the username in local storage
-            navigate("/Dashboard"); // Redirect the user to "/Dashboard" page
+            navigate("/dashboard"); // Redirect the user to "/Dashboard" page
         })
         .catch(error => {
             console.log(error.message); // Log errors to the console
