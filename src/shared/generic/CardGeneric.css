@@ -10,3 +10,6 @@
     background-color: var(--DTDarkGray);
     color: var(--DTWhiteDarker);
 }
+.card-body {
+    width:100%;
+}

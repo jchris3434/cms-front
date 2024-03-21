@@ -14,9 +14,7 @@ function PageCard(props) {
   return (
     <CardGeneric id='PageCard' isDarkMode={props.isDarkMode} onClick={redirect}>
         <p className='titleText'>{props.pageName}</p>
-
         <div className='pagePreviewPlaceholder'> </div>
-
         <div className='pageCardButtons'>
             {props.modifyButton !== null ? <IconButton icon='bi-pencil-square' buttonAction={props.modifyButton}/>: null}
             {props.deleteButton !== null ? <IconButton icon='bi-x-circle' buttonAction={props.deleteButton}/> : null}

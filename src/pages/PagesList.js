@@ -43,7 +43,6 @@ const [pagesList, setPagesList] = useState([]);
           <div>
           <ContainerCustom 
               isDarkMode={props.isDarkMode} 
-              id='containerpagelist'
           >
             {pagesList.map((page) => {
               return <PageCard id={'page'+page.id} pageName={page.website} isDarkMode={props.isDarkMode}/>
