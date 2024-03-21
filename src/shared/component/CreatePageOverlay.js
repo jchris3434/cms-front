@@ -15,7 +15,7 @@ function CreatePageOverlay(props){
 
    const [pagesList, setPagesList] = useState([]);
    useEffect(()=> {
-      fetch("https://jsonplaceholder.typicode.com/users") //Fake API until we have the right DB
+      fetch("http://localhost:12000/pages") //Fake API until we have the right DB
               .then((res) => res.json())
               .then((res) => {setPagesList(res)})
               .catch((err) => console.error(err))
@@ -35,7 +35,7 @@ function CreatePageOverlay(props){
          <select name="parentpage" id="parentpage">
          <option value="">Aucune</option>
             {pagesList.map((page) => {
-              return <option value={'page'+page.id}>{page.website}</option>
+              return <option value={'page'+page.pag_id}>{page.pag_name}</option>
             })}
          </select>            
          </div>

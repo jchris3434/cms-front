@@ -22,7 +22,7 @@ const [showcreatepageoverlay, setShowCreatePageOverlay] = useState(false);
 
 const [pagesList, setPagesList] = useState([]);
    useEffect(()=> {
-      fetch("https://jsonplaceholder.typicode.com/users") //Fake API until we have the right DB
+      fetch("http://localhost:12000/pages") //Fake API until we have the right DB
               .then((res) => res.json())
               .then((res) => {setPagesList(res)})
               .catch((err) => console.error(err))
@@ -45,7 +45,7 @@ const [pagesList, setPagesList] = useState([]);
               isDarkMode={props.isDarkMode} 
           >
             {pagesList.map((page) => {
-              return <PageCard id={'page'+page.id} pageName={page.website} isDarkMode={props.isDarkMode}/>
+              return <PageCard id={'page'+page.pag_id} pageName={page.pag_name} isDarkMode={props.isDarkMode}/>
             })}
           </ContainerCustom>
         </div>
