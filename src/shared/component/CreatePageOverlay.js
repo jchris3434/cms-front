@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import './CreatePageOverlay.css';
 
 /**
@@ -12,6 +12,15 @@ import './CreatePageOverlay.css';
  */
 
 function CreatePageOverlay(props){
+
+   const [pagesList, setPagesList] = useState([]);
+   useEffect(()=> {
+      fetch("https://jsonplaceholder.typicode.com/users") //Fake API until we have the right DB
+              .then((res) => res.json())
+              .then((res) => {setPagesList(res)})
+              .catch((err) => console.error(err))
+      }, [])
+
     return ( 
        <div class="createpageoverlay" id={props.isDarkMode === true ? 'darkcreatepageoverlay':''}>
         <h3>Créer une nouvelle page</h3>
@@ -24,7 +33,8 @@ function CreatePageOverlay(props){
          <div class="input-data">
          <label for='parentpage'>Page parente</label><br/>
          <select name="parentpage" id="parentpage">
-            {props.pagesList.map((page) => {
+         <option value="">Aucune</option>
+            {pagesList.map((page) => {
               return <option value={'page'+page.id}>{page.website}</option>
             })}
          </select>            
