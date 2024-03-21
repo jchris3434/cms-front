@@ -16,7 +16,7 @@ function App() {
     <div className="App">
      <BrowserRouter>
        <Routes>
-        <Route element={<Layout isDarkMode={isdarkmode} setDarkMode={setDarkMode} />}>
+         <Route element={<Layout isDarkMode={isdarkmode} setDarkMode={setDarkMode} />}>
            <Route path="/" element={<DashboardProject />} />
            <Route path="createPage" element={<CreatePage isDarkMode={isdarkmode}/>} />
            <Route path="mediasList" element={<MediasList isDarkMode={isdarkmode}/>} />
