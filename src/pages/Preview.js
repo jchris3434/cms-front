@@ -25,15 +25,24 @@ function Preview(props) {
     <div className="Prevdiv"> 
       <SidebarLeftNavigation className="Sidebar" isDarkMode={props.isDarkMode} items={pages}/>
       <div className="MainContent">
-        <h1 className='projectName'>Nom projet</h1>
-        <div className='prevProject'>
-        {userData && (
+   {userData && (
   <div>
-    <h2>Nom d'utilisateur: {userData.usr_username || 'N/A'}</h2>
-    {/* Other properties */}
-    <div>{JSON.stringify(userData)}</div>
+      <h1 className='projectName'>Nom projet: {userData.usr_username || 'N/A'}</h1>
+      <h2></h2>
   </div>
-)}
+)} 
+        <div className='prevProject'>
+       <div>
+      <div className="preview-container">
+        <iframe
+          src="https://fondespierre.com/nos-poles-de-competences/beweb-ecole-numerique/"
+          title="Prévisualisation de votre site"
+          width="100%"
+          height="500em"
+        />
+      </div>
+    </div>
+  
 
         </div>
       </div>
