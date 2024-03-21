@@ -3,13 +3,24 @@ import ContainerCustom from '../shared/generic/ContainerCustom'
 import DashBoardCard from '../shared/component/DashBoardCard'
 import Overlay from '../shared/component/Overlay'
 import DeleteProjectOverlay from '../shared/component/DeleteProjectOverlay'
+import CreatePageOverlay from '../shared/component/CreatePageOverlay'
+import 'bootstrap/dist/css/bootstrap.css';
 import './DashboardProject.css'
 
 export default function DashboardProject(props) {
   const [showdeleteprojectoverlay, setShowDeleteProjectOverlay] = useState(false);
+  const [showcreatepageoverlay, setShowCreatePageOverlay] = useState(false);
 
     return (
+
       <div id={props.isDarkMode === true ? 'dashboardprojectdark':''}>
+        
+        <div class="rounded-pill" id="projectstatusbar">
+        <span>Projet: Blog animalier</span>
+        <span>Client: Sue Flay</span>
+        <span>Statut: Développement</span>
+        </div>
+
         <ContainerCustom displayStyle='dashboard' isDarkMode={props.isDarkMode}>
             <DashBoardCard 
               isDarkMode={props.isDarkMode} 
@@ -30,7 +41,7 @@ export default function DashboardProject(props) {
               text='Accéder au mode création de pages'
               title='Créer une page'
               icon="bi bi-plus-circle-fill"
-              redirect='/pagesList'
+              show={setShowCreatePageOverlay} 
             />
             <DashBoardCard 
               isDarkMode={props.isDarkMode}
@@ -47,12 +58,24 @@ export default function DashboardProject(props) {
               show={setShowDeleteProjectOverlay} 
             />
         </ContainerCustom> 
+
+        {/* Overlays */}
          {showdeleteprojectoverlay && 
            <Overlay 
            component={
               <DeleteProjectOverlay 
                   isDarkMode={props.isDarkMode}
                   setShowDeleteProjectOverlay={setShowDeleteProjectOverlay}
+              />}
+           />
+            }
+
+          {showcreatepageoverlay && 
+           <Overlay 
+           component={
+              <CreatePageOverlay 
+                  isDarkMode={props.isDarkMode}
+                  setShowCreatePageOverlay={setShowCreatePageOverlay}
               />}
            />
             }

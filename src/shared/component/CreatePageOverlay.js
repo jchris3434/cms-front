@@ -14,7 +14,7 @@ import './CreatePageOverlay.css';
 
 function CreatePageOverlay(props){
     return ( 
-       <div class="createpageoverlay" id={props.isDarkMode === true ? 'dark':''}>
+       <div class="createpageoverlay" id={props.isDarkMode === true ? 'darkcreatepageoverlay':''}>
         <h3>Créer une nouvelle page</h3>
         <form action='#'>
         <div id="inputs-row-page">

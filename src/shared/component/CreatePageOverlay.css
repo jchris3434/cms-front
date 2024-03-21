@@ -1,9 +1,9 @@
-#dark {
+#darkcreatepageoverlay {
    background-color: var(--DTBlack);
    color:var(--DTWhiteDarker);
 }
 
-#dark input{
+#darkcreatepageoverlay input{
    background-color: var(--DTDarkGray);
 }
 
