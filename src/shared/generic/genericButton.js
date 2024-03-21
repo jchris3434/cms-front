@@ -14,9 +14,7 @@ function CustomButton(props) {
   };
 
   const redirect = () => {
-    if (props.redirectTo !== undefined) {
-    props.navigate(props.redirectTo); // Utilisez la fonction navigate pour rediriger
-};
+    window.location.href = props.redirect;
   };
 
 return (
