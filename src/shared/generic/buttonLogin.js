@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import './buttonLogin.css';
 import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 
 function ButtonLogin(props) {
   const [isHover, setIsHover] = useState(false);
+  const navigate = useNavigate();
 
   const handleMouseEnter = () => {
     setIsHover(true);
@@ -13,15 +15,37 @@ function ButtonLogin(props) {
     setIsHover(false);
   };
 
-//   const handleSubmit = () => {
-//     if (props.redirectTo !== undefined) {
-//       props.navigate(props.redirectTo); // Utilisez la fonction navigate pour rediriger
-//     }
-//   };
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-const redirect = () => {
-    props.navigate(props.redirectTo); // Utilisez la fonction navigate pour rediriger
-};
+    const body = {
+      "usr_username": props.username,
+      "usr_password": props.password
+    }
+
+    fetch('http://localhost:12000/users/login', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('Error during login');
+      }
+    })
+    .then(data => {
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("username", props.username);
+      navigate("/dashboard");
+    })
+    .catch(error => {
+      console.log(error.message);
+    });
+  };
 
   return (
     <Button 
@@ -29,16 +53,11 @@ const redirect = () => {
       variant="primary"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-    //   onClick={handleSubmit} // Utilisez la fonction redirect lors du clic sur le bouton
-      onClick={redirect} // Utilisez la fonction redirect lors du clic sur le bouton
+      onClick={handleSubmit}
     >
-      <div className="IconContainer">
-        {props.icon}
-      </div>
-      <p className={`ButtonText`}>{props.text}</p>
+      <p className={`ButtonText`}>Connexion</p>
     </Button>
   );
 }
 
 export default ButtonLogin;
-

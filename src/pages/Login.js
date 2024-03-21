@@ -22,42 +22,6 @@ function Login() {
         setPassword(event.target.value); // Update the password state variable with the input field value
     };
 
-    // Function to handle form submission
-    const handleSubmit = (event) => {
-        console.log("handlesubmit error");
-        event.preventDefault(); // Prevents the default form submission behavior
-
-        // Create a FormData object to send form data to the server
-        const formData = new FormData();
-        formData.append('usr_username', username); // Add the username to the FormData object
-        formData.append('usr_password', password); // Add the password to the FormData object
-        console.log("formdata error");
-        // Send a POST HTTP request to the server with form data
-        fetch('http://localhost:12000/users/login', {
-            method: 'POST', // Use POST method to send data
-            body: formData // Use the FormData object as the request body
-
-        })
-        .then(response => {
-            if (response.ok) { // Check if the server response is successful 
-                console.log("error response");
-                return response.json(); // Convert the response to JSON
-               
-            } else {
-                throw new Error('Error during login'); // Throw an error if login fails
-            }
-        })
-        .then(data => {
-            localStorage.setItem("token", data.token); // Store the authentication token in local storage
-            localStorage.setItem("usr_username", username); // Store the username in local storage
-            navigate("/dashboard"); // Redirect the user to "/Dashboard" page
-            console.log("error navigate");
-        })
-        .catch(error => {
-            console.log(error.message); // Log errors to the console
-        });
-    };
-
     // Render the login form using React-bootstrap
     return (
         <div>
@@ -78,10 +42,7 @@ function Login() {
                         </Form.Group>
                         {/* Submit button for the form */}
                         <div className="d-flex justify-content-end">
-                        <ButtonLogin className="ButtonText" onClick={handleSubmit} text="Connexion" navigate={navigate} redirectTo="/dashboard" />
-
-
-
+                            <ButtonLogin className="ButtonText" username={username} password={password} />
                         </div>
                     </Form>
                 </div>
