@@ -11,7 +11,6 @@ import './CreatePageOverlay.css';
  * @returns                                         Create Page Content
  */
 
-
 function CreatePageOverlay(props){
     return ( 
        <div class="createpageoverlay" id={props.isDarkMode === true ? 'darkcreatepageoverlay':''}>
@@ -24,7 +23,11 @@ function CreatePageOverlay(props){
          </div>
          <div class="input-data">
          <label for='parentpage'>Page parente</label><br/>
-            <input type="text" name='parentpage'/>
+         <select name="parentpage" id="parentpage">
+            {props.pagesList.map((page) => {
+              return <option value={'page'+page.id}>{page.website}</option>
+            })}
+         </select>            
          </div>
       </div>
       <div id="modifymediabuttons">

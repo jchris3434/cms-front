@@ -12,9 +12,7 @@ export default function DashboardProject(props) {
   const [showcreatepageoverlay, setShowCreatePageOverlay] = useState(false);
 
     return (
-
       <div id={props.isDarkMode === true ? 'dashboardprojectdark':''}>
-        
         <div class="rounded-pill" id="projectstatusbar">
         <span>Projet: Blog animalier</span>
         <span>Client: Sue Flay</span>

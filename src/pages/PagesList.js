@@ -58,6 +58,7 @@ const [pagesList, setPagesList] = useState([]);
               <CreatePageOverlay 
                   isDarkMode={props.isDarkMode} 
                   setShowCreatePageOverlay={setShowCreatePageOverlay}
+                  pagesList={pagesList}
               />}
            />
             }

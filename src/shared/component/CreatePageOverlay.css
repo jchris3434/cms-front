@@ -3,8 +3,9 @@
    color:var(--DTWhiteDarker);
 }
 
-#darkcreatepageoverlay input{
+#darkcreatepageoverlay input, #darkcreatepageoverlay select {
    background-color: var(--DTDarkGray);
+   color:var(--DTWhiteDarker);
 }
 
 .createpageoverlay {
@@ -36,7 +37,7 @@
    margin:0.938rem;
 }
 
-.input-data input {
+.input-data input, select {
    width: 95%;
    border-radius: 0.2rem;
    height:2.7rem;
