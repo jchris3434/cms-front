@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import { useNavigate } from 'react-router-dom'; // Enables navigation between pages in React Router
 import './Login.css'; // Import CSS styles for this component
-import CustomButton from '../shared/generic/genericButton';
+import ButtonLogin from '../shared/generic/buttonLogin';
 
 
 // Definition of the login form component
@@ -24,29 +24,34 @@ function Login() {
 
     // Function to handle form submission
     const handleSubmit = (event) => {
+        console.log("handlesubmit error");
         event.preventDefault(); // Prevents the default form submission behavior
 
         // Create a FormData object to send form data to the server
         const formData = new FormData();
-        formData.append('identifiant', username); // Add the username to the FormData object
-        formData.append('password', password); // Add the password to the FormData object
-
+        formData.append('usr_username', username); // Add the username to the FormData object
+        formData.append('usr_password', password); // Add the password to the FormData object
+        console.log("formdata error");
         // Send a POST HTTP request to the server with form data
-        fetch('http://localhost:3000/users/login', {
+        fetch('http://localhost:12000/users/login', {
             method: 'POST', // Use POST method to send data
             body: formData // Use the FormData object as the request body
+
         })
         .then(response => {
-            if (response.ok) { // Check if the server response is successful
+            if (response.ok) { // Check if the server response is successful 
+                console.log("error response");
                 return response.json(); // Convert the response to JSON
+               
             } else {
                 throw new Error('Error during login'); // Throw an error if login fails
             }
         })
         .then(data => {
             localStorage.setItem("token", data.token); // Store the authentication token in local storage
-            localStorage.setItem("username", username); // Store the username in local storage
+            localStorage.setItem("usr_username", username); // Store the username in local storage
             navigate("/dashboard"); // Redirect the user to "/Dashboard" page
+            console.log("error navigate");
         })
         .catch(error => {
             console.log(error.message); // Log errors to the console
@@ -73,7 +78,10 @@ function Login() {
                         </Form.Group>
                         {/* Submit button for the form */}
                         <div className="d-flex justify-content-end">
-                            <CustomButton className="ButtonText"  type="submit" onClick={handleSubmit} text="Connexion" />
+                        <ButtonLogin className="ButtonText" onClick={handleSubmit} text="Connexion" navigate={navigate} redirectTo="/dashboard" />
+
+
+
                         </div>
                     </Form>
                 </div>

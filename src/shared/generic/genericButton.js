@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './genericButton.css';
+import './genericButton'
 import { Button } from 'react-bootstrap';
 
 function CustomButton(props) {
@@ -14,23 +14,27 @@ function CustomButton(props) {
   };
 
   const redirect = () => {
-    window.location.href = props.redirect;
+    if (props.redirectTo !== undefined) {
+    props.navigate(props.redirectTo); // Utilisez la fonction navigate pour rediriger
+};
   };
 
-  return (
+return (
     <Button 
-    className= {`ButtonContainer ${isHover ? 'hover' : ''}`}
-      variant="primary"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      onClick={redirect}
+        className={`ButtonContainer ${isHover ? 'hover' : ''}`}
+        variant="primary"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onClick={redirect} // Utilisez la fonction redirect lors du clic sur le bouton
     >
-    <div className="IconContainer">
-        {props.icon}
-    </div>
-      <p className={`ButtonText`}>{props.text}</p>
+        <div className="IconContainer">
+            {props.icon}
+        </div>
+        <p className={`ButtonText`}>{props.text}</p>
     </Button>
-  );
+);
+
 }
 
 export default CustomButton;
+
