@@ -10,7 +10,7 @@ function Layout(props) {
   return (    
     <div>      
       {isLoginPage ? (
-        <>
+        <>  
           <HeaderLogin isDarkMode={props.isDarkMode} setDarkMode={props.setDarkMode} />
           <Outlet isDarkMode={props.isDarkMode} setDarkMode={props.setDarkMode} />     
         </>
