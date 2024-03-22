@@ -19,6 +19,7 @@ input {
     position: absolute;
     margin-left: 2.5rem;
     border: 0.063rem solid var(--DTLightGray);
+    z-index:1;
 }
 
 .search-result {
