@@ -1,0 +1,16 @@
+#dashboardprojectdark {
+  background-color: var(--DTDarkGray);
+}
+
+#projectstatusbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--DTPink);
+  color:var(--DTWhiteDarker);
+  height:3.125rem;
+  align-items: center;
+  padding:0 3.125rem;
+  font-size: 1.125rem;
+  margin:3.125rem auto;
+  width:68.75rem;
+}
