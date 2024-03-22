@@ -11,9 +11,9 @@ import AddButton from '../shared/component/AddButton'
 function PageList(props) {
   
   const pages = [
-    { url: '/projectdashboard', label: 'Dashboard projet' },
+    { url: '/dashboard', label: 'Dashboard projet' },
     { url: '/createPage', label: 'Création de page' },
-    { url: '/mediasList', label: 'Liste des médias' },
+    // { url: '/mediasList', label: 'Liste des médias' },
     { url: '/pagesList', label: 'Liste des pages' },
     { url: '/preview', label: 'Preview' }
 ];
@@ -22,7 +22,7 @@ const [showcreatepageoverlay, setShowCreatePageOverlay] = useState(false);
 
 const [pagesList, setPagesList] = useState([]);
    useEffect(()=> {
-      fetch("http://localhost:12000/pages") //Fake API until we have the right DB
+      fetch("http://localhost:12000/pages")
               .then((res) => res.json())
               .then((res) => {setPagesList(res)})
               .catch((err) => console.error(err))

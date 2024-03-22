@@ -16,7 +16,7 @@ function Preview(props) {
   const pages = [
     { url: '/', label: 'Dashboard projet' },
     { url: '/createPage', label: 'Création de page' },
-    { url: '/mediasList', label: 'Liste des médias' },
+    // { url: '/mediasList', label: 'Liste des médias' },
     { url: '/pagesList', label: 'Liste des pages' },
     { url: '/preview', label: 'Preview' }
   ];

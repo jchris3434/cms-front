@@ -8,7 +8,7 @@
 
 export default function Logout() {
     sessionStorage.removeItem("username") 
-    sessionStorage.removeItem("JWT") 
-    alert("Déconnexion")
+    sessionStorage.removeItem("token") 
+    // alert("Déconnexion")
     window.location.href = "/";
 }
