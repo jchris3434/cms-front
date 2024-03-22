@@ -14,7 +14,7 @@ function App() {
   const [isdarkmode, setDarkMode] = useState(getDarkModeFromLocalStorage());
   
   return (
-    <div className="App">
+    <div className="App" id={isdarkmode === true ? 'appdark':''}>
      <BrowserRouter>
        <Routes>
         {/* Use the Layout component as the parent route */}
