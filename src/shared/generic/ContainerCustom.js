@@ -14,7 +14,7 @@ import './ContainerCustom.css';
 function ContainerCustom(props){
 
     return ( 
-        <Card className='ContainerCustom' isdarkmode={props.isDarkMode.toString()} >
+        <Card className='ContainerCustom' displayStyle={props.displayStyle} isdarkmode={props.isDarkMode.toString()} >
             {props.children}
         </Card>
     )

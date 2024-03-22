@@ -1,0 +1,45 @@
+#dark {
+    background-color: var(--DTBlack);
+    color:var(--DTWhiteDarker);
+}
+
+#dark input{
+    background-color: var(--DTDarkGray);
+    color:var(--DTWhiteDarker);
+}
+
+.deleteprojectoverlay {
+    width:56.25rem;
+    height:20rem;
+    background-color:var(--LTWhiteDarker) ;
+    position: relative;
+}
+
+.deleteprojectoverlay h3 {
+    position:absolute;
+    left:50%;
+    top:15%;
+    transform:translate(-50%, -50%);
+}
+
+.createprojectoverlay form {
+    margin-top:4.375rem;
+}
+
+#deleteprojectbuttons {
+    position: absolute;
+    bottom: 0;
+    right: 0; 
+    margin:2.2rem;
+    padding-right:0.2rem;
+}
+
+#deleteprojectbuttons button {
+    background-color: var(--DTPink);
+    border:none;
+    margin:0.5rem;
+    color:var(--DTWhiteDarker);
+    border-radius:4rem;
+    height:3.125rem;
+    width:6.688rem;
+}

@@ -2,15 +2,19 @@
 
 .ContainerCustom{
     margin: auto auto 3.125rem auto;
-    
-    padding: 3.125rem;
-
+    padding:1.563rem;
     width: fit-content;
-    max-width: 68.75rem;
-
     border-radius: 1.5rem;
     border: none;
     box-shadow: 0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.2);
+}
+.ContainerCustom >*{
+vertical-align: top;
+}
+
+.ContainerCustom[displayStyle=dashboard]{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 /* LIGHT MODE */
@@ -18,7 +22,6 @@
 .ContainerCustom[isdarkmode=false]{
     background-color: var(--LTWhiteDarker) ;
 }
-
 
 /* DARK MODE */
 
@@ -29,4 +32,3 @@
 .ContainerCustom[isdarkmode=true]{
     background-color: var(--DTBlack) ;
 }
-
