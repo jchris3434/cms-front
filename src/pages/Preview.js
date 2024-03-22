@@ -38,7 +38,7 @@ function Preview(props) {
           src="https://fondespierre.com/nos-poles-de-competences/beweb-ecole-numerique/"
           title="Prévisualisation de votre site"
           width="100%"
-          height="500em"
+          height="600rem"
         />
       </div>
     </div>
