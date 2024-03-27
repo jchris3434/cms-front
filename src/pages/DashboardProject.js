@@ -13,7 +13,7 @@ export default function DashboardProject(props) {
 
     return (
       <div id={props.isDarkMode === true ? 'dashboardprojectdark':''}>
-        <div class="rounded-pill" id="projectstatusbar">
+        <div classname="rounded-pill" id="projectstatusbar">
         <span>Projet: Blog animalier</span>
         <span>Client: Sue Flay</span>
         <span>Statut: Développement</span>
@@ -27,13 +27,7 @@ export default function DashboardProject(props) {
               icon="bi bi-folder-fill"
               redirect='/pagesList'
             />
-            {/* <DashBoardCard 
-              isDarkMode={props.isDarkMode}
-              text='Accéder à la liste de tous les média de ce projet'
-              title='Liste Des Média'
-              icon="bi bi-card-image"
-              redirect='/mediasList'
-            /> */}
+      
             <DashBoardCard 
               isDarkMode={props.isDarkMode}
               text='Accéder au mode création de pages'
