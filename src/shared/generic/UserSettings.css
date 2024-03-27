@@ -1,8 +1,8 @@
 .avatar {
     background-color: var(--LTWhiteLighter);
-    border: solid 0.063rem var(--LTPink);
-    width: 4.375rem;
-    height: 4.375rem;
+    border: solid 0.121rem var(--LTPink);
+    width: 6rem;
+    height: 6rem;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -13,7 +13,7 @@
 }
 
 .avatar span {
-    color:var(--LTPink);
+    color: var(--LTPink);
     display: table;
     margin: 0 auto;
     font-size: 2.5rem;
@@ -24,12 +24,12 @@
 }
 
 #dark {
-    background-color: var(--DTDarkGray);
-    color:white;
+    background-color: rgb(201, 201, 201);
+    color: white;
 }
 
-#overlay{
-    padding:1.25rem;
+#overlay {
+    padding: 1.25rem;
     border-radius: 1.5rem;
     box-shadow: 0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.2);
     background-color: var(--LTWhiteDarker);
@@ -38,7 +38,7 @@
     right: 0.625rem;
     width: 18.5rem;
     height: 12.875rem;
-    z-index:1;
+    z-index: 1;
 }
 
 .subdiv {
@@ -46,24 +46,24 @@
     background-color: var(--LTWhiteLighter);
     width: 15.375rem;
     height: 3.125rem;
-    margin:0.625rem;
+    margin: 0.625rem;
     display: grid;
     grid-template-columns: auto auto;
-	align-items: center;
-    padding:0.75rem 1.25rem;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
 }
 
 #dark .subdiv {
     background-color: var(--DTBlack);
-    color:white;
+    color: white;
 }
 
 #themebutton {
-    float:right;
+    float: right;
 }
 
 .subdiv p {
-    margin:0;
-    display:inline-block;
-    width:fit-content;
+    margin: 0;
+    display: inline-block;
+    width: fit-content;
 }
