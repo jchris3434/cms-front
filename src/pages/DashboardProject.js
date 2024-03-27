@@ -13,7 +13,7 @@ export default function DashboardProject(props) {
 
     return (
       <div id={props.isDarkMode === true ? 'dashboardprojectdark':''}>
-        <div classname="rounded-pill" id="projectstatusbar">
+        <div className="rounded-pill" id="projectstatusbar">
         <span>Projet: Blog animalier</span>
         <span>Client: Sue Flay</span>
         <span>Statut: Développement</span>

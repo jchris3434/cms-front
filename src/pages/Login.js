@@ -11,7 +11,6 @@ function Login() {
     // Declaration of state variables for username and password
     const [username, setUsername] = useState(''); // Use useState to create a state variable for username
     const [password, setPassword] = useState(''); // Use useState to create a state variable for password
-    const navigate = useNavigate(); // Use useNavigate to get a navigation function from React Router
 
     // Functions to update state variables when input fields change
     const handleUsernameChange = (event) => {
