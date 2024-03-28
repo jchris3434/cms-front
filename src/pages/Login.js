@@ -12,6 +12,7 @@ function Login() {
     const [username, setUsername] = useState(''); // Use useState to create a state variable for username
     const [password, setPassword] = useState(''); // Use useState to create a state variable for password
 
+    
     // Functions to update state variables when input fields change
     const handleUsernameChange = (event) => {
         setUsername(event.target.value); // Update the username state variable with the input field value
