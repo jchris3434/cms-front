@@ -28,7 +28,6 @@ function Preview(props) {
    {userData && (
   <div>
       <h1 className='projectName'>Nom projet: {userData.usr_username || 'N/A'}</h1>
-      <h2></h2>
   </div> 
 )} 
         <div className='prevProject'>

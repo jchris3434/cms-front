@@ -1,21 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AddButton.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default function AddButton(props) {
+  const [isActive, setIsActive] = useState(false);
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      props.show(true);
+    }
+  };
+
   return (
-      <div 
-      class="rounded-pill"
+    <div
+      className={`rounded-pill ${isActive ? 'active' : ''}`}
       id='addbutton'
       onClick={() => props.show(true)}
-      >
-        <span>{props.text}</span>
-        <button type="button" class="btn">
-            <i class="bi bi-plus-circle-fill"></i>
-        </button>
-  </div>
+      onKeyDown={handleKeyDown} // Adding keydown event listener
+      tabIndex={0} // Making the div focusable
+      role="button" // Specifying role as button for accessibility
+      aria-label={props.text} // Providing a label for accessibility
+      onMouseDown={() => setIsActive(true)}
+      onMouseUp={() => setIsActive(false)}
+      onMouseLeave={() => setIsActive(false)}
+    >
+      <span>{props.text}</span>
+      <button type="button" className="btn">
+        <i className="bi bi-plus-circle-fill"></i>
+      </button>
+    </div>
   );
 }
-
-
