@@ -26,7 +26,7 @@ export default function CreateProjectOverlay(props){
         <h3>Créer un nouveau projet</h3>
         <form action='#'>
         <div id="inputs-row-project">
-         <div class="input-data">
+         <div className="input-data">
             <label htmlFor='projectname'>Nom du projet</label><br/>
             <input name='projectname' type="text" placeholder='My_Project' required/>
          </div>
