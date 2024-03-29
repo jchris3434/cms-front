@@ -2,5 +2,5 @@ projectKey=CMS-Beweb
 serverUrl=http://localhost:9000
 serverVersion=10.4.1.88267
 dashboardUrl=http://localhost:9000/dashboard?id=CMS-Beweb
-ceTaskId=2a179083-ed99-4085-a469-321c587f6ea8
-ceTaskUrl=http://localhost:9000/api/ce/task?id=2a179083-ed99-4085-a469-321c587f6ea8
+ceTaskId=87840dd0-5b35-48d9-82c8-464c3d5c7b8f
+ceTaskUrl=http://localhost:9000/api/ce/task?id=87840dd0-5b35-48d9-82c8-464c3d5c7b8f

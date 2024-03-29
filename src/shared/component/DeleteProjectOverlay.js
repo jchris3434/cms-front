@@ -13,7 +13,7 @@ import './DeleteProjectOverlay.css';
 
 export default function DeleteProjectOverlay(props){
     return ( 
-       <div class="deleteprojectoverlay" id={props.isDarkMode === true ? 'dark':''}>
+       <div className="deleteprojectoverlay" id={props.isDarkMode === true ? 'dark':''}>
         <h3>Etes-vous sûr de vouloir supprimer le projet ?</h3>
         <form action='#'>
       <div id="deleteprojectbuttons">
