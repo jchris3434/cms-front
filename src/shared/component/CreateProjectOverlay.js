@@ -22,16 +22,16 @@ export default function CreateProjectOverlay(props){
       }, [])
 
     return ( 
-       <div class="createprojectoverlay" id={props.isDarkMode === true ? 'dark':''}>
+       <div className="createprojectoverlay" id={props.isDarkMode === true ? 'dark':''}>
         <h3>Créer un nouveau projet</h3>
         <form action='#'>
         <div id="inputs-row-project">
          <div class="input-data">
-            <label for='projectname'>Nom du projet</label><br/>
+            <label htmlFor='projectname'>Nom du projet</label><br/>
             <input name='projectname' type="text" placeholder='My_Project' required/>
          </div>
-         <div class="input-data">
-         <label for='clientname'>Nom du client</label><br/>
+         <div className="input-data">
+         <label htmlFor='clientname'>Nom du client</label><br/>
          <select name="clientname" id="clientname" required>
             <option value="-"></option>
             {clientsList.map((user) => {
