@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types'; // Import PropTypes
 import './AddButton.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -25,6 +26,7 @@ export default function AddButton(props) {
       onMouseUp={() => setIsActive(false)}
       onMouseLeave={() => setIsActive(false)}
     >
+      
       <span>{props.text}</span>
       <button type="button" className="btn">
         <i className="bi bi-plus-circle-fill"></i>
@@ -32,3 +34,9 @@ export default function AddButton(props) {
     </div>
   );
 }
+
+// Adding PropTypes for validation
+AddButton.propTypes = {
+  text: PropTypes.string.isRequired, // text prop is required and should be a string
+  show: PropTypes.func.isRequired // show prop is required and should be a function
+};
