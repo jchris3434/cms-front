@@ -5,6 +5,8 @@ import { Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './MediaCard.css';
 import { BsXCircleFill, BsPencil } from "react-icons/bs";
+import PropTypes from 'prop-types';
+
 
 function MediaCard(props) {
   // Add an additional class to apply dark mode
@@ -38,5 +40,13 @@ function MediaCard(props) {
 
   );
 }
+
+MediaCard.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
+  redirect: PropTypes.string.isRequired, // redirect prop is required and should be a string
+  src: PropTypes.string.isRequired, // src prop is required and should be a string
+  alt: PropTypes.string.isRequired, // alt prop is required and should be a string
+  text: PropTypes.string.isRequired // text prop is required and should be a string
+};
 
 export default MediaCard;

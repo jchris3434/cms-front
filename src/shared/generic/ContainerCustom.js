@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import './ContainerCustom.css';
+import PropTypes from 'prop-types';
 
 /**
  * @description                     Versatile container for cards, lists, forms and other
@@ -19,5 +20,11 @@ function ContainerCustom(props){
         </Card>
     )
 }
+
+ContainerCustom.propTypes = {
+    isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
+    displayStyle: PropTypes.string, // displayStyle prop is optional and should be a string
+    children: PropTypes.node.isRequired // children prop is required and can be any renderable React node
+  };
 
 export default ContainerCustom ;

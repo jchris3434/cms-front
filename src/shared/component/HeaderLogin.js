@@ -1,6 +1,7 @@
 import React from 'react';
 import './HeaderLogin.css';
 import Logo from '../generic/Logo';
+import PropTypes from 'prop-types';
 
 /**
  * @description                                     The header that is displayed as the header navbar
@@ -20,5 +21,9 @@ function HeaderLogin(props){
         </div>
     )
 }
+
+HeaderLogin.propTypes = {
+    isDarkMode: PropTypes.bool.isRequired // isDarkMode prop is required and should be a boolean
+  };
 
 export default HeaderLogin ;

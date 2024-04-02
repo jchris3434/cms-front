@@ -1,5 +1,7 @@
 import React from 'react';
 import './Overlay.css';
+import PropTypes from 'prop-types';
+
 
 function Overlay(props){
     return ( 
@@ -7,6 +9,10 @@ function Overlay(props){
        {props.component}
        </div>
     )
+}
+
+Overlay.propTypes ={
+    component: PropTypes.element.isRequired
 }
 
 export default Overlay ;

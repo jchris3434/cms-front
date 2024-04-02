@@ -1,6 +1,7 @@
 import React from 'react';
 import './IconButton.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import PropTypes from 'prop-types';
 
 /**
  * @description                         A small icon that is a button. Executes passed on function when clicked
@@ -14,8 +15,14 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 function IconButton(props){
     return (
         <button className='IconButton' onClick={props.buttonAction}>
-            <i class={props.icon}/>
+            <i className={props.icon}/>
         </button>
     )
 }
+
+IconButton.propTypes = {
+    icon: PropTypes.string.isRequired, // icon prop is required and should be a string
+    buttonAction: PropTypes.func.isRequired // buttonAction prop is required and should be a function
+  };
+
 export default IconButton ;

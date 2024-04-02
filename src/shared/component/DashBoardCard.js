@@ -36,7 +36,8 @@ DashBoardCard.propTypes = {
   redirect: PropTypes.string, // redirect prop is optional and should be a string
   show: PropTypes.func, // show prop is optional and should be a function
   title: PropTypes.string.isRequired, // title prop is required and should be a string
-  icon: PropTypes.string.isRequired // icon prop is required and should be a string
+  icon: PropTypes.string.isRequired, // icon prop is required and should be a string
+  text: PropTypes.string.isRequired
 };
 
 export default DashBoardCard;

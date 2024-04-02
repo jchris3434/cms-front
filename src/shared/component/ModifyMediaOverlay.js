@@ -38,4 +38,9 @@ function ModifyMediaOverlay(props){
     )
 }
 
+ModifyMediaOverlay.propTypes = {
+   isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
+   setShowModifyMedia: PropTypes.func.isRequired // setShowModifyMedia prop is required and should be a function
+ };
+
 export default ModifyMediaOverlay ;

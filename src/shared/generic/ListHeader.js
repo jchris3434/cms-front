@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import './ListHeader.css';
+import PropTypes from 'prop-types';
 
 /**
  * @description                             Card used as header for a list. Similar to an HTML <th> </th>.                           
@@ -34,5 +35,11 @@ function ListHeader(props){
         </Card>
     )
 }
+
+ListHeader.propTypes = {
+    content: PropTypes.array.isRequired, // content prop is required and should be an array
+    modifyButton: PropTypes.any, // modifyButton prop can be null or any type
+    deleteButton: PropTypes.any // deleteButton prop can be null or any type
+  };
 
 export default ListHeader ;
