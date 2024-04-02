@@ -2,6 +2,7 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import IconButton from './IconButton';
 import './ListItem.css';
+import PropTypes from 'prop-types';
 
 /**
  * @description                             Card used as rows for a list. Similar to <tr> </tr>                               
@@ -37,5 +38,12 @@ function ListItem(props){
         </Card>
     )
 }
+
+ListItem.propTypes = {
+    content: PropTypes.array.isRequired, // content prop is required and should be an array
+    modifyButton: PropTypes.func, // modifyButton prop should be a function or null
+    deleteButton: PropTypes.func, // deleteButton prop should be a function or null
+    isDarkMode: PropTypes.bool // isDarkMode prop should be a boolean
+  };
 
 export default ListItem ;

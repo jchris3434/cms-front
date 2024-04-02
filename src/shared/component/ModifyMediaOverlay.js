@@ -1,5 +1,6 @@
 import React from 'react';
 import './ModifyMediaOverlay.css';
+import PropTypes from 'prop-types';
 
 /**
  * @description                                     Overlay Content (fits in Overlay component)
@@ -15,16 +16,16 @@ import './ModifyMediaOverlay.css';
 function ModifyMediaOverlay(props){
  
     return ( 
-       <div class="modifymediaoverlay" id={props.isDarkMode === true ? 'dark':''}>
+       <div className="modifymediaoverlay" id={props.isDarkMode === true ? 'dark':''}>
         <h3>Modifier un media</h3>
         <form action='#'>
         <div id="inputs-row">
-         <div class="input-data">
-            <label for='medianame'>Nom du Media</label><br/>
+         <div className="input-data">
+            <label htmlFor='medianame'>Nom du Media</label><br/>
             <input name='medianame' type="text" placeholder='MonMedia.jpg' required/>
          </div>
-         <div class="input-data">
-         <label for='altmedianame'>Texte alternatif</label><br/>
+         <div className="input-data">
+         <label htmlFor='altmedianame'>Texte alternatif</label><br/>
             <input type="text" name='altmedianame'/>
          </div>
       </div>
@@ -36,5 +37,10 @@ function ModifyMediaOverlay(props){
        </div>
     )
 }
+
+ModifyMediaOverlay.propTypes = {
+   isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
+   setShowModifyMedia: PropTypes.func.isRequired // setShowModifyMedia prop is required and should be a function
+ };
 
 export default ModifyMediaOverlay ;

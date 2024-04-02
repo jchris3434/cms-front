@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './CreateProjectOverlay.css';
+import PropTypes from 'prop-types';
 
 /**
  * @description                                     Overlay Content (fits in Overlay component)
@@ -50,3 +51,7 @@ export default function CreateProjectOverlay(props){
     )
 }
 
+CreateProjectOverlay.propTypes = {
+   isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
+   setShowCreateProjectOverlay: PropTypes.func.isRequired // setShowCreateProjectOverlay prop is required and should be a function
+ };

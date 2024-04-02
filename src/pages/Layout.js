@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../shared/component/Header';
+import PropTypes from 'prop-types';
 import { Outlet, useLocation } from 'react-router-dom';
 import HeaderLogin from '../shared/component/HeaderLogin';
 
@@ -23,5 +24,9 @@ function Layout(props) {
     </div>  
   );
 }
+Layout.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
+  setDarkMode: PropTypes.func.isRequired // setDarkMode prop is required and should be a function
+};
 
 export default Layout;

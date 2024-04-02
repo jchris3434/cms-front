@@ -7,6 +7,7 @@ import './PagesList.css';
 import Overlay from '../shared/component/Overlay'
 import CreatePageOverlay from '../shared/component/CreatePageOverlay'
 import AddButton from '../shared/component/AddButton'
+import PropTypes from 'prop-types';
 
 function PageList(props) {
   
@@ -73,4 +74,7 @@ return (
       
     );
   }
+  PageList.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired // isDarkMode prop is required and should be a boolean
+};
    export default PageList;

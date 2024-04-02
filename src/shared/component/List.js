@@ -2,6 +2,7 @@ import React from 'react';
 import ContainerCustom from '../generic/ContainerCustom';
 import ListHeader from '../generic/ListHeader';
 import ListItem from '../generic/ListItem';
+import PropTypes from 'prop-types';
 
 /**
  * @description                             Component that displays a list with headers, similar to a <table> element 
@@ -38,5 +39,13 @@ function List(props){
         </div>
     )
 }
+
+List.propTypes = {
+    isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
+    listHeaders: PropTypes.array.isRequired, // listHeaders prop is required and should be an array
+    listRows: PropTypes.array.isRequired, // listRows prop is required and should be an array
+    modifyButton: PropTypes.func, // modifyButton prop is optional and should be a function
+    deleteButton: PropTypes.func // deleteButton prop is optional and should be a function
+  };
 
 export default List ;

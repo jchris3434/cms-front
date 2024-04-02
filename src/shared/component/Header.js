@@ -4,6 +4,7 @@ import Logo from '../generic/Logo';
 import SearchBar from '../generic/SearchBar.js';
 import HeaderButton from '../generic/HeaderButton';
 import UserSettings from '../generic/UserSettings';
+import PropTypes from 'prop-types';
 
 /**
  * @description                                     The header that is displayed as the header navbar
@@ -28,5 +29,11 @@ function Header(props){
         </div>
     )
 }
+
+Header.propTypes = {
+    isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
+    pageName: PropTypes.string, // pageName prop is optional and should be a string
+    setDarkMode: PropTypes.func.isRequired // setDarkMode prop is required and should be a function
+  };
 
 export default Header ;

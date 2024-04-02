@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './CreatePageOverlay.css';
+import PropTypes from 'prop-types';
 
 /**
  * @description                                     Overlay Content (fits in Overlay component)
@@ -22,7 +23,7 @@ function CreatePageOverlay(props){
       }, [])
 
     return ( 
-       <div class="createpageoverlay" id={props.isDarkMode === true ? 'darkcreatepageoverlay':''}>
+       <div className="createpageoverlay" id={props.isDarkMode === true ? 'darkcreatepageoverlay':''}>
         <h3>Créer une nouvelle page</h3>
         <form action='#'>
         <div id="inputs-row-page">
@@ -48,5 +49,9 @@ function CreatePageOverlay(props){
        </div>
     )
 }
+CreatePageOverlay.propTypes = {
+   isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
+   setShowCreatePageOverlay: PropTypes.func.isRequired // setShowCreatePageOverlay prop is required and should be a function
+ };
 
 export default CreatePageOverlay ;

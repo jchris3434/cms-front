@@ -3,6 +3,8 @@ import CardGeneric from '../generic/CardGeneric';
 import IconButton from '../generic/IconButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './PageCard.css';
+import PropTypes from 'prop-types';
+
 
 function PageCard(props) {
 
@@ -23,4 +25,11 @@ function PageCard(props) {
   );
 }
 
+PageCard.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
+  redirect: PropTypes.string.isRequired, // redirect prop is required and should be a string
+  pageName: PropTypes.string.isRequired, // pageName prop is required and should be a string
+  modifyButton: PropTypes.func, // modifyButton prop is optional and should be a function
+  deleteButton: PropTypes.func // deleteButton prop is optional and should be a function
+};
 export default PageCard;
