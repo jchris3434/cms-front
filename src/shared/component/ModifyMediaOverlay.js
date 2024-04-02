@@ -1,5 +1,6 @@
 import React from 'react';
 import './ModifyMediaOverlay.css';
+import PropTypes from 'prop-types';
 
 /**
  * @description                                     Overlay Content (fits in Overlay component)

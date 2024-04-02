@@ -1,5 +1,6 @@
 import React from 'react';
 import './DeleteProjectOverlay.css';
+import PropTypes from 'prop-types';
 
 /**
  * @description                                                                        Overlay Content (fits in Overlay component)
@@ -25,3 +26,7 @@ export default function DeleteProjectOverlay(props){
     )
 }
 
+DeleteProjectOverlay.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
+  setShowDeleteProjectOverlay: PropTypes.func.isRequired // setShowDeleteProjectOverlay prop is required and should be a function
+};

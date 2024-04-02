@@ -1,5 +1,7 @@
 import React from 'react';
 import './CreateUserOverlay.css';
+import PropTypes from 'prop-types';
+
 
 /**
  * @description                                     Overlay Content (fits in Overlay component)
@@ -43,5 +45,10 @@ function CreateUserOverlay(props){
        </div>
     )
 }
+
+CreateUserOverlay.propTypes = {
+   isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
+   setShowCreateUserOverlay: PropTypes.func.isRequired // setShowCreateUserOverlay prop is required and should be a function
+ };
 
 export default CreateUserOverlay ;

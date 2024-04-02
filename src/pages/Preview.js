@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Preview.css';
 import SidebarLeftNavigation from '../shared/component/SidebarLeftNavigation';
+import PropTypes from 'prop-types';
 
 function Preview(props) {
   const [userData, setUserData] = useState(null);
@@ -49,4 +50,7 @@ function Preview(props) {
   );
 }
 
+Preview.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired // isDarkMode prop is required and should be a boolean
+};
 export default Preview;
