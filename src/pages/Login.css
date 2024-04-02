@@ -10,11 +10,9 @@
 .form-container {
     width: 20rem;
     background-color: var(--LTWhiteDarker);
-    /* Fond blanc pour le formulaire */
-    padding: 1.8rem;
+   padding: 1.8rem;
     border-radius: 1rem;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    /* Ombre douce */
 }
 
 .login {
