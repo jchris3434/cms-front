@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export const SearchResult = ({ result }) => {
     return (
         <div
@@ -7,4 +9,8 @@ export const SearchResult = ({ result }) => {
             {result}
         </div>
     );
+};
+
+SearchResult.propTypes = {
+    result: PropTypes.string.isRequired,
 };

@@ -1,6 +1,7 @@
 import React from "react";
 import './ThemeButton.css'
 import getDarkModeFromLocalStorage from '../getDarkModeFromLocalStorage'
+import PropTypes from 'prop-types';
 
 /**
  * @description                     Theme Button for changing To Light/Dark Mode 
@@ -19,15 +20,21 @@ function ThemeButton(props) {
 	} // Inverts boolean in localStorage, then updates state in app.js
 
 	return (
-            <label class = 'toggle-switch'>
-                <input 
-                    type = 'checkbox' 
-                    checked={props.isdarkmode} 
-                    onChange={toggleMode}
-                />
-                <span class = 'slider'></span>
-            </label>
+        <label className='toggle-switch' htmlFor='darkModeToggle'>
+        <input 
+            id='darkModeToggle'
+            type='checkbox' 
+            checked={props.isdarkmode} 
+            onChange={toggleMode}
+        />
+        <span className='slider'></span>
+    </label>
 	);
 }
+
+ThemeButton.propTypes = {
+    isdarkmode: PropTypes.bool.isRequired,
+    setDarkMode: PropTypes.func.isRequired
+};
 
 export default ThemeButton;

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './genericButton'
 import { Button } from 'react-bootstrap';
+import PropTypes from 'prop-types';
 
 function CustomButton(props) {
   const [isHover, setIsHover] = useState(false);
@@ -34,5 +35,10 @@ return (
 
 }
 
-export default CustomButton;
+CustomButton.propTypes = {
+  icon: PropTypes.element.isRequired,
+  text: PropTypes.string.isRequired,
+  redirect: PropTypes.string.isRequired, 
+};
 
+export default CustomButton;
