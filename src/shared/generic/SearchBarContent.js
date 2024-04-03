@@ -44,6 +44,7 @@ const SearchBarContent = (props) => {
 };
 
 SearchBarContent.propTypes = {
+    placeholder: PropTypes.string.isRequired,
     clientsList: PropTypes.arrayOf(PropTypes.object).isRequired,
     setResults: PropTypes.func.isRequired
 };
