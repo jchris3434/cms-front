@@ -1,7 +1,8 @@
 import SearchBarContent from './SearchBarContent'
-import { SearchResultsList } from "./SearchResultsList";
+import SearchResultsList from "./SearchResultsList";
 import { useState } from "react";
 import './SearchBar.css'
+import PropTypes from 'prop-types';
 
 /**
  * @description                                     A searchbar 
@@ -29,3 +30,9 @@ export default function SearchBar(props) {
         </div> //Displays results if string > 0
     );
 }
+
+SearchBar.propTypes = {
+    isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
+    customWidth: PropTypes.string, // customWidth prop should be a string or undefined
+    placeholder: PropTypes.string.isRequired // placeholder prop is required and should be a string
+  };

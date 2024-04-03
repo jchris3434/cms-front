@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './buttonLogin.css';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function ButtonLogin(props) {
   const [isHover, setIsHover] = useState(false);
@@ -59,5 +60,10 @@ function ButtonLogin(props) {
     </Button>
   );
 }
+
+ButtonLogin.propTypes = {
+  username: PropTypes.string.isRequired,
+  password: PropTypes.string.isRequired, 
+};
 
 export default ButtonLogin;

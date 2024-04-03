@@ -1,6 +1,7 @@
 import React, { useState,useEffect } from 'react'
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import PropTypes from 'prop-types';
 
 const SearchBarContent = (props) => {
     const [input, setInput] = useState("");
@@ -27,10 +28,10 @@ const SearchBarContent = (props) => {
     return (
         <form>
             <div 
-                class="input-group rounded-pill"
+                className="input-group rounded-pill"
             >
-                <button type="button" class="btn">
-                    <i class="bi-search"/>
+                <button type="button" className="btn">
+                    <i className="bi-search"/>
                 </button>
                 <input
                     placeholder={props.placeholder}
@@ -40,6 +41,11 @@ const SearchBarContent = (props) => {
             </div>
         </form> 
     );
+};
+
+SearchBarContent.propTypes = {
+    placeholder: PropTypes.string.isRequired,
+    setResults: PropTypes.func.isRequired
 };
 
 export default SearchBarContent;
