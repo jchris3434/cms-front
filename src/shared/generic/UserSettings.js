@@ -1,17 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './UserSettings.css';
 import ThemeButton from './ThemeButton';
 import Logout from '../Logout';
 
-// Set session storage items
-sessionStorage.setItem("username", "Sue Flay");
-sessionStorage.setItem("JWT", "fqzmifgqzmigfmkzqgrfmiz75JFJYFJ");
-
 function UserSettings(props){
-
     const [show, setShow] = useState(false);
-    const username = sessionStorage.getItem("username");
+    const [username, setUsername] = useState('');
+
+    useEffect(() => {
+        fetch('/users/getAllUsers')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erreur lors de la requête réseau');
+            }
+            return response.json();
+        })
+        .then(data => setUsername(data.username))
+        .catch(error => console.error('Erreur lors de la récupération de l\'username:', error));
+    
+    }, []);
 
     const showOverlay = () => {
         setShow(!show);
