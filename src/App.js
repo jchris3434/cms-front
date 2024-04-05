@@ -11,15 +11,15 @@ import Preview from './pages/Preview';
 import Login from './pages/Login';
 
 function App() {
-  // Destructuring the useState call into value + setter pair
-  const [isDarkMode, setDarkMode] = useState(getDarkModeFromLocalStorage());
+  // Destructuring the useState call symmetrically
+  const [isDarkMode, setIsDarkMode] = useState(getDarkModeFromLocalStorage());
   
   return (
     <div className="App" id={isDarkMode === true ? 'appdark':''}>
      <BrowserRouter>
        <Routes>
         {/* Use the Layout component as the parent route */}
-        <Route element={<Layout isDarkMode={isDarkMode} setDarkMode={setDarkMode} />}>
+        <Route element={<Layout isDarkMode={isDarkMode} setDarkMode={setIsDarkMode} />}>
            {/* Define the child routes */}
            <Route path="/" element={<Login />} />
            <Route path="/dashboard" element={<DashboardProject isDarkMode={isDarkMode}/>} />
