@@ -14,21 +14,19 @@ import PropTypes from 'prop-types';
  * 
  * @returns                                         The header component
  */
-function Header(props){
-
+function Header(props) {
     return (
-        <div className='Header' isDarkMode={props.isDarkMode.toString()}>
+        <div className='Header' data-isDarkMode={props.isDarkMode}>
             <div className='headerBody'>
                 <Logo isDarkMode={props.isDarkMode} />
-                <p className='titleText'> {props.pageName || 'Nom de la page'} </p>
-                <SearchBar customWidth='22.5rem' isDarkMode={props.isDarkMode} placeholder='Rechercher un projet'/>
-                {/* <HeaderButton isDarkMode={props.isDarkMode} icon='bi-archive-fill' text='Projets' redirect='/projectsList'/>
-                <HeaderButton isDarkMode={props.isDarkMode} icon='bi-people-fill' text='Clients' redirect='/pagesList'/> */}
-                <UserSettings isdarkmode={props.isDarkMode} setDarkMode={props.setDarkMode}/>
+                <p className='titleText'>{props.pageName || 'Nom de la page'}</p>
+                <SearchBar customWidth='22.5rem' isDarkMode={props.isDarkMode} placeholder='Rechercher un projet' />
+                <UserSettings isdarkmode={props.isDarkMode} setDarkMode={props.setDarkMode} />
             </div>
         </div>
     )
 }
+
 
 Header.propTypes = {
     isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
