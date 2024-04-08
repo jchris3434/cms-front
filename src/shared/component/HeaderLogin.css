@@ -14,3 +14,13 @@
     /* Ajuster la largeur du logo */
     cursor: pointer;
 }
+.light {
+    background-color: var(--LTWhiteDarker);
+    border-bottom: 0.063rem solid var(--LTGray);
+}
+
+
+.dark  {
+    background-color: var(--DTBlack);
+    border-bottom: 0.063rem solid var(--DTLightGray);
+}
