@@ -34,11 +34,12 @@ export default function CreateProjectOverlay(props){
          <div className="input-data">
          <label htmlFor='clientname'>Nom du client</label><br/>
          <select name="clientname" id="clientname" required>
-            <option value="-"></option>
-            {clientsList.map((user) => {
-              return <option value={user.id}>{user.username}</option>
-            })}
-         </select>
+   <option value="-"></option>
+   {clientsList.map((user) => (
+      <option key={user.id} value={user.id}>{user.username}</option>
+   ))}
+</select>
+
          </div>
       </div>
      
