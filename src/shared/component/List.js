@@ -38,7 +38,6 @@ function List(props) {
 }
 
 List.propTypes = {
-    isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
     listHeaders: PropTypes.array.isRequired, // listHeaders prop is required and should be an array
     listRows: PropTypes.array.isRequired, // listRows prop is required and should be an array
     modifyButton: PropTypes.func, // modifyButton prop is optional and should be a function
