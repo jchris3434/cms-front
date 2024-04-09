@@ -25,16 +25,16 @@ function List(props){
         <div className='List' isDarkMode={props.isDarkMode.toString()}>
             <ListHeader content={props.listHeaders} modifyButton={props.modifyButton} deleteButton={props.deleteButton} />
             
-            {props.listRows.map(function(data) {
-                return (
-                    <ListItem  
-                        isDarkMode={props.isDarkMode} 
-                        content={data} 
-                        modifyButton={props.modifyButton} 
-                        deleteButton={props.deleteButton}  
-                    />
-                )
-            })}  
+            {props.listRows.map((data, index) => (
+    <ListItem
+        key={index} // Adding key prop
+        isDarkMode={props.isDarkMode}
+        content={data}
+        modifyButton={props.modifyButton}
+        deleteButton={props.deleteButton}
+    />
+))}
+
                 
         </div>
     )
