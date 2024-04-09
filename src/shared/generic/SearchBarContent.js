@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import PropTypes from 'prop-types';
@@ -6,30 +6,44 @@ import PropTypes from 'prop-types';
 const SearchBarContent = (props) => {
     const [input, setInput] = useState("");
     const [clientsList, setClientsList] = useState([]);
-    useEffect(()=> {
-        fetch("https://jsonplaceholder.typicode.com/users") //Fake data until we have a true database to fetch
-        .then((response) => response.json())
-        .then((json) => {
-            const results = json.filter((user) => {
-                return (
-                    user
-                );
-        });
-        setClientsList(results);
-        });
-    }, [])
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data');
+                }
+                return response.json();
+            })
+            .then((json) => {
+                setClientsList(json);
+                setLoading(false);
+            })
+            .catch((error) => {
+                setError(error.message);
+                setLoading(false);
+            });
+    }, []);
 
     const handleChange = (value) => {
         setInput(value);
-        const data_filter = clientsList.filter( client => client.username.includes(value))
-        props.setResults(data_filter)
+        const dataFilter = clientsList?.filter(client => client.username.includes(value));
+        props.setResults(dataFilter);
     };
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
 
     return (
         <form>
-            <div 
-                className="input-group rounded-pill"
-            >
+            <div className="input-group rounded-pill">
                 <button type="button" className="btn">
                     <i className="bi-search"/>
                 </button>
@@ -37,9 +51,9 @@ const SearchBarContent = (props) => {
                     placeholder={props.placeholder}
                     value={input}
                     onChange={(e) => handleChange(e.target.value)}
-                  />
+                />
             </div>
-        </form> 
+        </form>
     );
 };
 
