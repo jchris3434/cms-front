@@ -25,10 +25,9 @@ function List(props){
         <div className='List' isDarkMode={props.isDarkMode.toString()}>
             <ListHeader content={props.listHeaders} modifyButton={props.modifyButton} deleteButton={props.deleteButton} />
             
-            {props.listRows.map((data, index) => (
+            {props.listRows.map((data) => (
     <ListItem
-        key={index} // Adding key prop
-        isDarkMode={props.isDarkMode}
+        key={data.id} // Using unique identifier as key
         content={data}
         modifyButton={props.modifyButton}
         deleteButton={props.deleteButton}
