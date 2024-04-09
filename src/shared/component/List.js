@@ -19,22 +19,20 @@ import PropTypes from 'prop-types';
  * @returns                         ContainerCustom component
  */
 
-function List(props){
-
-    return ( 
-        <div className='List' isDarkMode={props.isDarkMode.toString()}>
+function List(props) {
+    // Remove isDarkMode from the props passed to the div element
+    return (
+        <div className='List'>
             <ListHeader content={props.listHeaders} modifyButton={props.modifyButton} deleteButton={props.deleteButton} />
             
             {props.listRows.map((data) => (
-    <ListItem
-        key={data.id} // Using unique identifier as key
-        content={data}
-        modifyButton={props.modifyButton}
-        deleteButton={props.deleteButton}
-    />
-))}
-
-                
+                <ListItem
+                    key={data.id} // Using unique identifier as key
+                    content={data}
+                    modifyButton={props.modifyButton}
+                    deleteButton={props.deleteButton}
+                />
+            ))}
         </div>
     )
 }
