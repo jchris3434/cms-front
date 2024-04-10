@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './UserSettings.css';
 import ThemeButton from './ThemeButton';
 import Logout from '../Logout';
+
+// Set session storage items
+sessionStorage.setItem("username", "Sue Flay");
+sessionStorage.setItem("JWT", "fqzmifgqzmigfmkzqgrfmiz75JFJYFJ");
 
 function UserSettings(props){
 
@@ -13,36 +17,20 @@ function UserSettings(props){
         setShow(!show);
     };
 
-    // Keyboard event handler
-    const handleKeyDown = (event) => {
-        if (event.key === 'Enter') {
-            showOverlay();
-        }
-    };
-
-    useEffect(() => {
-        document.addEventListener('keydown', handleKeyDown);
-        return () => {
-            document.removeEventListener('keydown', handleKeyDown);
-        };
-    }, []);
-
     if (!username) {
         return null;
     }
 
     return ( 
-        <button 
-            className="avatar-button" 
-            id={props.isdarkmode ? 'dark' : ''}
-            onClick={showOverlay}
-            onKeyDown={handleKeyDown}
+        <div 
+            className="avatar" 
+            id={props.isdarkmode === true ? 'dark':''}
         >
-            <span>
+            <span onClick={showOverlay}>
                 {username.slice(0, 2).toUpperCase()}
             </span>
             {show && 
-                <div id='overlay'>
+                <div isdarkmode={props.isdarkmode} id='overlay'>
                     <h2>{username}</h2>
                     <div className='subdiv'>
                         <label htmlFor="themebutton">Changer le thème</label>
@@ -57,7 +45,7 @@ function UserSettings(props){
                     </div>
                 </div>
             }
-        </button>
+        </div>
     );
 }
 
