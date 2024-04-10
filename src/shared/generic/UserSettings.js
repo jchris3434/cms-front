@@ -35,14 +35,12 @@ function UserSettings(props){
         return null;
     }
 
-    return (
-        <button
-            className="avatar-button"
-            id={props.isdarkmode === true ? 'dark' : ''}
+    return ( 
+        <button 
+            className="avatar-button" 
+            id={props.isdarkmode === true ? 'dark':''}
             onClick={showOverlay}
             onKeyDown={handleKeyDown} // Utiliser onKeyDown au lieu de onKeyPress
-            role="button" // Adding role to make it behave like a button
-            tabIndex={0} // Allowing keyboard focus
         >
             <span>
                 {username.slice(0, 2).toUpperCase()}
@@ -65,7 +63,6 @@ function UserSettings(props){
             }
         </button>
     );
-    
 }
 
 UserSettings.propTypes = {
