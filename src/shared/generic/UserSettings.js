@@ -18,16 +18,16 @@ function UserSettings(props){
     };
 
     // Gestionnaire d'événements de clavier
-    const handleKeyPress = (event) => {
+    const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
             showOverlay();
         }
     };
 
     useEffect(() => {
-        document.addEventListener('keydown', handleKeyPress);
+        document.addEventListener('keydown', handleKeyDown);
         return () => {
-            document.removeEventListener('keydown', handleKeyPress);
+            document.removeEventListener('keydown', handleKeyDown);
         };
     }, []); // Le tableau de dépendances vide signifie que cet effet s'exécute uniquement une fois après le rendu initial
 
@@ -36,12 +36,11 @@ function UserSettings(props){
     }
 
     return ( 
-        <div 
-            className="avatar" 
+        <button 
+            className="avatar-button" 
             id={props.isdarkmode === true ? 'dark':''}
-            tabIndex="0" // Ajouter tabIndex pour rendre l'élément focusable
             onClick={showOverlay}
-            onKeyPress={handleKeyPress} // Ajouter le gestionnaire d'événements clavier
+            onKeyDown={handleKeyDown} // Utiliser onKeyDown au lieu de onKeyPress
         >
             <span>
                 {username.slice(0, 2).toUpperCase()}
@@ -62,7 +61,7 @@ function UserSettings(props){
                     </div>
                 </div>
             }
-        </div>
+        </button>
     );
 }
 
