@@ -4,10 +4,6 @@ import './UserSettings.css';
 import ThemeButton from './ThemeButton';
 import Logout from '../Logout';
 
-// Définir les éléments de stockage de session
-sessionStorage.setItem("username", "Sue Flay");
-sessionStorage.setItem("JWT", "fqzmifgqzmigfmkzqgrfmiz75JFJYFJ");
-
 function UserSettings(props){
 
     const [show, setShow] = useState(false);
@@ -17,7 +13,7 @@ function UserSettings(props){
         setShow(!show);
     };
 
-    // Gestionnaire d'événements de clavier
+    // Keyboard event handler
     const handleKeyDown = (event) => {
         if (event.key === 'Enter') {
             showOverlay();
@@ -29,7 +25,7 @@ function UserSettings(props){
         return () => {
             document.removeEventListener('keydown', handleKeyDown);
         };
-    }, []); // Le tableau de dépendances vide signifie que cet effet s'exécute uniquement une fois après le rendu initial
+    }, []);
 
     if (!username) {
         return null;
@@ -38,15 +34,15 @@ function UserSettings(props){
     return ( 
         <button 
             className="avatar-button" 
-            id={props.isdarkmode === true ? 'dark':''}
+            id={props.isdarkmode ? 'dark' : ''}
             onClick={showOverlay}
-            onKeyDown={handleKeyDown} // Utiliser onKeyDown au lieu de onKeyPress
+            onKeyDown={handleKeyDown}
         >
             <span>
                 {username.slice(0, 2).toUpperCase()}
             </span>
             {show && 
-                <div isdarkmode={props.isdarkmode} id='overlay'>
+                <div id='overlay'>
                     <h2>{username}</h2>
                     <div className='subdiv'>
                         <label htmlFor="themebutton">Changer le thème</label>
