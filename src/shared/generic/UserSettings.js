@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './UserSettings.css';
 import ThemeButton from './ThemeButton';
 import Logout from '../Logout';
 
-// Set session storage items
+// Définir les éléments de stockage de session
 sessionStorage.setItem("username", "Sue Flay");
 sessionStorage.setItem("JWT", "fqzmifgqzmigfmkzqgrfmiz75JFJYFJ");
 
@@ -17,6 +17,20 @@ function UserSettings(props){
         setShow(!show);
     };
 
+    // Gestionnaire d'événements de clavier
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            showOverlay();
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('keydown', handleKeyPress);
+        return () => {
+            document.removeEventListener('keydown', handleKeyPress);
+        };
+    }, []); // Le tableau de dépendances vide signifie que cet effet s'exécute uniquement une fois après le rendu initial
+
     if (!username) {
         return null;
     }
@@ -25,8 +39,11 @@ function UserSettings(props){
         <div 
             className="avatar" 
             id={props.isdarkmode === true ? 'dark':''}
+            tabIndex="0" // Ajouter tabIndex pour rendre l'élément focusable
+            onClick={showOverlay}
+            onKeyPress={handleKeyPress} // Ajouter le gestionnaire d'événements clavier
         >
-            <span onClick={showOverlay}>
+            <span>
                 {username.slice(0, 2).toUpperCase()}
             </span>
             {show && 
