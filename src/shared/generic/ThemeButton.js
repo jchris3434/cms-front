@@ -21,14 +21,14 @@ function ThemeButton(props) {
 
 	return (
         <label className='toggle-switch' htmlFor='darkModeToggle'>
-        <input 
-            id='darkModeToggle'
-            type='checkbox' 
-            checked={props.isdarkmode} 
-            onChange={toggleMode}
-        />
-        <span className='slider'></span>
-    </label>
+            <input 
+                id='darkModeToggle'
+                type='checkbox' 
+                checked={props.isdarkmode} 
+                onChange={toggleMode}
+            />
+            <span className='slider'></span>
+        </label>
 	);
 }
 
