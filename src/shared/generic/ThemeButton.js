@@ -15,13 +15,13 @@ import PropTypes from 'prop-types';
 
 function ThemeButton(props) {
     function toggleMode() {
-        localStorage.setItem("isdarkmode", !getDarkModeFromLocalStorage());
-        props.setDarkMode(getDarkModeFromLocalStorage());
-    } // Inverts boolean in localStorage, then updates state in app.jss
+        props.setDarkMode(!props.isDarkMode);
+        localStorage.setItem("isdarkmode", !props.isDarkMode);
+    } // Updates state in app.jss, then inverts boolean in localStorage
 
     return (
-        <div className='theme-button'>
-            <label htmlFor='darkModeToggle'>Dark Mode</label>
+        <div>
+            <label htmlFor='darkModeToggle'></label>
             <label className='toggle-switch' htmlFor='darkModeToggle'>
                 <input 
                     id='darkModeToggle'
