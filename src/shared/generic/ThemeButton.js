@@ -7,36 +7,34 @@ import PropTypes from 'prop-types';
  * @description                     Theme Button for changing To Light/Dark Mode 
  * 
  * @param {object} props
- * @param {boolean} isDarkMode      props.isDarkMode either 'true' or 'false'
+ * @param {boolean} isdarkmode      props.isDarkMode either 'true' or 'false'
  * @param {function} setDarkMode    props.setDarkMode UseState in parent element
  * 
  * @returns                         JSX elements (ThemeButton)
  */
 
 function ThemeButton(props) {
-    function toggleMode() {
-        props.setDarkMode(!props.isDarkMode);
-        localStorage.setItem("isdarkmode", !props.isDarkMode);
-    } // Updates state in app.jss, then inverts boolean in localStorage
+	function toggleMode() {
+		localStorage.setItem("isdarkmode", !getDarkModeFromLocalStorage());
+        props.setDarkMode(getDarkModeFromLocalStorage());
+	} // Inverts boolean in localStorage, then updates state in app.jss
 
-    return (
-        <div>
-            <label htmlFor='darkModeToggle'></label>
-            <label className='toggle-switch' htmlFor='darkModeToggle'>
-                <input 
-                    id='darkModeToggle'
-                    type='checkbox' 
-                    checked={props.isDarkMode} 
-                    onChange={toggleMode}
-                />
-                <span className='slider'></span>
-            </label>
-        </div>
-    );
+	return (
+<label htmlFor='darkModeToggle'>
+  <input 
+    id='darkModeToggle'
+    type='checkbox' 
+    checked={props.isdarkmode} 
+    onChange={toggleMode}
+  />
+  Theme Mode
+</label>
+
+	);
 }
 
 ThemeButton.propTypes = {
-    isDarkMode: PropTypes.bool.isRequired,
+    isdarkmode: PropTypes.bool.isRequired,
     setDarkMode: PropTypes.func.isRequired
 };
 
