@@ -8,21 +8,21 @@
     color:var(--DTWhiteDarker);
 }
 
-.createclientoverlay {
+.createuseroverlay {
     width:56.25rem;
     height:20rem;
     background-color:var(--LTWhiteDarker) ;
     position: relative;
 }
 
-.createclientoverlay h3 {
+.createuseroverlay h3 {
     position:absolute;
     left:50%;
     top:15%;
     transform:translate(-50%, -50%);
 }
 
-.createclientoverlay form {
+.createuseroverlay form {
     margin-top:4.375rem;
 }
 
@@ -51,7 +51,7 @@
     border:none;
 }
 
-#createclientbuttons {
+#createuserbuttons {
     position: absolute;
     bottom: 0;
     right: 0; 
@@ -59,7 +59,7 @@
     padding-right:0.2rem;
 }
 
-#createclientbuttons button {
+#createuserbuttons button {
     background-color: var(--DTPink);
     border:none;
     margin:0.5rem;
