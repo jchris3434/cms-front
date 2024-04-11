@@ -20,14 +20,14 @@ function ThemeButton(props) {
 	} // Inverts boolean in localStorage, then updates state in app.jss
 
 	return (
-<label htmlFor='darkModeToggle'>
+        <label className='toggle-switch' htmlFor='darkModeToggle'>
   <input 
     id='darkModeToggle'
     type='checkbox' 
     checked={props.isdarkmode} 
     onChange={toggleMode}
   />
-  Theme Mode
+            <span className='slider'></span>
 </label>
 
 	);
