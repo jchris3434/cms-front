@@ -17,7 +17,7 @@ function ThemeButton(props) {
 	function toggleMode() {
 		localStorage.setItem("isdarkmode", !getDarkModeFromLocalStorage());
         props.setDarkMode(getDarkModeFromLocalStorage());
-	} // Inverts boolean in localStorage, then updates state in app.js
+	} // Inverts boolean in localStorage, then updates state in app.jss
 
 	return (
         <label className='toggle-switch' htmlFor='darkModeToggle'>
