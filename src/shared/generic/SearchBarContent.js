@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import PropTypes from 'prop-types';
@@ -8,6 +8,7 @@ const SearchBarContent = (props) => {
     const [clientsList, setClientsList] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const resultsListRef = useRef(null);
 
     useEffect(() => {
         fetch("https://jsonplaceholder.typicode.com/users")
@@ -27,9 +28,22 @@ const SearchBarContent = (props) => {
             });
     }, []);
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (resultsListRef.current && !resultsListRef.current.contains(event.target)) {
+                props.setResults([]); // Cacher la liste de résultats
+            }
+        };
+
+        window.addEventListener('click', handleClickOutside);
+        return () => {
+            window.removeEventListener('click', handleClickOutside);
+        };
+    }, [props]);
+
     const handleChange = (value) => {
         setInput(value);
-        const dataFilter = clientsList?.filter(client => client.username.includes(value));
+        const dataFilter = clientsList.filter(client => client.username.toLowerCase().includes(value.toLowerCase()));
         props.setResults(dataFilter);
     };
 
@@ -38,7 +52,12 @@ const SearchBarContent = (props) => {
     }
 
     if (error) {
-        return <div>Error: {error}</div>;
+        return (
+            <div>
+                Error: {error}
+                <button onClick={() => window.location.reload()}>Retry</button>
+            </div>
+        );
     }
 
     return (
@@ -52,6 +71,8 @@ const SearchBarContent = (props) => {
                     value={input}
                     onChange={(e) => handleChange(e.target.value)}
                 />
+            </div>
+            <div ref={resultsListRef}>
             </div>
         </form>
     );
