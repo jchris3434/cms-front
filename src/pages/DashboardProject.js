@@ -7,7 +7,7 @@ import DeleteProjectOverlay from '../shared/component/DeleteProjectOverlay'
 import CreatePageOverlay from '../shared/component/CreatePageOverlay'
 import 'bootstrap/dist/css/bootstrap.css';
 import './DashboardProject.css'
-
+import DeleteButton from '../shared/component/DeleteButton'
 export default function DashboardProject(props) {
   const [showdeleteprojectoverlay, setShowDeleteProjectOverlay] = useState(false);
   const [showcreatepageoverlay, setShowCreatePageOverlay] = useState(false);
@@ -19,8 +19,7 @@ export default function DashboardProject(props) {
         <span>Client: Sue Flay</span>
         <span>Statut: Développement</span>
         </div>
-
-        <ContainerCustom displayStyle='dashboard' isDarkMode={props.isDarkMode}>
+        <ContainerCustom displayStyle='dashboard' isDarkMode={props.isDarkMode} id="custom">
             <DashBoardCard 
               isDarkMode={props.isDarkMode} 
               text='Accéder à la liste de toutes les pages de ce projet' 
@@ -43,14 +42,15 @@ export default function DashboardProject(props) {
               icon="bi bi-eye-fill"
               redirect='/preview'
             />
-            <DashBoardCard 
-              isDarkMode={props.isDarkMode}
-              title='Supprimer'
-              text='Supprimer le projet en cours'
-              icon="bi-x-circle-fill"
-              show={setShowDeleteProjectOverlay} 
-            />
-        </ContainerCustom> 
+ </ContainerCustom> 
+<div className="deleteButtonContainer">
+  <DeleteButton 
+    show={setShowDeleteProjectOverlay} 
+    text="Supprimer"
+  />
+  </div>
+       
+      
 
         {/* Overlays */}
          {showdeleteprojectoverlay && 
