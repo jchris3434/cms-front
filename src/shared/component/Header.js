@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 import Logo from '../generic/Logo';
 import SearchBar from '../generic/SearchBar.js';
-import HeaderButton from '../generic/HeaderButton';
+//import HeaderButton from '../generic/HeaderButton';
 import UserSettings from '../generic/UserSettings';
 import PropTypes from 'prop-types';
 
