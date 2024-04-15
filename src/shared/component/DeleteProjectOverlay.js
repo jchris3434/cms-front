@@ -1,32 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './DeleteProjectOverlay.css';
 import PropTypes from 'prop-types';
 
-/**
- * @description                                                                        Overlay Content (fits in Overlay component)
- * 
- * @param {object}  props
- * @param {boolean} isDarkMode                     props.isDarkMode                    Either true or false 
- * @param {function} setShowDeleteProjectOverlay   props.setShowDeleteProjectOverlay   Returns a boolean to display the overlay
- * 
- * @returns                                        Delete Project Content
- */
+export default function DeleteProjectOverlay(props) {
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
-export default function DeleteProjectOverlay(props){
-    return ( 
-       <div className="deleteprojectoverlay" id={props.isDarkMode === true ? 'dark':''}>
-        <h3>Etes-vous sûr de vouloir supprimer le projet ?</h3>
-        <form action='#'>
-      <div id="deleteprojectbuttons">
-      <button onClick={() => props.setShowDeleteProjectOverlay(false)}>Retour</button> 
-      <button type="submit">Valider</button>
-      </div>
-        </form>
-       </div>
-    )
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Vérifier le mot de passe
+        if (password === props.password) {
+            // Mot de passe correct, supprimer le projet
+            props.onDeleteProject(props.projectId);
+            // Fermer l'overlay
+            props.setShowDeleteProjectOverlay(false);
+        } else {
+            // Mot de passe incorrect, afficher un message d'erreur
+            setError('Mot de passe incorrect');
+        }
+    };
+
+    return (
+        <div className={`delete-project-overlay ${props.isDarkMode ? 'dark' : ''}`}>
+            <h3>Etes-vous sûr de vouloir supprimer le projet ?</h3>
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="password"
+                    placeholder="Mot de passe"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <div id="deleteprojectbuttons">
+                    <button type="button" onClick={() => props.setShowDeleteProjectOverlay(false)}>
+                        Retour
+                    </button>
+                    <button type="submit">Valider</button>
+                </div>
+            </form>
+            {error && <p className="error-message">{error}</p>}
+        </div>
+    );
 }
 
 DeleteProjectOverlay.propTypes = {
-  isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
-  setShowDeleteProjectOverlay: PropTypes.func.isRequired // setShowDeleteProjectOverlay prop is required and should be a function
+    isDarkMode: PropTypes.bool.isRequired,
+    setShowDeleteProjectOverlay: PropTypes.func.isRequired,
+    onDeleteProject: PropTypes.func.isRequired,
+    projectId: PropTypes.string.isRequired,
+    password: PropTypes.string.isRequired,
 };
