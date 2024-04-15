@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import ContainerCustom from '../shared/generic/ContainerCustom'
 import DashBoardCard from '../shared/component/DashBoardCard'
 import Overlay from '../shared/component/Overlay'
-import PropTypes from 'prop-types';
 import DeleteProjectOverlay from '../shared/component/DeleteProjectOverlay'
 import CreatePageOverlay from '../shared/component/CreatePageOverlay'
 import 'bootstrap/dist/css/bootstrap.css';
@@ -14,7 +13,7 @@ export default function DashboardProject(props) {
 
     return (
       <div id={props.isDarkMode === true ? 'dashboardprojectdark':''}>
-        <div className="rounded-pill" id="projectstatusbar">
+        <div class="rounded-pill" id="projectstatusbar">
         <span>Projet: Blog animalier</span>
         <span>Client: Sue Flay</span>
         <span>Statut: Développement</span>
@@ -27,7 +26,13 @@ export default function DashboardProject(props) {
               icon="bi bi-folder-fill"
               redirect='/pagesList'
             />
-      
+            {/* <DashBoardCard 
+              isDarkMode={props.isDarkMode}
+              text='Accéder à la liste de tous les média de ce projet'
+              title='Liste Des Média'
+              icon="bi bi-card-image"
+              redirect='/mediasList'
+            /> */}
             <DashBoardCard 
               isDarkMode={props.isDarkMode}
               text='Accéder au mode création de pages'
@@ -77,6 +82,3 @@ export default function DashboardProject(props) {
       </div>
     );
   }
-  DashboardProject.propTypes = {
-    isDarkMode: PropTypes.bool.isRequired // isDarkMode prop is required and should be a boolean
-  };
