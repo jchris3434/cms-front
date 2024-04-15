@@ -34,10 +34,10 @@ function CreatePageOverlay(props){
          <div className="input-data">
          <label htmlFor='parentpage'>Page parente</label><br/>
          <select name="parentpage" id="parentpage">
-         <option value="">Aucune</option>
-            {pagesList.map((page) => {
-              return <option value={'page'+page.pag_id}>{page.pag_name}</option>
-            })}
+            <option value="">Aucune</option>
+               {pagesList.map((page) => (
+            <option key={page.pag_id} value={'page' + page.pag_id}>{page.pag_name}</option>
+          ))}
          </select>            
          </div>
       </div>

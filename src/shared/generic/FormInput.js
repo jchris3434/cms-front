@@ -3,9 +3,8 @@ import './FormInput.css';
 import PropTypes from 'prop-types';
 
 function FormInput(props){
-
     return ( 
-        <div className='FormInput' isdarkmode={props.isDarkMode.toString()}>
+        <div className='FormInput' data-isdarkmode={props.isDarkMode.toString()}>
             <label className='textDefault'>{props.label}</label>
             {props.children}
         </div>

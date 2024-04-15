@@ -1,59 +1,57 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './UserSettings.css';
 import ThemeButton from './ThemeButton';
-import Logout from '../Logout'
+import Logout from '../Logout';
 
-/**
- * @description                     User Avatar and overlay for changing To Light/Dark Mode and Logout 
- * 
- * @param {object} props
- * @param {boolean} isdarkmode      props.isDarkMode either 'true' or 'false'
- * @param {function} setDarkMode    props.setDarkMode UseState in parent element
- * 
- * @returns                         JSX elements (Avatar + Overlay on click + ThemeButton)
- */
-
-// Token simulation, will be created when authenticated
-sessionStorage.setItem("username", "Sue Flay") 
-sessionStorage.setItem("JWT", "fqzmifgqzmigfmkzqgrfmiz75JFJYFJ") 
-
-const username = sessionStorage.getItem("username") 
+// Set session storage items
+sessionStorage.setItem("username", "Sue Flay");
+sessionStorage.setItem("JWT", "fqzmifgqzmigfmkzqgrfmiz75JFJYFJ");
 
 function UserSettings(props){
 
-    //Boolean changing Overlay visibility
     const [show, setShow] = useState(false);
+    const username = sessionStorage.getItem("username");
+
     const showOverlay = () => {
-        setShow(!show)
+        setShow(!show);
+    };
+
+    if (!username) {
+        return null;
     }
 
     return ( 
         <div 
-        class="avatar" 
-        id={props.isdarkmode === true ? 'dark':''}
+            className="avatar" 
+            id={props.isdarkmode === true ? 'dark':''}
         >
             <span onClick={showOverlay}>
                 {username.slice(0, 2).toUpperCase()}
             </span>
             {show && 
-            <div isdarkmode={props.isdarkmode} id='overlay'>
+                <div isdarkmode={props.isdarkmode} id='overlay'>
                     <h2>{username}</h2>
-                    <div class='subdiv'>
-                        <p>Changer le thème</p>
+                    <div className='subdiv'>
+                        <label htmlFor="themebutton">Changer le thème</label>
                         <ThemeButton 
-                        isdarkmode={props.isdarkmode}
-                        setDarkMode={props.setDarkMode}
-                        id="themebutton"
+                            isdarkmode={props.isdarkmode}
+                            setDarkMode={props.setDarkMode}
+                            id="themebutton"
                         />
                     </div>
-                    <div class='subdiv' onClick={Logout}>
+                    <div className='subdiv' onClick={Logout}>
                         <p>Déconnexion</p>
                     </div>
-                    
-            </div>}
-            
+                </div>
+            }
         </div>
-    )
+    );
 }
+
+UserSettings.propTypes = {
+    isdarkmode: PropTypes.bool.isRequired,
+    setDarkMode: PropTypes.func.isRequired
+};
 
 export default UserSettings;

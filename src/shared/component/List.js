@@ -19,29 +19,25 @@ import PropTypes from 'prop-types';
  * @returns                         ContainerCustom component
  */
 
-function List(props){
-
-    return ( 
-        <div className='List' isDarkMode={props.isDarkMode.toString()}>
+function List(props) {
+    // Remove isDarkMode from the props passed to the div element
+    return (
+        <div className='List'>
             <ListHeader content={props.listHeaders} modifyButton={props.modifyButton} deleteButton={props.deleteButton} />
             
-            {props.listRows.map(function(data) {
-                return (
-                    <ListItem  
-                        isDarkMode={props.isDarkMode} 
-                        content={data} 
-                        modifyButton={props.modifyButton} 
-                        deleteButton={props.deleteButton}  
-                    />
-                )
-            })}  
-                
+            {props.listRows.map((data) => (
+                <ListItem
+                    key={data.id} // Using unique identifier as key
+                    content={data}
+                    modifyButton={props.modifyButton}
+                    deleteButton={props.deleteButton}
+                />
+            ))}
         </div>
     )
 }
 
 List.propTypes = {
-    isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
     listHeaders: PropTypes.array.isRequired, // listHeaders prop is required and should be an array
     listRows: PropTypes.array.isRequired, // listRows prop is required and should be an array
     modifyButton: PropTypes.func, // modifyButton prop is optional and should be a function
