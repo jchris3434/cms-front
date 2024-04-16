@@ -10,17 +10,20 @@ import './DashboardProject.css'
 import DeleteButton from '../shared/component/DeleteButton'
 
 
+
 export default function DashboardProject(props) {
   const [showdeleteprojectoverlay, setShowDeleteProjectOverlay] = useState(false);
   const [showcreatepageoverlay, setShowCreatePageOverlay] = useState(false);
 
     return (
+
       <div id={props.isDarkMode === true ? 'dashboardprojectdark':''}>
-        <div class="rounded-pill" id="projectstatusbar">
+        <div className="rounded-pill" id="projectstatusbar">
         <span>Projet: Blog animalier</span>
         <span>Client: Sue Flay</span>
         <span>Statut: Développement</span>
         </div>
+
         <ContainerCustom displayStyle='dashboard' isDarkMode={props.isDarkMode} id="custom">
             <DashBoardCard 
               isDarkMode={props.isDarkMode} 
@@ -29,13 +32,13 @@ export default function DashboardProject(props) {
               icon="bi bi-folder-fill"
               redirect='/pagesList'
             />
-            {/* <DashBoardCard 
+            <DashBoardCard 
               isDarkMode={props.isDarkMode}
               text='Accéder à la liste de tous les média de ce projet'
               title='Liste Des Média'
               icon="bi bi-card-image"
               redirect='/mediasList'
-            /> */}
+            /> 
             <DashBoardCard 
               isDarkMode={props.isDarkMode}
               text='Accéder au mode création de pages'
@@ -45,18 +48,18 @@ export default function DashboardProject(props) {
             />
             <DashBoardCard 
               isDarkMode={props.isDarkMode}
-              title='Preview'
-              text='Accéder au mode preview de votre site'
+              title='Previsualiser'
+              text='Accéder à la previsualisation de votre site'
               icon="bi bi-eye-fill"
               redirect='/preview'
             />
- </ContainerCustom> 
-<div className="deleteButtonContainer">
-  <DeleteButton 
-    show={setShowDeleteProjectOverlay} 
-    text="Supprimer"
-  />
-  </div>
+            </ContainerCustom> 
+             <div className="deleteButtonContainer">
+              <DeleteButton 
+               show={setShowDeleteProjectOverlay} 
+               text="Supprimer"
+               />
+               </div>
        
       
 
