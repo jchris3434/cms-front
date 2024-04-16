@@ -6,6 +6,15 @@ import UserSettings from '../generic/UserSettings';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 
+/**
+ * @description                                     The header that is displayed as the header navbar
+ * 
+ * @param {object}  props
+ * @param {boolean} isDarkMode  props.isDarkMode    Either true or false 
+ * 
+ * @returns                                         The header component
+ */
+
 function Header(props) {
     const placeHolder = "Rechercher un projet";
     const location = useLocation();
