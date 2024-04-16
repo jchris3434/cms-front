@@ -27,3 +27,4 @@ yarn-error.log*
 # sonarqube fichier de rapport
 /.scannerwork/scanner-report/
 /.scannerwork/report-task.txt 
+.scannerwork/report-task.txt

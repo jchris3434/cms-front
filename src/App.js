@@ -11,21 +11,22 @@ import Preview from './pages/Preview';
 import Login from './pages/Login';
 
 function App() {
-  const [isdarkmode, setDarkMode] = useState(getDarkModeFromLocalStorage());
+  // Destructuring the useState call symmetrically
+  const [isDarkMode, setIsDarkMode] = useState(getDarkModeFromLocalStorage());
   
   return (
-    <div className="App" id={isdarkmode === true ? 'appdark':''}>
+    <div className="App" id={isDarkMode === true ? 'appdark':''}>
      <BrowserRouter>
        <Routes>
         {/* Use the Layout component as the parent route */}
-        <Route element={<Layout isDarkMode={isdarkmode} setDarkMode={setDarkMode} />}>
+        <Route element={<Layout isDarkMode={isDarkMode} setDarkMode={setIsDarkMode} />}>
            {/* Define the child routes */}
            <Route path="/" element={<Login />} />
-           <Route path="/dashboard" element={<DashboardProject isDarkMode={isdarkmode}/>} />
-           <Route path="/createPage" element={<CreatePage isDarkMode={isdarkmode}/>} />
-           <Route path="/mediasList" element={<MediasList isDarkMode={isdarkmode}/>} />
-           <Route path="/pagesList" element={<PagesList isDarkMode={isdarkmode}/>} />
-           <Route path="/preview" element={<Preview isDarkMode={isdarkmode}/>} />
+           <Route path="/dashboard" element={<DashboardProject isDarkMode={isDarkMode}/>} />
+           <Route path="/createPage" element={<CreatePage isDarkMode={isDarkMode}/>} />
+           <Route path="/mediasList" element={<MediasList isDarkMode={isDarkMode}/>} />
+           <Route path="/pagesList" element={<PagesList isDarkMode={isDarkMode}/>} />
+           <Route path="/preview" element={<Preview isDarkMode={isDarkMode}/>} />
          </Route>
        </Routes>
      </BrowserRouter>

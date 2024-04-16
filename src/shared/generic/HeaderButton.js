@@ -20,11 +20,15 @@ function HeaderButton(props){
     };
 
     return ( 
-        <button isDarkMode={props.isDarkMode.toString()} className='HeaderButton' onClick={redirect}> 
-            <i className={props.icon}></i>
-            <label >{props.text}</label>
+        <button
+            className={`HeaderButton ${props.isDarkMode ? 'darkMode' : ''}`}
+            onClick={redirect}
+            aria-label={props.text}
+        >
+            <i className={props.icon} aria-hidden="true"></i>
+            <label>{props.text}</label>
         </button>
-    )
+    );
 }
 
 HeaderButton.propTypes = {

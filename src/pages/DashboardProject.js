@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import ContainerCustom from '../shared/generic/ContainerCustom'
 import DashBoardCard from '../shared/component/DashBoardCard'
 import Overlay from '../shared/component/Overlay'
+import PropTypes from 'prop-types';
 import DeleteProjectOverlay from '../shared/component/DeleteProjectOverlay'
 import CreatePageOverlay from '../shared/component/CreatePageOverlay'
 import 'bootstrap/dist/css/bootstrap.css';
 import './DashboardProject.css'
 import DeleteButton from '../shared/component/DeleteButton'
+
+
 export default function DashboardProject(props) {
   const [showdeleteprojectoverlay, setShowDeleteProjectOverlay] = useState(false);
   const [showcreatepageoverlay, setShowCreatePageOverlay] = useState(false);
@@ -82,3 +85,8 @@ export default function DashboardProject(props) {
       </div>
     );
   }
+
+DashboardProject.propTypes = {
+  isDarkMode: PropTypes.bool.isRequired // isDarkMode prop is required and should be a boolean
+};
+  

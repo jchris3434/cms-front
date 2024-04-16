@@ -14,13 +14,12 @@ export default function AddButton(props) {
   };
 
   return (
-    <div
+    <button
       className={`rounded-pill ${isActive ? 'active' : ''}`}
       id='addbutton'
       onClick={() => props.show(true)}
       onKeyDown={handleKeyDown} // Adding keydown event listener
-      tabIndex={0} // Making the div focusable
-      role="button" // Specifying role as button for accessibility
+      tabIndex={0} // Making the button focusable
       aria-label={props.text} // Providing a label for accessibility
       onMouseDown={() => setIsActive(true)}
       onMouseUp={() => setIsActive(false)}
@@ -28,10 +27,8 @@ export default function AddButton(props) {
     >
       
       <span>{props.text}</span>
-      <button type="button" className="btn">
-        <i className="bi bi-plus-circle-fill"></i>
-      </button>
-    </div>
+      <i className="bi bi-plus-circle-fill"></i>
+    </button>
   );
 }
 

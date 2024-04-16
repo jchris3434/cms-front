@@ -4,17 +4,16 @@ import Logo from '../generic/Logo';
 import PropTypes from 'prop-types';
 
 /**
- * @description                                     The header that is displayed as the header navbar
+ * The header that is displayed as the header navbar
  * 
  * @param {object}  props
- * @param {boolean} isDarkMode  props.isDarkMode    Either true or false 
+ * @param {boolean} props.isDarkMode  Either true or false 
  * 
- * @returns                                         The header component
+ * @returns The header component
  */
-function HeaderLogin(props){
-
+function HeaderLogin(props) {
     return (
-        <div className='Header' isDarkMode={props.isDarkMode.toString()}>
+        <div className={`Header ${props.isDarkMode ? 'dark' : 'light'}`}>
             <div className='headerBody'>
                 <Logo isDarkMode={props.isDarkMode} />
             </div>
@@ -24,6 +23,6 @@ function HeaderLogin(props){
 
 HeaderLogin.propTypes = {
     isDarkMode: PropTypes.bool.isRequired // isDarkMode prop is required and should be a boolean
-  };
+};
 
-export default HeaderLogin ;
+export default HeaderLogin;
