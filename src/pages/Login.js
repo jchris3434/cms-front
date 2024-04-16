@@ -1,27 +1,26 @@
-// Import necessary modules from React and react-bootstrap
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
-import './Login.css'; // Import CSS styles for this component
+import './Login.css';
 import ButtonLogin from '../shared/generic/buttonLogin';
 
-
-// Definition of the login form component
 function Login() {
-    // Declaration of state variables for username and password
-    const [username, setUsername] = useState(''); // Use useState to create a state variable for username
-    const [password, setPassword] = useState(''); // Use useState to create a state variable for password
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
-    
-    // Functions to update state variables when input fields change
     const handleUsernameChange = (event) => {
-        setUsername(event.target.value); // Update the username state variable with the input field value
+        setUsername(event.target.value);
     };
 
     const handlePasswordChange = (event) => {
-        setPassword(event.target.value); // Update the password state variable with the input field value
+        setPassword(event.target.value);
     };
 
-    // Render the login form using React-bootstrap
+    useEffect(() => {
+        if (username !== '' && password !== '') {
+            localStorage.setItem('username', username);
+        }
+    }, [username, password]);
+
     return (
         <div>
             <div className="container">
@@ -29,17 +28,16 @@ function Login() {
                     <Form>
                         <p className='login'>Connexion</p>
 
-                        {/* Input field for username */}
                         <Form.Group className="mb-3" controlId="formBasicUsername">
                             <Form.Label className='Text'>Identifiant</Form.Label>
-                            <Form.Control type="text"  value={username} onChange={handleUsernameChange} />
+                            <Form.Control type="text" value={username} onChange={handleUsernameChange} />
                         </Form.Group>
-                        {/* Input field for pass word */}
+
                         <Form.Group className="mb-3" controlId="formBasicPassword">
                             <Form.Label className='Text'>Mot de passe</Form.Label>
                             <Form.Control type="password" value={password} onChange={handlePasswordChange} />
                         </Form.Group>
-                        {/* Submit button for the form */}
+
                         <div className="d-flex justify-content-end">
                             <ButtonLogin className="ButtonText" username={username} password={password} />
                         </div>
@@ -50,4 +48,4 @@ function Login() {
     );
 }
 
-export default Login; // Export the Login component
+export default Login;

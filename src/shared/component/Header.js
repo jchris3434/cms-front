@@ -5,14 +5,6 @@ import SearchBar from '../generic/SearchBar.js';
 import UserSettings from '../generic/UserSettings';
 import PropTypes from 'prop-types';
 
-/**
- * @description                                     The header that is displayed as the header navbar
- * 
- * @param {object}  props
- * @param {boolean} isDarkMode  props.isDarkMode    Either true or false 
- * 
- * @returns                                         The header component
- */
 function Header(props) {
     return (
         <div className='Header' data-isDarkMode={props.isDarkMode}>
@@ -26,11 +18,10 @@ function Header(props) {
     )
 }
 
-
 Header.propTypes = {
-    isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
-    pageName: PropTypes.string, // pageName prop is optional and should be a string
-    setDarkMode: PropTypes.func.isRequired // setDarkMode prop is required and should be a function
-  };
+    isDarkMode: PropTypes.bool.isRequired,
+    pageName: PropTypes.string, 
+    setDarkMode: PropTypes.func.isRequired 
+};
 
 export default Header ;

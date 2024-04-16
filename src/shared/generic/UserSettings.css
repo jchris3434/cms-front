@@ -27,8 +27,7 @@
     background-color: rgb(201, 201, 201);
     color: white;
 }
-
-#overlay {
+.overlay {
     padding: 1.25rem;
     border-radius: 1.5rem;
     box-shadow: 0 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.2);
@@ -40,6 +39,11 @@
     height: 12.875rem;
     z-index: 1;
 }
+
+.overlay.dark {
+    background-color: var(--DTDarkGray);
+}
+
 
 .subdiv {
     border-radius: 0.5rem;
