@@ -4,9 +4,9 @@
     align-items: center;
     background-color: var(--DTPink);
     color:var(--DTWhiteDarker);
-    height:3.125rem;
-    width:9.313rem;
-    font-size: 1.125rem;
+    height:2.5rem;
+    width:8.313rem;
+    font-size: 1.1rem;
     padding-left: 0.938rem;
     text-align: center;
     padding-bottom: 0.313rem;
@@ -15,7 +15,7 @@
 .bi-plus-circle-fill
 {
     color:var(--DTWhiteDarker);
-    font-size: 2rem;
+    font-size: 1.2rem;
     margin-left: 0.313rem;
 }
 
