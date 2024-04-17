@@ -5,7 +5,8 @@
 .pagePreviewPlaceholder {
     width: 100%;
     aspect-ratio: 25 / 20;
-    background-color: rgba(136, 126, 126, 0.516);
+    background-color: rgba(152, 146, 146, 0.516);
+
 }
 
 #PageCard {
