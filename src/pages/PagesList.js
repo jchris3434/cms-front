@@ -16,7 +16,15 @@ function PagesList({ isDarkMode }) {
   useEffect(() => {
     fetch("http://localhost:12000/pages")
       .then((res) => res.json())
-      .then((res) => setPagesList(res))
+      .then((res) => {
+        // Vérifie si la réponse est un objet avec une propriété 'success' égale à true et une propriété 'data' qui est un tableau
+        if (res.success && Array.isArray(res.data)) {
+          // Extraire les données de chaque objet Page
+          setPagesList(res.data);
+        } else {
+          console.error("Pages list is not an array:", res);
+        }
+      })
       .catch((err) => console.error(err));
   }, []);
 
@@ -43,12 +51,15 @@ function PagesList({ isDarkMode }) {
             isDarkMode={isDarkMode}
           >
             {pagesList.map((page) => (
-              <PageCard
-                key={page.pag_id}
-                id={`page${page.pag_id}`}
-                pageName={page.pag_name}
-                isDarkMode={isDarkMode}
-              />
+              // Vérifie si la page existe avant d'accéder à ses propriétés
+              page && (
+                <PageCard
+                  key={page.pag_id}
+                  id={`page${page.pag_id}`}
+                  pageName={page.pag_name}
+                  isDarkMode={isDarkMode}
+                />
+              )
             ))}
           </ContainerCustom>
         </div>
