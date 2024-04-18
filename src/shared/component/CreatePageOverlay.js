@@ -5,7 +5,8 @@ import PropTypes from 'prop-types';
 function CreatePageOverlay(props) {
   const [formData, setFormData] = useState({
     pag_name: '',
-    pag_parent: ''
+    pag_parent: null, // Null car la page n'a pas de parent par défaut
+    fk_prj_id: 1 // ID du projet passé en dur pour le moment
   });
 
   const [pagesList, setPagesList] = useState([]);
@@ -35,7 +36,7 @@ function CreatePageOverlay(props) {
     
     console.log('Données du formulaire avant envoi:', formData); // Ajout du console.log
     
-    fetch(`http://localhost:12000/projects/${props.projectId}/pages`, {
+    fetch(`http://localhost:12000/pages`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -46,7 +47,7 @@ function CreatePageOverlay(props) {
       .then((data) => {
         console.log('Page créée avec succès:', data);
         // Réinitialiser le formulaire après la soumission réussie
-        setFormData({ pag_name: '', pag_parent: '' });
+        setFormData({ pag_name: '', pag_parent: null, fk_prj_id: 1 }); // Remise à zéro des valeurs après la création
         // Fermer l'overlay après la soumission réussie
         props.setShowCreatePageOverlay(false);
       })
@@ -86,8 +87,8 @@ function CreatePageOverlay(props) {
 
 CreatePageOverlay.propTypes = {
   isDarkMode: PropTypes.bool.isRequired,
-  setShowCreatePageOverlay: PropTypes.func.isRequired,
-  projectId: PropTypes.number.isRequired // Nouvelle prop projectId
+  setShowCreatePageOverlay: PropTypes.func.isRequired
 };
 
 export default CreatePageOverlay;
+
