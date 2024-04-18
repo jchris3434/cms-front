@@ -71,7 +71,7 @@ function PagesList({ isDarkMode }) {
               isDarkMode={isDarkMode}
               setShowCreatePageOverlay={setShowCreatePageOverlay}
               pagesList={pagesList}
-            />}
+          />}
         />
       }
     </div>
