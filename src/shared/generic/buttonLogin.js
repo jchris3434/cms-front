@@ -20,7 +20,7 @@ function ButtonLogin(props) {
     event.preventDefault();
 
     const body = {
-      "usr_username": props.username,
+      "usr_username": props.username, // Utilisez props.username pour récupérer le nom d'utilisateur depuis les props
       "usr_password": props.password
     }
 
@@ -40,7 +40,7 @@ function ButtonLogin(props) {
     })
     .then(data => {
       localStorage.setItem("token", data.token);
-      localStorage.setItem("username", props.username);
+      localStorage.setItem("username", props.username); // Stockez le nom d'utilisateur dans le stockage local
       navigate("/dashboard");
     })
     .catch(error => {

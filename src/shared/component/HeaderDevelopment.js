@@ -2,9 +2,10 @@ import React from 'react';
 import './Header.css';
 import Logo from '../generic/Logo';
 import SearchBar from '../generic/SearchBar.js';
-import HeaderButton from '../generic/HeaderButton';
 import UserSettings from '../generic/UserSettings';
 import PropTypes from 'prop-types';
+import { useLocation } from 'react-router-dom';
+import HeaderButton from '../generic/HeaderButton';
 
 /**
  * @description                                     The header that is displayed as the header navbar
@@ -14,26 +15,41 @@ import PropTypes from 'prop-types';
  * 
  * @returns                                         The header component
  */
-function HeaderDev(props){
+
+function HeaderDev(props) {
+    const placeHolder = "Rechercher un projet";
+    const location = useLocation();
+    const pages = [
+        { url: '/homepage', label: `Page d'accueil Admin`},
+        { url: '/dashboard', label: 'Dashboard projet' },
+        { url: '/createPage', label: 'Création de page' },
+        { url: '/mediasList', label: 'Liste des médias' },
+        { url: '/pagesList', label: 'Liste des pages' },
+        { url: '/preview', label: 'Previsualisation du site' }
+    ];
+
+    const getPageName = () => {
+        const currentPage = pages.find(page => page.url === location.pathname);
+        return currentPage ? currentPage.label : 'Nom de la page';
+    };
 
     return (
-        <div className='Header' isDarkMode={props.isDarkMode.toString()}>
+        <div className='Header' data-isDarkMode={props.isDarkMode}>
             <div className='headerBody'>
                 <Logo isDarkMode={props.isDarkMode} />
-                <p className='titleText'> {props.pageName || 'Nom de la page'} </p>
-                <SearchBar customWidth='22.5rem' isDarkMode={props.isDarkMode} placeholder='Rechercher un projet'/>
+                <p className='titleText'> {getPageName() || 'Nom de la page'} </p>
+                <SearchBar customWidth='22.5rem' isDarkMode={props.isDarkMode} placeholder={placeHolder}/>
                 <HeaderButton isDarkMode={props.isDarkMode} icon='bi-archive-fill' text='Projets' redirect='/projectsList'/>
                 <HeaderButton isDarkMode={props.isDarkMode} icon='bi-people-fill' text='Clients' redirect='/pagesList'/> 
-                <UserSettings isdarkmode={props.isDarkMode} setDarkMode={props.setDarkMode}/>
+                <UserSettings isdarkmode={props.isDarkMode} setDarkMode={props.setDarkMode} />
             </div>
         </div>
     )
 }
 
 HeaderDev.propTypes = {
-    isDarkMode: PropTypes.bool.isRequired, // isDarkMode prop is required and should be a boolean
-    pageName: PropTypes.string, // pageName prop is optional and should be a string
-    setDarkMode: PropTypes.func.isRequired // setDarkMode prop is required and should be a function
-  };
+    isDarkMode: PropTypes.bool.isRequired,
+    setDarkMode: PropTypes.func.isRequired 
+};
 
-export default HeaderDev ;
+export default HeaderDev;
