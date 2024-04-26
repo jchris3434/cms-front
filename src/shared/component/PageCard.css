@@ -5,10 +5,16 @@
 .pagePreviewPlaceholder {
     width: 100%;
     aspect-ratio: 25 / 20;
-    background-color: orange;
+    background-color: rgba(152, 146, 146, 0.516);
+
 }
 
-#PageCard{
-    width:18.75rem;
-    height: 22.188rem;
-}
+#PageCard {
+    width: 14.2rem;
+    height: 17rem;
+    text-align: center;
+  }
+  
+  #PageCard p {
+    font-size: 1.2rem; /* Ajustez la taille de la police selon vos préférences */
+  }
