@@ -35,8 +35,13 @@ const config = {
         //   label: "Couleur du texte",
         // },
         fontWeight: {
-          type: "select",
-          options: ["normal", "bold", "italic"],
+               type: "select",
+          options: [
+            { label: "Normal", value: "Normal" },
+            { label: "Bold", value: "Bold" },
+            { label: "italic", value: "italic" },
+          ],
+        
           label: "Poids de la police",
         },
         // Ajoutez d'autres champs pour d'autres propriétés de style CSS
