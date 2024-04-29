@@ -21,7 +21,7 @@ const config = {
         return <h1>{children}</h1>;
       },
     },
-    ZoneTexte: {
+    Texte: {
       fields: {
         text: {
           type: "text",
@@ -38,11 +38,12 @@ const config = {
                type: "select",
           options: [
             { label: "Normal", value: "Normal" },
-            { label: "Bold", value: "Bold" },
-            { label: "italic", value: "italic" },
+            { label: "Gras", value: "Bold" },
+            { label: "Italique", value: "italic" },//marche pas encore
+            { label: "Souligne", value: "Underline" },//marche pas encore
           ],
         
-          label: "Poids de la police",
+          label: "Style de la police",
         },
         // Ajoutez d'autres champs pour d'autres propriétés de style CSS
       },
