@@ -22,7 +22,7 @@ function Login() {
     }, [username, password]);
 
     return (
-        <div>
+        <div className='page'>
             <div className="container">
                 <div className="form-container">
                     <Form>
