@@ -9,8 +9,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './DashboardProject.css'
 import DeleteButton from '../shared/component/DeleteButton'
 
-
-
 export default function DashboardProject(props) {
   const [showdeleteprojectoverlay, setShowDeleteProjectOverlay] = useState(false);
   const [showcreatepageoverlay, setShowCreatePageOverlay] = useState(false);

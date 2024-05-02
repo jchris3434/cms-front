@@ -2,7 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import getDarkModeFromLocalStorage from './shared/getDarkModeFromLocalStorage'
-import CreatePage from './pages/CreatePage';
+import PuckPage from './pages/PuckPage';
 import DashboardProject from './pages/DashboardProject';
 import Layout from './pages/Layout';
 import MediasList from './pages/MediasList';
@@ -23,7 +23,7 @@ function App() {
            {/* Define the child routes */}
            <Route path="/" element={<Login />} />
            <Route path="/dashboard" element={<DashboardProject isDarkMode={isDarkMode}/>} />
-           <Route path="/createPage" element={<CreatePage isDarkMode={isDarkMode}/>} />
+           <Route path="/createPage" element={<PuckPage isDarkMode={isDarkMode}/>} />
            <Route path="/mediasList" element={<MediasList isDarkMode={isDarkMode}/>} />
            <Route path="/pagesList" element={<PagesList isDarkMode={isDarkMode}/>} />
            <Route path="/preview" element={<Preview isDarkMode={isDarkMode}/>} />

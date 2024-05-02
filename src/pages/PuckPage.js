@@ -67,6 +67,6 @@ const initialData = {
 const save = (data) => {};
 
 // Render Puck editor
-export default function CreatePage() {
+export default function PuckPage() {
   return <Puck config={config} data={initialData} onPublish={save} />;
 }
