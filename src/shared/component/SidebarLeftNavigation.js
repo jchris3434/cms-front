@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom';
 const SidebarLeftNavigation = ({ items, isDarkMode }) => {
     const [isOpen, setIsOpen] = useState(true);
 
+    // Fonction pour basculer l'état de la barre latérale
     const toggleSidebar = () => {
         setIsOpen(!isOpen);
     };
@@ -25,7 +26,8 @@ const SidebarLeftNavigation = ({ items, isDarkMode }) => {
                     </ul>
                 </div>
             )}
-            <div className="button-container">
+            {/* Bouton de bascule avec gestion de l'état isOpen */}
+            <div className={`button-container ${isOpen ? '' : 'closed'}`}>
                 <button className={`toggle-btn ${isDarkMode ? 'dark-mode' : ''}`} onClick={toggleSidebar}>
                     {isOpen ? <BsArrowLeft /> : <BsArrowRight />}
                 </button>

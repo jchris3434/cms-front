@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: flex-start;
     width: 17rem;
-    height: 85.5vh;
+    height: 60vw;
     background-color: var(--LTWhiteDarker);
     color: var(--LTBlack);
     transition: width 0.3s ease-in-out;
@@ -80,25 +80,18 @@
     color: white;
 }
 
-.sidebar-left.classClose {
-    width: 0;
-    height: 85.5vh;
-}
 
-.content.classClose {
-    opacity: 0;
-}
-
-.button-container.classClose {
-    margin-left: 0;
-}
-
-.sidebar-left.classClose .pages-list,
-.sidebar-left.classClose .pages-list-title {
-    opacity: 0;
-}
 
 .nav-link {
     color: #000; 
     text-decoration: none;
 }
+
+.sidebar-left.closed {
+  width: 2vw;
+  text-decoration: none;
+}
+
+.button-container.closed {
+    margin-left: 0;
+  }

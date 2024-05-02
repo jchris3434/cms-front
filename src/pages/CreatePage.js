@@ -29,28 +29,27 @@ const config = {
         fontSize: {
           type: "number",
           label: "Taille de la police",
+          defaultValue: 40,
         },
-        // color: {
-        //   type: "color",
-        //   label: "Couleur du texte",
-        // },
         fontWeight: {
-               type: "select",
+          type: "select",
           options: [
             { label: "Normal", value: "Normal" },
             { label: "Gras", value: "Bold" },
-            { label: "Italique", value: "italic" },//marche pas encore
-            { label: "Souligne", value: "Underline" },//marche pas encore
+            { label: "Italique", value: "italic" }, //marche pas encore
+            { label: "Souligne", value: "Underline" }, //marche pas encore
           ],
-        
           label: "Style de la police",
         },
         // Ajoutez d'autres champs pour d'autres propriétés de style CSS
       },
       render: ({ text, textStyle, fontSize, color, fontWeight }) => {
+        // Définir la taille de police par défaut à 10 si aucune valeur n'est spécifiée
+        const defaultFontSize = fontSize || 40;
+
         // Construire l'objet de style en fonction des valeurs des champs de style
-        const style = textStyle ? { ...textStyle } : {}; // Copie des styles pour éviter de modifier l'objet d'origine
-        if (fontSize) style.fontSize = `${fontSize}px`;
+        const style = textStyle ? { ...textStyle } : {}; 
+        style.fontSize = `${defaultFontSize}px`; 
         if (color) style.color = color;
         if (fontWeight) style.fontWeight = fontWeight;
         // Ajoutez d'autres propriétés de style ici si nécessaire
