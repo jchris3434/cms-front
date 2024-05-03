@@ -44,7 +44,6 @@ const config = {
         // Ajoutez d'autres champs pour d'autres propriétés de style CSS
       },
       render: ({ text, textStyle, fontSize, color, fontWeight }) => {
-        // Définir la taille de police par défaut à 10 si aucune valeur n'est spécifiée
         const defaultFontSize = fontSize || 40;
 
         // Construire l'objet de style en fonction des valeurs des champs de style
@@ -52,7 +51,6 @@ const config = {
         style.fontSize = `${defaultFontSize}px`; 
         if (color) style.color = color;
         if (fontWeight) style.fontWeight = fontWeight;
-        // Ajoutez d'autres propriétés de style ici si nécessaire
 
         return <span style={style}>{text}</span>;
       },
