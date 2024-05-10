@@ -9,6 +9,7 @@ export const TitreConfig = {
           type: "number",
           label: "Taille de la police",
           defaultValue: 40,
+
           min: 40,
         },
         fontWeight: {
