@@ -9,24 +9,24 @@ export const TitreConfig = {
           type: "number",
           label: "Taille de la police",
           defaultValue: 40,
+          min: 40,
         },
         fontWeight: {
           type: "select",
           options: [
+            { label: "Gras", value: "Bold" },            
             { label: "Normal", value: "Normal" },
-            { label: "Gras", value: "Bold" },
             { label: "Italique", value: "italic" },
             { label: "Souligne", value: "Underline" },
-           
-          ], 
+          ],  
+          defaultValue: "Gras",
           label: "Style de la police",
         },
       },
-      render: ({ titre, textStyle, fontSize, color, fontWeight }) => {
+      render: ({ titre, textStyle, fontSize, fontWeight }) => {
         const defaultFontSize = fontSize || 40;
-        const style = textStyle ? { ...textStyle } : {};
+        const style = textStyle ? { ...textStyle } : { fontWeight: 'bold' };
         style.fontSize = `${defaultFontSize}px`;
-        if (color) style.color = color;
         if (fontWeight) {
           if (fontWeight === "italic") style.fontStyle = "italic";
           else if (fontWeight === "Underline") style.textDecoration = "underline";
