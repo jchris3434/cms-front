@@ -1,13 +1,34 @@
 // Editeur test jc
 import { Puck, DropZone} from "@measured/puck";
 import "@measured/puck/puck.css";
-//import Columns from "../widgets/Columns/columns";
+import Columns from "../widgets/Columns/columns";
+
 const config = {
-  
+
   components: {
+
+        Columns: {
+          render: () => {
+            return (
+              <div>
+                <Columns />
+              </div>
+            );
+          },
+        },
+        Alternative: {
+          render: () => {
+            return (
+              <div>
+                <Columns />
+              </div>
+            );
+          },
+        },
+
     Article: {
       fields: {
-        title: { type: "text" }, // We need to redefine the `title` field if we want to retain it
+        title: { type: "text" }, 
         description: { type: "textarea" },
       },
       defaultProps: {
@@ -67,6 +88,6 @@ const initialData = {
 const save = (data) => {};
 
 // Render Puck editor
-export default function PuckPage() {
+export default function CreatePage() {
   return <Puck config={config} data={initialData} onPublish={save} />;
 }
