@@ -1,38 +1,77 @@
 import React from "react";
 
 export const TitreConfig = {
-    fields: {
-        titre: {
-          type: "text",
-        },
-        fontSize: {
-          type: "number",
-          label: "Taille de la police",
-          defaultValue: 40,
+  fields: {
+    titre: {
+      type: "text",
+    },
+    fontSize: {
+      type: "number",
+      label: "Taille de la police",
+      defaultValue: 40,
+      min: 40,
+    },
+    isBold: {
+      type: "custom",
+      label: "Gras",
+      render: ({ name, onChange, value }) => (
+        <label style={{ display: "flex", alignItems: "center" }}>
+          <input
+            type="checkbox"
+            checked={value}
+            onChange={(e) => onChange(e.currentTarget.checked)}
+            style={{ marginRight: "8px" }}
+          />
+          Gras
+        </label>
+      ),
+    },
+    isItalic: {
+      type: "custom",
+      label: "Italique",
+      render: ({ name, onChange, value }) => (
+        <label style={{ display: "flex", alignItems: "center" }}>
+          <input
+            type="checkbox"
+            checked={value}
+            onChange={(e) => onChange(e.currentTarget.checked)}
+            style={{ marginRight: "8px" }}
+          />
+          Italique
+        </label>
+      ),
+    },
+    isUnderline: {
+      type: "custom",
+      label: "Souligné",
+      render: ({ name, onChange, value }) => (
+        <label style={{ display: "flex", alignItems: "center" }}>
+          <input
+            type="checkbox"
+            checked={value}
+            onChange={(e) => onChange(e.currentTarget.checked)}
+            style={{ marginRight: "8px" }}
+          />
+          Souligné
+        </label>
+      ),
+    },
+  },
+  render: ({ titre, textStyle, fontSize, fontWeight, isBold, isItalic, isUnderline }) => {
+    const defaultFontSize = fontSize || 40;
+    const style = textStyle ? { ...textStyle } : { fontWeight: '' };
+    style.fontSize = `${defaultFontSize}px`;
 
-          min: 40,
-        },
-        fontWeight: {
-          type: "select",
-          options: [
-            { label: "Gras", value: "Bold" },            
-            { label: "Normal", value: "Normal" },
-            { label: "Italique", value: "italic" },
-            { label: "Souligne", value: "Underline" },
-          ],  
-          defaultValue: "Gras",
-          label: "Style de la police",
-        },
-      },
-      render: ({ titre, textStyle, fontSize, fontWeight }) => {
-        const defaultFontSize = fontSize || 40;
-        const style = textStyle ? { ...textStyle } : { fontWeight: 'bold' };
-        style.fontSize = `${defaultFontSize}px`;
-        if (fontWeight) {
-          if (fontWeight === "italic") style.fontStyle = "italic";
-          else if (fontWeight === "Underline") style.textDecoration = "underline";
-          else style.fontWeight = fontWeight;
-        }
-        return <span style={style}>{titre}</span>;
-      },
-  }
+    if (isBold) {
+      style.fontWeight = 'bold';
+    }
+    if (isItalic) {
+      style.fontStyle = 'italic';
+    }
+    if (isUnderline) {
+      style.textDecoration = 'underline';
+    }
+    
+    return <span style={style}>{titre}</span>;
+  },
+};

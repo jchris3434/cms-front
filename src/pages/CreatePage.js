@@ -21,7 +21,9 @@ const initialData = {
   root: {},
 };
 
-const save = (data) => {};
+const save = (data) => {
+  
+};
 
 export default function CreatePage() {
   return <Puck config={config} data={initialData} onPublish={save} />;

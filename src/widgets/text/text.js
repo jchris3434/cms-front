@@ -9,27 +9,67 @@ export const TexteConfig = {
       type: "number",
       label: "Taille de la police",
       defaultValue: 20,
+      min: 20,
     },
-    fontWeight: {
-      type: "select",
-      options: [
-        { label: "Normal", value: "Normal" },
-        { label: "Gras", value: "Bold" },
-        { label: "Italique", value: "italic" },
-        { label: "Souligne", value: "Underline" },
-      ],
-      label: "Style de la police",
+    isBold: {
+      type: "custom",
+      label: "Gras",
+      render: ({ name, onChange, value }) => (
+        <label style={{ display: "flex", alignItems: "center" }}>
+          <input
+            type="checkbox"
+            checked={value}
+            onChange={(e) => onChange(e.currentTarget.checked)}
+            style={{ marginRight: "8px" }}
+          />
+          Gras
+        </label>
+      ),
+    },
+    isItalic: {
+      type: "custom",
+      label: "Italique",
+      render: ({ name, onChange, value }) => (
+        <label style={{ display: "flex", alignItems: "center" }}>
+          <input
+            type="checkbox"
+            checked={value}
+            onChange={(e) => onChange(e.currentTarget.checked)}
+            style={{ marginRight: "8px" }}
+          />
+          Italique
+        </label>
+      ),
+    },
+    isUnderline: {
+      type: "custom",
+      label: "Souligné",
+      render: ({ name, onChange, value }) => (
+        <label style={{ display: "flex", alignItems: "center" }}>
+          <input
+            type="checkbox"
+            checked={value}
+            onChange={(e) => onChange(e.currentTarget.checked)}
+            style={{ marginRight: "8px" }}
+          />
+          Souligné
+        </label>
+      ),
     },
   },
-  render: ({ text, textStyle, fontSize, color, fontWeight }) => {
-    const defaultFontSize = fontSize || 20;
-    const style = textStyle ? { ...textStyle } : {};
+  render: ({ text, textStyle, fontSize, fontWeight, isBold, isItalic, isUnderline }) => {
+    const defaultFontSize = fontSize || 40;
+    const style = textStyle ? { ...textStyle } : { fontWeight: '' };
     style.fontSize = `${defaultFontSize}px`;
-    if (color) style.color = color;
-    if (fontWeight) {
-      if (fontWeight === "italic") style.fontStyle = "italic";
-      else if (fontWeight === "Underline") style.textDecoration = "underline";
-      else style.fontWeight = fontWeight;
+
+    if (isBold) {
+      style.fontWeight = 'bold';
+    }
+    if (isItalic) {
+      style.fontStyle = 'italic';
+    }
+    if (isUnderline) {
+      style.textDecoration = 'underline';
     }
   
     return <span style={style}>{text}</span>;
