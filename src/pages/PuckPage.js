@@ -2,12 +2,31 @@
 import { Puck, DropZone} from "@measured/puck";
 import "@measured/puck/puck.css";
 import Columns from "../widgets/Columns/columns";
+import Buttonwidget from "../widgets/Buttonwidget/Button";
 
 const config = {
 
-  components: {
+    components: {
 
-        Columns: {
+      Button: {
+        fields: {
+          title: { type: "text" }
+        },
+        defaultProps: {
+          title: "Bouton",
+        },
+        render: ({ title}) => {
+          return ( 
+            <div>
+              <Buttonwidget>
+                {title}
+              </Buttonwidget>
+            </div>
+          );
+        },
+      },
+
+      Columns: {
           render: () => {
             return (
               <div>
