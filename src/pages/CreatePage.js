@@ -3,6 +3,7 @@ import { Puck } from "@measured/puck";
 import "@measured/puck/puck.css";
 import { TexteConfig }  from '../widgets/text/text'; // Make sure the import path is correct
 import { TitreConfig } from '../widgets/Titre/Titre';
+import { NavBar } from '../widgets/navbar/navbar';
 
 const config = {
   components: {
@@ -13,6 +14,7 @@ const config = {
     },
     Titre: TitreConfig,
     Texte: TexteConfig, 
+    Barre_de_navigation:NavBar
   },
 };
 
