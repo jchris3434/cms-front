@@ -7,6 +7,7 @@ import { TexteConfig }  from '../widgets/text/text';
 import { TitreConfig } from '../widgets/Titre/Titre';
 import { NavBar } from '../widgets/navbar/navbar';
 
+
 const config = {
 
     components: {
@@ -15,32 +16,58 @@ const config = {
       Barre_de_navigation:NavBar,
       Button: {
         fields: {
-          title: { type: "text" }
+          Elements: {
+            type: "array",
+            arrayFields: {
+              title: { type: "text" },
+            },
+            getItemSummary: (item) => item.title || "Modifie",
+          },
+        },
+        render: ({ items }) => {
+          if (!items) {
+            return null; 
+          }
+        
+          return (
+            <ul>
+              {items.map((item, i) => (
+                <li key={i}>{item.title}</li>
+              ))}
+            </ul>
+          );
+        },
+      },
+
+      Bouton: {
+        fields: {
+          title: { type: "text" },
+          alignItem: {
+            type: "radio",
+            options: [
+              { label: "Left", value: "left" },
+              { label: "Right", value: "right" },
+            ],
+          },
         },
         defaultProps: {
           title: "Bouton",
         },
-        render: ({ title}) => {
+        
+        render: ({ title, alignItem}) => {
           return ( 
             <div>
-              <Buttonwidget>
-                {title}
+              <Buttonwidget
+              style={{ alignItem }}>
+                {title} 
               </Buttonwidget>
+             
             </div>
           );
         },
       },
 
-      Columns: {
-          render: () => {
-            return (
-              <div>
-                <Columns />
-              </div>
-            );
-          },
-        },
-        Alternative: {
+      Colonne: {
           render: () => {
             return (
               <div>
@@ -80,7 +107,8 @@ const config = {
         return <h1>{children}</h1>;
       },
     },
-    ZoneTexte: {
+
+    Texte: {
       fields: {
         children: {
           type: "text",
@@ -90,7 +118,7 @@ const config = {
         return <span>{children}</span>;
       },
     },
-    ZoneDeDepot: { // Déplacer Example en dehors de components
+    Container: { 
       render: () => {
         return (
           <div>

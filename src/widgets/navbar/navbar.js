@@ -11,6 +11,7 @@ export const NavBar = {
           value={value || ""}
           onChange={(e) => onChange(e.target.value)}
           placeholder="URL du logo"
+          className="logo-input-custom"
         />
       ),
     },
@@ -18,10 +19,10 @@ export const NavBar = {
       type: "custom",
       label: "Boutons",
       render: ({ name, onChange, value }) => (
-        <div style={{ display: "flex", alignItems: "center" }}>
+        <div>
           {value &&
             value.map((button, index) => (
-              <div key={index} style={{ marginRight: "10px" }}>
+              <div key={index} className="button-container-custom">
                 <input
                   type="text"
                   value={button.label || ""}
@@ -33,7 +34,7 @@ export const NavBar = {
                     ])
                   }
                   placeholder="Libellé du bouton"
-                  style={{ marginRight: "5px" }}
+                  className="button-label-input-custom"
                 />
 
                 <input
@@ -47,25 +48,27 @@ export const NavBar = {
                     ])
                   }
                   placeholder="Nom de la fonction onClick"
-                  style={{ marginRight: "5px" }}
+                  className="button-onclick-input-custom"
                 />
               </div>
             ))}
-          <button onClick={() => onChange([...(value || []), { label: "", onClick: "" }])}>Ajouter un bouton</button>
+          <div className="add-button-container-custom">
+            <button className="add-button-custom" onClick={() => onChange([...(value || []), { label: "", onClick: "" }])}>Ajouter un bouton</button>
+          </div>
         </div>
       ),
     },
   },
   render: ({ logo, buttons = [] }) => {
     return (
-      <nav>
-        <div className="logo">
+      <nav className="navbar-custom">
+        <div className="logo-custom">
           {logo && <img src={logo} alt="Logo" />}
         </div>
-        <ul className="buttons" style={{ display: "flex", listStyleType: "none", margin: 0, padding: 0 }}>
+        <ul className="buttons-custom">
           {buttons.map((button, index) => (
-            <li key={index} style={{ marginRight: "10px" }}>
-              <button style={{ padding: "5px 10px" }} onClick={button.onClick}>{button.label}</button>
+            <li key={index} className="button-li-custom">
+              <button className="button-custom" onClick={button.onClick}>{button.label}</button>
             </li>
           ))}
         </ul>

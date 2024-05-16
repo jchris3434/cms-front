@@ -1,0 +1,48 @@
+/* styles.css */
+
+.navbar-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .buttons-custom {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .button-li-custom {
+    margin-right: 10px;
+  }
+  
+  .button-li-custom:last-child {
+    margin-right: 0;
+  }
+  
+  .button-custom {
+    padding: 5px 10px;
+  }
+  
+  .add-button-container-custom {
+    margin-top: 10px;
+  }
+  
+  .add-button-custom {
+    margin-right: 0;
+  }
+  
+  .button-container-custom {
+    margin-bottom: 10px;
+  }
+  
+  .button-input-custom {
+    margin-right: 5px;
+  }
+  
+  /* Align buttons to left */
+  .buttons-custom {
+    justify-content: flex-start;
+  }
+  
