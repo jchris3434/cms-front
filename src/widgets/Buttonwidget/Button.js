@@ -5,10 +5,11 @@ const Buttonwidget = ({
   children,
   onClick,
   variant,
-  type
+  type,
+  size
 }) => {
   return (
-    <MeasuredButton onClick={onClick} variant={variant} type={type}>
+    <MeasuredButton onClick={onClick} variant={variant} type={type} size={size}>
       {children}
     </MeasuredButton>
   );
