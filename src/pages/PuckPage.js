@@ -3,11 +3,16 @@ import { Puck, DropZone} from "@measured/puck";
 import "@measured/puck/puck.css";
 import Columns from "../widgets/Columns/columns";
 import Buttonwidget from "../widgets/Buttonwidget/Button";
+import { TexteConfig }  from '../widgets/text/text';
+import { TitreConfig } from '../widgets/Titre/Titre';
+import { NavBar } from '../widgets/navbar/navbar';
 
 const config = {
 
     components: {
-
+      Titre: TitreConfig,
+      Texte: TexteConfig, 
+      Barre_de_navigation:NavBar,
       Button: {
         fields: {
           title: { type: "text" }

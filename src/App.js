@@ -24,8 +24,8 @@ function App() {
            {/* Define the child routes */}
            <Route path="/" element={<Login />} />
            <Route path="/dashboard" element={<DashboardProject isDarkMode={isDarkMode}/>} />
-           <Route path="/createPage2" element={<PuckPage isDarkMode={isDarkMode}/>} />
-           <Route path="/createPage" element={<CreatePage isDarkMode={isDarkMode}/>} />
+           <Route path="/createPage" element={<PuckPage isDarkMode={isDarkMode}/>} />
+           <Route path="/createPage2" element={<CreatePage isDarkMode={isDarkMode}/>} />
            <Route path="/mediasList" element={<MediasList isDarkMode={isDarkMode}/>} />
            <Route path="/pagesList" element={<PagesList isDarkMode={isDarkMode}/>} />
            <Route path="/preview" element={<Preview isDarkMode={isDarkMode}/>} />
