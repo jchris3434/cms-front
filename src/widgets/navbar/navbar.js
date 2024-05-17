@@ -1,4 +1,5 @@
 import React from "react";
+import "../navbar/navbar.css"
 
 export const NavBar = {
   fields: {
@@ -23,33 +24,35 @@ export const NavBar = {
           {value &&
             value.map((button, index) => (
               <div key={index} className="button-container-custom">
-                <input
-                  type="text"
-                  value={button.label || ""}
-                  onChange={(e) =>
-                    onChange([
-                      ...value.slice(0, index),
-                      { ...button, label: e.target.value },
-                      ...value.slice(index + 1),
-                    ])
-                  }
-                  placeholder="Libellé du bouton"
-                  className="button-label-input-custom"
-                />
+                <div className="button-info-container"> 
+                  <input
+                    type="text"
+                    value={button.label || ""}
+                    onChange={(e) =>
+                      onChange([
+                        ...value.slice(0, index),
+                        { ...button, label: e.target.value },
+                        ...value.slice(index + 1),
+                      ])
+                    }
+                    placeholder="Nom"
+                    className="button-label-input-custom"
+                  />
 
-                <input
-                  type="text"
-                  value={button.onClick || ""}
-                  onChange={(e) =>
-                    onChange([
-                      ...value.slice(0, index),
-                      { ...button, onClick: e.target.value },
-                      ...value.slice(index + 1),
-                    ])
-                  }
-                  placeholder="Nom de la fonction onClick"
-                  className="button-onclick-input-custom"
-                />
+                  <input
+                    type="text"
+                    value={button.onClick || ""}
+                    onChange={(e) =>
+                      onChange([
+                        ...value.slice(0, index),
+                        { ...button, onClick: e.target.value },
+                        ...value.slice(index + 1),
+                      ])
+                    }
+                    placeholder="Lien"
+                    className="button-onclick-input-custom"
+                  />
+                </div>
               </div>
             ))}
           <div className="add-button-container-custom">

@@ -96,28 +96,7 @@ const config = {
         );
       },
     },
-    
-    Titre: {
-      fields: {
-        children: {
-          type: "text",
-        },
-      },
-      render: ({ children }) => {
-        return <h1>{children}</h1>;
-      },
-    },
-
-    Texte: {
-      fields: {
-        children: {
-          type: "text",
-        },
-      },
-      render: ({ children }) => {
-        return <span>{children}</span>;
-      },
-    },
+   
     Container: { 
       render: () => {
         return (
