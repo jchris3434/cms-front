@@ -3,27 +3,50 @@ import { Puck, DropZone} from "@measured/puck";
 import "@measured/puck/puck.css";
 import Columns from "../widgets/Columns/columns";
 import Buttonwidget from "../widgets/Buttonwidget/Button";
-
+import ImageFromURL from "../widgets/ImageFromUrl/imageFromUrl";
 
 const config = {
 
     components: {
+      ImageURL: {
+        fields: {
+          url: { type: "text", label: "URL de l'image" },
+        },
+        render: ({ url }) => {
+          return <ImageFromURL url={url} />;
+        },
+      },
+        LienURL: {
+          fields: {
+            url: { type: "text" },
+            linkText: { type: "text" },
+          },
+          defaultProps: {
+            linkText: "Cliquez ici",
+          },
+          render: ({ url, linkText }) => {
+            return (
+              <a href={url} target="_blank" rel="noopener noreferrer">
+                {linkText}
+              </a>
+            );
+          },
+        },
+    
 
       Liste: {
         fields: {
-          Elements: {
+          items: {
             type: "array",
             arrayFields: {
               title: { type: "text" },
             },
-            getItemSummary: (item) => item.title || "Modifie",
           },
         },
         render: ({ items }) => {
           if (!items) {
             return null; 
           }
-        
           return (
             <ul>
               {items.map((item, i) => (
