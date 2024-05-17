@@ -7,6 +7,7 @@ import { TexteConfig }  from '../widgets/text/text';
 import { TitreConfig } from '../widgets/Titre/Titre';
 import { NavBar } from '../widgets/navbar/navbar';
 
+import ImageFromURL from "../widgets/ImageFromUrl/imageFromUrl";
 
 const config = {
 
@@ -14,21 +15,47 @@ const config = {
       Titre: TitreConfig,
       Texte: TexteConfig, 
       Barre_de_navigation:NavBar,
-      Button: {
+    
+      ImageURL: {
         fields: {
-          Elements: {
+          url: { type: "text", label: "URL de l'image" },
+        },
+        render: ({ url }) => {
+          return <ImageFromURL url={url} />;
+        },
+      },
+        LienURL: {
+          fields: {
+            url: { type: "text" },
+            linkText: { type: "text" },
+          },
+          defaultProps: {
+            linkText: "Cliquez ici",
+          },
+          render: ({ url, linkText }) => {
+            return (
+              <a href={url} target="_blank" rel="noopener noreferrer">
+                {linkText}
+              </a>
+            );
+          },
+        },
+    
+
+      Liste: {
+          Button: {
+            fields: {
+          items: {
             type: "array",
             arrayFields: {
               title: { type: "text" },
             },
-            getItemSummary: (item) => item.title || "Modifie",
           },
         },
         render: ({ items }) => {
           if (!items) {
             return null; 
           }
-        
           return (
             <ul>
               {items.map((item, i) => (
@@ -106,7 +133,7 @@ const config = {
         );
       },
     },
-  },
+  },},
 };
 
 // Describe the initial data
