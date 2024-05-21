@@ -56,22 +56,28 @@ export const TitreConfig = {
         </label>
       ),
     },
+    textAlign: {
+      type: "radio",
+      label: "Alignement du texte",
+      options: [
+        { label: "Gauche", value: "left" },
+        { label: "Centré", value: "center" },
+        { label: "Droite", value: "right" },
+      ],
+      defaultValue: "Gauche",
+    },
   },
-  render: ({ titre, textStyle, fontSize, fontWeight, isBold, isItalic, isUnderline }) => {
+  render: ({ titre, textStyle, fontSize, fontWeight, isBold, isItalic, isUnderline, textAlign }) => {
     const defaultFontSize = fontSize || 40;
-    const style = textStyle ? { ...textStyle } : { fontWeight: '' };
-    style.fontSize = `${defaultFontSize}px`;
+    const style = {
+      ...textStyle,
+      fontSize: `${defaultFontSize}px`,
+      fontWeight: isBold ? 'bold' : 'normal',
+      fontStyle: isItalic ? 'italic' : 'normal',
+      textDecoration: isUnderline ? 'underline' : 'none',
+      textAlign: textAlign || 'left',
+    };
 
-    if (isBold) {
-      style.fontWeight = 'bold';
-    }
-    if (isItalic) {
-      style.fontStyle = 'italic';
-    }
-    if (isUnderline) {
-      style.textDecoration = 'underline';
-    }
-    
-    return <span style={style}>{titre}</span>;
+    return <div style={style}>{titre}</div>;
   },
 };

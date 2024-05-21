@@ -1,50 +1,44 @@
-// Editeur test jc
-import { Puck, DropZone} from "@measured/puck";
+import { Puck, DropZone } from "@measured/puck";
 import "@measured/puck/puck.css";
 import Columns from "../widgets/Columns/columns";
 import Buttonwidget from "../widgets/Buttonwidget/Button";
-import { TexteConfig }  from '../widgets/text/text';
+import { TexteConfig } from '../widgets/text/text';
 import { TitreConfig } from '../widgets/Titre/Titre';
 import { NavBar } from '../widgets/navbar/navbar';
-
 import ImageFromURL from "../widgets/ImageFromUrl/imageFromUrl";
 
 const config = {
-
-    components: {
-      Titre: TitreConfig,
-      Texte: TexteConfig, 
-      Barre_de_navigation:NavBar,
-    
-      ImageURL: {
-        fields: {
-          url: { type: "text", label: "URL de l'image" },
-        },
-        render: ({ url }) => {
-          return <ImageFromURL url={url} />;
-        },
+  components: {
+    Titre: TitreConfig,
+    Texte: TexteConfig,
+    Barre_de_navigation: NavBar,
+    ImageURL: {
+      fields: {
+        url: { type: "text", label: "URL de l'image" },
       },
-        LienURL: {
-          fields: {
-            url: { type: "text" },
-            linkText: { type: "text" },
-          },
-          defaultProps: {
-            linkText: "Cliquez ici",
-          },
-          render: ({ url, linkText }) => {
-            return (
-              <a href={url} target="_blank" rel="noopener noreferrer">
-                {linkText}
-              </a>
-            );
-          },
-        },
-    
-
-      Liste: {
-          Button: {
-            fields: {
+      render: ({ url }) => {
+        return <ImageFromURL url={url} />;
+      },
+    },
+    LienURL: {
+      fields: {
+        url: { type: "text" },
+        linkText: { type: "text" },
+      },
+      defaultProps: {
+        linkText: "Cliquez ici",
+      },
+      render: ({ url, linkText }) => {
+        return (
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            {linkText}
+          </a>
+        );
+      },
+    },
+    Liste: {
+      Button: {
+        fields: {
           items: {
             type: "array",
             arrayFields: {
@@ -54,7 +48,7 @@ const config = {
         },
         render: ({ items }) => {
           if (!items) {
-            return null; 
+            return null;
           }
           return (
             <ul>
@@ -65,7 +59,6 @@ const config = {
           );
         },
       },
-
       Bouton: {
         fields: {
           title: { type: "text" },
@@ -80,60 +73,55 @@ const config = {
         defaultProps: {
           title: "Bouton",
         },
-        
-        render: ({ title, alignItem}) => {
-          return ( 
+        render: ({ title, alignItem }) => {
+          return (
             <div>
-              <Buttonwidget
-              style={{ alignItem }}>
-                {title} 
+              <Buttonwidget style={{ textAlign: alignItem }}>
+                {title}
               </Buttonwidget>
-             
             </div>
           );
         },
       },
-
       Colonne: {
-          render: () => {
-            return (
-              <div>
-                <Columns />
-              </div>
-            );
-          },
+        render: () => {
+          return (
+            <div>
+              <Columns />
+            </div>
+          );
         },
-
-    Article: {
-      fields: {
-        title: { type: "text" }, 
-        description: { type: "textarea" },
       },
-      defaultProps: {
-        title: "Modifie ton titre",
-        description: "Description",
+      Article: {
+        fields: {
+          title: { type: "text" },
+          description: { type: "textarea" },
+        },
+        defaultProps: {
+          title: "Modifie ton titre",
+          description: "Description",
+        },
+        render: ({ children, title, description }) => {
+          return (
+            <div>
+              <h1>{title}</h1>
+              <p>{description}</p>
+              {children}
+            </div>
+          );
+        },
       },
-      render: ({ children, title, description }) => {
-        return (
-          <div>
-            <h1>{title}</h1>
-            <p>{description}</p>
-            {children}
-          </div>
-        );
+      Container: {
+        render: () => {
+          return (
+            <div>
+              <DropZone zone="my-content" />
+            </div>
+          );
+        },
       },
     },
-   
-    Container: { 
-      render: () => {
-        return (
-          <div>
-            <DropZone zone="my-content" />
-          </div>
-        );
-      },
-    },
-  },},
+  },
 };
 
 // Describe the initial data
