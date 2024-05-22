@@ -1,4 +1,5 @@
 import React from "react";
+import { SketchPicker } from "react-color";
 
 export const TitreConfig = {
   fields: {
@@ -66,8 +67,21 @@ export const TitreConfig = {
       ],
       defaultValue: "Gauche",
     },
+    textColor: {
+      type: "custom",
+      label: "Couleur du texte",
+      render: ({ name, onChange, value }) => (
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <SketchPicker
+            color={value}
+            onChangeComplete={(color) => onChange(color.hex)}
+          />
+        </div>
+      ),
+    },
   },
-  render: ({ titre, textStyle, fontSize, fontWeight, isBold, isItalic, isUnderline, textAlign }) => {
+
+  render: ({ titre, textStyle, fontSize, fontWeight, isBold, isItalic, isUnderline, textAlign, textColor }) => {
     const defaultFontSize = fontSize || 40;
     const style = {
       ...textStyle,
@@ -76,6 +90,7 @@ export const TitreConfig = {
       fontStyle: isItalic ? 'italic' : 'normal',
       textDecoration: isUnderline ? 'underline' : 'none',
       textAlign: textAlign || 'left',
+      color: textColor || '#000000', // Default to black if no color is selected
     };
 
     return <div style={style}>{titre}</div>;

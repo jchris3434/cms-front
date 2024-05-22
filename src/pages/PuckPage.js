@@ -7,7 +7,6 @@ import { TitreConfig } from '../widgets/Titre/Titre';
 import { NavBar } from '../widgets/navbar/navbar';
 import ImageFromURL from "../widgets/ImageFromUrl/imageFromUrl";
 import VideoFromUrl from "../widgets/VideoFromUrl/videoFromUrl";
-import TextColor from "../widgets/Textcolor/texteColor";
 
 const config = {
 
@@ -16,20 +15,6 @@ const config = {
         Titre: TitreConfig,
         Texte: TexteConfig,
         Barre_de_navigation: NavBar,
-
-      TextColor: {
-        fields: {
-          text: { type: 'text' },
-          color: { type: 'text' },
-        },
-        defaultProps: {
-          text: 'Votre texte ici',
-          color: 'black',
-        },
-        render: ({ text, color }) => {
-          return <TextColor text={text} color={color} />;
-        },
-      },
 
       ImageURL: {
         fields: {
