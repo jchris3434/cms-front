@@ -7,20 +7,38 @@ import { TitreConfig } from '../widgets/Titre/Titre';
 import { NavBar } from '../widgets/navbar/navbar';
 import ImageFromURL from "../widgets/ImageFromUrl/imageFromUrl";
 import VideoFromUrl from "../widgets/VideoFromUrl/videoFromUrl";
+import TextColor from "../widgets/Textcolor/texteColor";
 
 const config = {
-  components: {
-    Titre: TitreConfig,
-    Texte: TexteConfig,
-    Barre_de_navigation: NavBar,
-    ImageURL: {
-      fields: {
-        url: { type: "text", label: "URL de l'image" },
+
+    components: {
+      
+        Titre: TitreConfig,
+        Texte: TexteConfig,
+        Barre_de_navigation: NavBar,
+
+      TextColor: {
+        fields: {
+          text: { type: 'text' },
+          color: { type: 'text' },
+        },
+        defaultProps: {
+          text: 'Votre texte ici',
+          color: 'black',
+        },
+        render: ({ text, color }) => {
+          return <TextColor text={text} color={color} />;
+        },
       },
-      render: ({ url }) => {
-        return <ImageFromURL url={url} />;
+
+      ImageURL: {
+        fields: {
+          url: { type: "text", label: "URL de l'image" },
+        },
+        render: ({ url }) => {
+          return <ImageFromURL url={url} />;
+        },
       },
-    },
 
     LienURL: {
       fields: {
@@ -52,7 +70,7 @@ const config = {
           },
         },
     Liste: {
-      Button: {
+      
         fields: {
           items: {
             type: "array",
@@ -136,7 +154,7 @@ const config = {
         },
       },
     },
-  },
+  
 };
 
 // Describe the initial data
