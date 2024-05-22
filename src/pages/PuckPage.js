@@ -5,10 +5,26 @@ import Columns from "../widgets/Columns/columns";
 import Buttonwidget from "../widgets/Buttonwidget/Button";
 import ImageFromURL from "../widgets/ImageFromUrl/imageFromUrl";
 import VideoFromUrl from "../widgets/VideoFromUrl/videoFromUrl";
+import TextColor from "../widgets/Textcolor/texteColor";
 
 const config = {
 
     components: {
+      
+      TextColor: {
+        fields: {
+          text: { type: 'text' },
+          color: { type: 'text' },
+        },
+        defaultProps: {
+          text: 'Votre texte ici',
+          color: 'black',
+        },
+        render: ({ text, color }) => {
+          return <TextColor text={text} color={color} />;
+        },
+      },
+
       ImageURL: {
         fields: {
           url: { type: "text", label: "URL de l'image" },
