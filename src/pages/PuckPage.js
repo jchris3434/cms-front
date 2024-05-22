@@ -6,6 +6,7 @@ import { TexteConfig } from '../widgets/text/text';
 import { TitreConfig } from '../widgets/Titre/Titre';
 import { NavBar } from '../widgets/navbar/navbar';
 import ImageFromURL from "../widgets/ImageFromUrl/imageFromUrl";
+import VideoFromUrl from "../widgets/VideoFromUrl/videoFromUrl";
 
 const config = {
   components: {
@@ -20,6 +21,7 @@ const config = {
         return <ImageFromURL url={url} />;
       },
     },
+
     LienURL: {
       fields: {
         url: { type: "text" },
@@ -36,6 +38,19 @@ const config = {
         );
       },
     },
+
+        Video: {
+          fields: {
+            url: { type: 'text' },
+          },
+          render: ({ url }) => {
+            return (
+              <div>
+                <VideoFromUrl url={url} />
+              </div>
+            );
+          },
+        },
     Liste: {
       Button: {
         fields: {
