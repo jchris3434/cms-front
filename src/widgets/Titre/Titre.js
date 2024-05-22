@@ -90,7 +90,7 @@ export const TitreConfig = {
       fontStyle: isItalic ? 'italic' : 'normal',
       textDecoration: isUnderline ? 'underline' : 'none',
       textAlign: textAlign || 'left',
-      color: textColor || '#000000', // Default to black if no color is selected
+      color: textColor || '#000000', 
     };
 
     return <div style={style}>{titre}</div>;
