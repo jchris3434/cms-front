@@ -4,6 +4,7 @@ import "@measured/puck/puck.css";
 import Columns from "../widgets/Columns/columns";
 import Buttonwidget from "../widgets/Buttonwidget/Button";
 import ImageFromURL from "../widgets/ImageFromUrl/imageFromUrl";
+import VideoFromUrl from "../widgets/VideoFromUrl/videoFromUrl";
 
 const config = {
 
@@ -16,6 +17,7 @@ const config = {
           return <ImageFromURL url={url} />;
         },
       },
+
         LienURL: {
           fields: {
             url: { type: "text" },
@@ -29,6 +31,19 @@ const config = {
               <a href={url} target="_blank" rel="noopener noreferrer">
                 {linkText}
               </a>
+            );
+          },
+        },
+
+        Video: {
+          fields: {
+            url: { type: 'text' },
+          },
+          render: ({ url }) => {
+            return (
+              <div>
+                <VideoFromUrl url={url} />
+              </div>
             );
           },
         },
