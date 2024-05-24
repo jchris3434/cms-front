@@ -3,14 +3,24 @@ import { SketchPicker } from "react-color";
 
 export const TexteConfig = {
   fields: {
-    text: {
-      type: "text",
-    },
+    text: { type: "text" },
     fontSize: {
       type: "number",
       label: "Taille de la police",
       defaultValue: 20,
-      min: 20,
+      min: 10,
+    },
+    fontFamily: {
+      type: "select",
+      label: "Police",
+      options: [
+        { label: "Arial", value: "Arial, sans-serif" },
+        { label: "Georgia", value: "Georgia, serif" },
+        { label: "Times New Roman", value: "Times New Roman, serif" },
+        { label: "Courier New", value: "Courier New, monospace" },
+        { label: "Verdana", value: "Verdana, sans-serif" },
+      ],
+      defaultValue: "Arial, sans-serif",
     },
     isBold: {
       type: "custom",
@@ -80,16 +90,27 @@ export const TexteConfig = {
       ),
     },
   },
-  render: ({ text, textStyle, fontSize, isBold, isItalic, isUnderline, textAlign, textColor }) => {
+  render: ({
+    text,
+    textStyle,
+    fontSize,
+    textColor,
+    isBold,
+    isItalic,
+    isUnderline,
+    textAlign,
+    fontFamily,
+  }) => {
     const defaultFontSize = fontSize || 20;
     const style = {
       ...textStyle,
       fontSize: `${defaultFontSize}px`,
-      fontWeight: isBold ? 'bold' : 'normal',
-      fontStyle: isItalic ? 'italic' : 'normal',
-      textDecoration: isUnderline ? 'underline' : 'none',
-      textAlign: textAlign || 'left',
-      color: textColor || '#000000',
+      color: textColor || "#000000",
+      fontWeight: isBold ? "bold" : "normal",
+      fontStyle: isItalic ? "italic" : "normal",
+      textDecoration: isUnderline ? "underline" : "none",
+      textAlign: textAlign || "left",
+      fontFamily: fontFamily || "Arial, sans-serif",
     };
 
     return <div style={style}>{text}</div>;

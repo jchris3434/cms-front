@@ -3,14 +3,24 @@ import { SketchPicker } from "react-color";
 
 export const TitreConfig = {
   fields: {
-    titre: {
-      type: "text",
-    },
+    titre: { type: "text" },
     fontSize: {
       type: "number",
       label: "Taille de la police",
       defaultValue: 40,
-      min: 40,
+      min: 20,
+    },
+     fontFamily: {
+      type: "select",
+      label: "Police",
+      options: [
+        { label: "Arial", value: "Arial, sans-serif" },
+        { label: "Georgia", value: "Georgia, serif" },
+        { label: "Times New Roman", value: "Times New Roman, serif" },
+        { label: "Courier New", value: "Courier New, monospace" },
+        { label: "Verdana", value: "Verdana, sans-serif" },
+      ],
+      defaultValue: "Arial, sans-serif",
     },
     isBold: {
       type: "custom",
@@ -65,7 +75,7 @@ export const TitreConfig = {
         { label: "Centré", value: "center" },
         { label: "Droite", value: "right" },
       ],
-      defaultValue: "Gauche",
+      defaultValue: "left",
     },
     textColor: {
       type: "custom",
@@ -80,17 +90,27 @@ export const TitreConfig = {
       ),
     },
   },
-
-  render: ({ titre, textStyle, fontSize, fontWeight, isBold, isItalic, isUnderline, textAlign, textColor }) => {
+  render: ({
+    titre,
+    textStyle,
+    fontSize,
+    textColor,
+    isBold,
+    isItalic,
+    isUnderline,
+    textAlign,
+    fontFamily,
+  }) => {
     const defaultFontSize = fontSize || 40;
     const style = {
       ...textStyle,
       fontSize: `${defaultFontSize}px`,
-      fontWeight: isBold ? 'bold' : 'normal',
-      fontStyle: isItalic ? 'italic' : 'normal',
-      textDecoration: isUnderline ? 'underline' : 'none',
-      textAlign: textAlign || 'left',
-      color: textColor || '#000000', 
+      color: textColor || "#000000",
+      fontWeight: isBold ? "bold" : "normal",
+      fontStyle: isItalic ? "italic" : "normal",
+      textDecoration: isUnderline ? "underline" : "none",
+      textAlign: textAlign || "left",
+      fontFamily: fontFamily || "Arial, sans-serif",
     };
 
     return <div style={style}>{titre}</div>;

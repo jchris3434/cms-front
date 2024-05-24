@@ -7,13 +7,16 @@ import { TitreConfig } from '../widgets/Titre/Titre';
 import { NavBar } from '../widgets/navbar/navbar';
 import ImageFromURL from "../widgets/ImageFromUrl/imageFromUrl";
 import VideoFromUrl from "../widgets/VideoFromUrl/videoFromUrl";
-
+import { ListeConfig } from "../widgets/List/list";
+import { ArticleConfig } from "../widgets/Article/article";
 const config = {
 
     components: {
       
         Titre: TitreConfig,
         Texte: TexteConfig,
+        Article: ArticleConfig,
+        Liste: ListeConfig,
         Barre_de_navigation: NavBar,
 
       ImageURL: {
@@ -54,29 +57,6 @@ const config = {
             );
           },
         },
-    Liste: {
-      
-        fields: {
-          items: {
-            type: "array",
-            arrayFields: {
-              title: { type: "text" },
-            },
-          },
-        },
-        render: ({ items }) => {
-          if (!items) {
-            return null;
-          }
-          return (
-            <ul>
-              {items.map((item, i) => (
-                <li key={i}>{item.title}</li>
-              ))}
-            </ul>
-          );
-        },
-      },
       Bouton: {
         fields: {
           title: { type: "text" },
@@ -106,25 +86,6 @@ const config = {
           return (
             <div>
               <Columns />
-            </div>
-          );
-        },
-      },
-      Article: {
-        fields: {
-          title: { type: "text" },
-          description: { type: "textarea" },
-        },
-        defaultProps: {
-          title: "Modifie ton titre",
-          description: "Description",
-        },
-        render: ({ children, title, description }) => {
-          return (
-            <div>
-              <h1>{title}</h1>
-              <p>{description}</p>
-              {children}
             </div>
           );
         },
