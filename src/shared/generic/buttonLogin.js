@@ -24,13 +24,14 @@ function ButtonLogin(props) {
       "usr_password": props.password
     }
 
-    fetch('http://localhost:12000/users/login', {
+    fetch(`${process.env.REACT_APP_API_URL}/users/login`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(body),
     })
+    
     .then(response => {
       if (response.ok) {
         return response.json();

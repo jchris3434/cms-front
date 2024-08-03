@@ -31,14 +31,15 @@ function CreateClientOverlay(props) {
         fk_rol_id: 2 // L'ID du rôle client
       };
 
-      const response = await fetch('http://localhost:12000/users/', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/users/`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          // Vous pouvez également ajouter des en-têtes d'authentification si nécessaire
+          // Vous pouvez également ajouter d'autres en-têtes d'authentification si nécessaire
         },
         body: JSON.stringify(newUser)
       });
+      
 
       if (response.ok) {
         console.log('Utilisateur créé avec succès!');

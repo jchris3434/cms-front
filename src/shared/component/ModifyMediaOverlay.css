@@ -28,6 +28,7 @@
 #inputs-row {
     display: flex;
     font-size: 1.125rem;
+    padding-top: 5rem;
   }
 
 .input-data{

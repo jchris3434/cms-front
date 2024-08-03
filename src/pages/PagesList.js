@@ -14,7 +14,7 @@ function PagesList({ isDarkMode }) {
   const [pagesList, setPagesList] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:12000/pages")
+    fetch(`${process.env.REACT_APP_API_URL}/pages`)
       .then((res) => res.json())
       .then((res) => {
         // Vérifie si la réponse est un objet avec une propriété 'success' égale à true et une propriété 'data' qui est un tableau

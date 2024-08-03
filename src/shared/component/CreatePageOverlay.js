@@ -12,7 +12,7 @@ function CreatePageOverlay(props) {
   const [pagesList, setPagesList] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:12000/pages") 
+    fetch(`${process.env.REACT_APP_API_URL}/pages`) 
       .then((res) => res.json())
       .then((res) => {
         console.log(res); // Ajout pour afficher la structure de données renvoyée par l'API
@@ -36,7 +36,7 @@ function CreatePageOverlay(props) {
     
     console.log('Données du formulaire avant envoi:', formData); // Ajout du console.log
     
-    fetch(`http://localhost:12000/pages`, {
+    fetch(`${process.env.REACT_APP_API_URL}/pages`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

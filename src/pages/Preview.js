@@ -8,7 +8,7 @@ function Preview(props) {
 
   useEffect(() => {
     // Effectue la requête GET lors du chargement initial du composant
-    fetch('http://localhost:12000/users/1')
+    fetch(`${process.env.REACT_APP_API_URL}/users/1`)
       .then(response => response.json())
       .then(data => setUserData(data))
       .catch(error => console.error('Erreur lors de la récupération des données:', error));
