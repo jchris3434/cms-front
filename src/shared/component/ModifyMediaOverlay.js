@@ -26,7 +26,8 @@ function AddMediaOverlay(props) {
         formData.append('file', file);
 
         try {
-            const response = await fetch('http://localhost:12000/medias', {
+            //const response = await fetch('http://localhost:12000/medias', {
+                const response = await fetch('http://cmsback-service:12000/medias', {
                 method: 'POST',
                 body: formData,
             });

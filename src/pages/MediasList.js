@@ -12,7 +12,7 @@ function MediasList(props) {
 
   const fetchMedias = async () => {
     try {
-      const response = await axios.get('http://localhost:12000/medias');
+      const response = await axios.get('http://cmsback-service:12000/medias');
       setMedias(response.data.data);  // Extraire le tableau des médias
       console.log('medias', medias);
     } catch (error) {
@@ -39,7 +39,7 @@ function MediasList(props) {
             {medias.map(media => (
               <li key={media.med_id}>
                 <img
-                  src={`http://localhost:12000/uploads/${media.med_name}.jpg`}
+                  src={`http://cmsback-service:12000/uploads/${media.med_name}.jpg`}
                   alt={media.med_alt}
                   style={{ width: '100px', height: 'auto' }}
                 />
